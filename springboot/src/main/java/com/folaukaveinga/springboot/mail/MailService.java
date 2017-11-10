@@ -6,6 +6,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -17,6 +18,11 @@ public class MailService implements Mail {
 
 	@Autowired
 	private JavaMailSender mailSender;
+	
+	
+	// This is for aws ses mail. Sender email needs to be verified first before using it as a sender email.
+	@Value("${spring.mail.properties.mail.sender}")
+	private String sender;
 
 	@Override
 	public boolean sendSimpleMail(String to, String subject, String msg) {
@@ -24,6 +30,7 @@ public class MailService implements Mail {
 		simpleMailMessage.setTo(to);
 		simpleMailMessage.setSubject(subject);
 		simpleMailMessage.setText(msg);
+		simpleMailMessage.setFrom(sender);
 		try {
 			mailSender.send(simpleMailMessage);
 			return true;
@@ -42,7 +49,7 @@ public class MailService implements Mail {
 			helper.setTo(to);
 			helper.setSubject(subject);
 			helper.setText(msg);
-
+			helper.setFrom(sender);
 			ClassPathResource attachment = new ClassPathResource(attachmentPath);
 			helper.addAttachment(attachment.getFile().getName(), attachment.getFile());
 			mailSender.send(message);
@@ -71,6 +78,7 @@ public class MailService implements Mail {
 			helper.setTo(to);
 			helper.setSubject(subject);
 			helper.setText(msg, true);
+			helper.setFrom(sender);
 			mailSender.send(message);
 			return true;
 		} catch (MessagingException e) {
@@ -93,7 +101,7 @@ public class MailService implements Mail {
 			helper.setTo(to);
 			helper.setSubject(subject);
 			helper.setText(msg,true);
-			
+			helper.setFrom(sender);
 			// cid:log
 			helper.addInline("logo", new ClassPathResource(logoPath));
 			

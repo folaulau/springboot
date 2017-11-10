@@ -17,7 +17,7 @@ public class MailServiceTests {
 	@Autowired
 	private Mail mail;
 	
-	String testEmailRecipient = "testemail@gmail.com";
+	String testEmailRecipient = "toEmail@gmail.com";
 	
 	@Test
 	public void testSendSimpleMail() {
