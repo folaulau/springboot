@@ -18,7 +18,7 @@ public class Sender {
 	 
 	public void sendMail(Mail mail){
 		try {
-			jmsTemplate.convertAndSend(queue, mail.toJson());
+			jmsTemplate.convertAndSend(queue, mail);
 			System.out.println("Mail sent to queue, '"+queue+"', at "+LocalDateTime.now());
 		} catch (Exception e) {
 			System.out.println("Mail not sent");

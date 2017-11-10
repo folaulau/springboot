@@ -18,6 +18,8 @@ public class SenderTest {
 		this.senderService.sendMail(new Mail("to","from","msg","sub"));
 		
 		try {
+			// wait for 2 seconds so that the program does not stop right away instead it gives time 
+			// for the queue to gracefully terminate.
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			System.out.println("InterruptedException, msg: "+e.getLocalizedMessage());
