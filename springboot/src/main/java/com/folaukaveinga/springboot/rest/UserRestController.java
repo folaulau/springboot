@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +33,9 @@ public class UserRestController {
 	private UserService userService;
 	
 	@RequestMapping(value={"/",""}, method=RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<User> create(@RequestParam("name")String name, @RequestParam("age")int age){
+	public ResponseEntity<User> create(@RequestBody User user, @RequestParam(value="name",required=false)String name, @RequestParam(value="age",required=false)int age){
 		log.info("name: {}, age: {}", name, age);
+		log.info("Body user: "+user.toString());
 		return new ResponseEntity<>(userService.save(new User(name,age)), HttpStatus.OK);
 	}
 	
