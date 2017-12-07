@@ -1,5 +1,7 @@
 package com.folaukaveinga.springboot.rest;
 
+import java.io.File;
+import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.folaukaveinga.springboot.domain.Attachment;
 import com.folaukaveinga.springboot.jms.Mail;
@@ -37,8 +40,16 @@ public class AttachmentRestController {
 		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value={"/",""}, method=RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value={"/",""}, method=RequestMethod.POST)
 	public ResponseEntity<Attachment> save(@RequestParam(value="file") MultipartFile file){
+		log.info("uploading file to server. Filename: {}, File size: {}", file.getOriginalFilename(), file.getSize());
 		return new ResponseEntity<>(attachmentService.saveFile(file), HttpStatus.OK);
+	}
+	//MultipartHttpServletRequest request
+	@RequestMapping(value={"/multiple","/multiple/"}, method=RequestMethod.POST, consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+	public ResponseEntity<List<Attachment>> saveMultiple(@RequestParam(value="files") List <MultipartFile> files){
+		
+		log.info("uploading files to server. upload size: {}", files.size());
+		return new ResponseEntity<>(attachmentService.saveMultipartFiles(files), HttpStatus.OK);
 	}
 }

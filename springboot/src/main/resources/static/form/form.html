@@ -4,7 +4,7 @@
    		<h2>Normal Form</h2>
    		<div>{{form.currentUser}}</div>
    		<br>
-    	<form role = "form">
+    		<form role = "form">
 		   <div class = "form-group">
 		      <label for = "name">Name</label>
 		      <input type = "text" ng-model="form.data.name" class = "form-control" id = "name" placeholder = "Enter Name">
@@ -21,12 +21,35 @@
 		<h2>Upload Form</h2>
    		<br>
 		<form role = "form">
+			<div ng-repeat="attachment in form.attachments">
+				{{attachment.name}}
+				<br>
+			</div>
 		   <div class = "form-group">
 		      <label for = "inputfile">File</label>
-		      <input type = "file" id = "inputfile">
+		      <input type = "file" id = "file">
 		      <p class = "help-block">Example of upload file here.</p>
 		   </div>
-		   <button type = "button" ng-click="form.upload()" class = "btn btn-default">Upload</button>
+		   <button type = "button" ng-click="form.uploadFile()" class = "btn btn-default">Upload One File</button>
+		</form>
+		<br>
+		<form role = "form">
+			<div ng-repeat="attachment in form.attachments">
+				{{attachment.name}}
+				<br>
+				
+			</div>
+		   <div class = "form-group">
+		      <label for = "inputfile">Files</label>
+		      <input type = "file" id = "files" multiple>
+		      <p class = "help-block">Example of upload multiple files here.</p>
+		   </div>
+		   <button type = "button" ng-click="form.uploadFiles()" class = "btn btn-default">Upload Multiple Files</button>
 		</form>
 	</div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>

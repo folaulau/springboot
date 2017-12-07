@@ -10,6 +10,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -22,13 +23,13 @@ public class Attachment implements Serializable, Cloneable {
 	
 	private String name;
 	
-	private byte[] file;
+	private File file;
 	
 	public Attachment() {
 		
 	}
 
-	public Attachment(String name, byte[] file) {
+	public Attachment(String name, File file) {
 		super();
 		this.name = name;
 		this.file = file;
@@ -46,19 +47,25 @@ public class Attachment implements Serializable, Cloneable {
 		this.name = name;
 	}
 
-	public byte[] getFile() {
+	public File getFile() {
 		return file;
 	}
 
-	public File generateFile() throws IOException{
-		File f = new File(name);
-		FileOutputStream stream = new FileOutputStream (f);
-		stream.write(file);
-		return f;
-	}
-
-	public void setFile(byte[] file) {
+	public void setFile(File file) {
 		this.file = file;
+		this.file.renameTo(new File("newFile"));
+	}
+	
+	public void setFile(MultipartFile multipartFile) {
+		file = new File(multipartFile.getOriginalFilename());
+		try {
+			file.createNewFile();
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write(multipartFile.getBytes());
+			fos.close();
+		} catch (IOException e) {
+			System.err.println("Error, msg: " + e.getMessage());
+		}
 	}
 
 
@@ -79,9 +86,11 @@ public class Attachment implements Serializable, Cloneable {
 		return objectMapper.writeValueAsString(this);
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		return "Attachment [name=" + name + ", filename=" + file.getName() +", filename=" + file.length() + "]";
 	}
 
 	@Override

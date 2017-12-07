@@ -1,6 +1,10 @@
 package com.folaukaveinga.springboot.service;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -19,16 +23,44 @@ public class AttachmentService {
 		return null;
 	}
 	
-	public Attachment saveFile(MultipartFile file){
+	public Attachment saveFile(MultipartFile multipartFile){
 		Attachment attachment = new Attachment();
-		attachment.setName(file.getOriginalFilename());
-		try {
-			attachment.setFile(file.getBytes());
-		} catch (IOException e) {
-			log.warn("IOException, msg: {}",e.getMessage());
-		}
+		attachment.setName(multipartFile.getOriginalFilename());
+		attachment.setFile(multipartFile);
 		log.info(attachment.toString());
 		return attachment;
+	}
+	
+	public Attachment saveFile(File file){
+		Attachment attachment = new Attachment();
+		attachment.setName(file.getName());
+		attachment.setFile(file);
+		log.info(attachment.toString());
+		return attachment;
+	}
+	
+	public List<Attachment> saveFiles(MultipartFile[] multipartFiles){
+		List<Attachment> attachments = new ArrayList<>();
+		for (int i = 0; i < multipartFiles.length; i++) {
+			attachments.add(this.saveFile(multipartFiles[i]));
+		}
+		return attachments;
+	}
+	
+	public List<Attachment> saveMultipartFiles(List<MultipartFile> multipartFiles){
+		List<Attachment> attachments = new ArrayList<>();
+		for (int i = 0; i < multipartFiles.size(); i++) {
+			attachments.add(this.saveFile(multipartFiles.get(i)));
+		}
+		return attachments;
+	}
+	
+	public List<Attachment> saveFiles(List<File> files){
+		List<Attachment> attachments = new ArrayList<>();
+		for (int i = 0; i < files.size(); i++) {
+			attachments.add(this.saveFile(files.get(i)));
+		}
+		return attachments;
 	}
 	
 	public boolean saveList(List<Attachment> attachments){

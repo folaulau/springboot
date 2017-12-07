@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	 angular.module('springboot').service('FormService', [ '$http', function($http) {
+	 angular.module('springboot').service('FormService', [ '$http', '$resource', '$log', function($http, $resource, $log) {
 			
 	    this.getUser = function(userId) {
 	        return $http({
@@ -14,10 +14,25 @@
 	        		user
 	        );
 	    },
-	    this.uploadFile = function(params, user) {
+	    this.uploadFile = function(data) {
 	        return $http.post(
-	        		'api/users?'+params,
-	        		user
+	        		'api/attachments',
+	        		data,
+	        		{
+	                    transformRequest: angular.identity,
+	                    headers: {'Content-Type': undefined}
+	             }
+	        );
+	    },
+	    this.uploadFiles = function(data) {
+	    		$log.log(data);
+	        return $http.post(
+	        		'api/attachments/multiple',
+	        		data,
+	        		{
+	                    transformRequest: angular.identity,
+	                    headers: {'Content-Type': undefined}
+	             }
 	        );
 	    }
 	 }]);
