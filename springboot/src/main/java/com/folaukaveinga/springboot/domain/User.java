@@ -1,5 +1,12 @@
 package com.folaukaveinga.springboot.domain;
 
+import java.io.IOException;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class User {
 	private int id;
 	private String name;
@@ -41,4 +48,23 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
+	
+	public static User fromJson(String json){
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.readValue(json, User.class);
+		} catch (IOException e) {
+			return new User();
+		}
+	}
+
+	public String toJson() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			return"";
+		}
+	}
+
 }

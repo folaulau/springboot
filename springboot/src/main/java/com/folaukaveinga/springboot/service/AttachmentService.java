@@ -13,14 +13,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.folaukaveinga.springboot.domain.Attachment;
+import com.folaukaveinga.springboot.domain.Candidate;
 
 @Service
 public class AttachmentService {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	public Attachment save(Attachment attachment){
-		
-		return null;
+		log.info(attachment.toString());
+		return attachment;
 	}
 	
 	public Attachment saveFile(MultipartFile multipartFile){
@@ -45,6 +46,11 @@ public class AttachmentService {
 			attachments.add(this.saveFile(multipartFiles[i]));
 		}
 		return attachments;
+	}
+	
+	public Attachment saveCandidate(Candidate candidate){
+		log.info(candidate.toString());
+		return new Attachment(candidate.getName(),null);
 	}
 	
 	public List<Attachment> saveMultipartFiles(List<MultipartFile> multipartFiles){

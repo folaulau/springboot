@@ -34,6 +34,39 @@
 	                    headers: {'Content-Type': undefined}
 	             }
 	        );
+	    },
+	    this.uploadAttachment = function(data) {
+    		$log.log(data);
+	        return $http.post(
+        		'api/attachments/save',
+        		data,
+        		{
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined}
+        		}
+	        );
+	    },
+	    this.uploadAttachments = function(data) {
+    		$log.log(data);
+	        return $http.post(
+        		'api/attachments/save-list',
+        		data,
+        		{
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined}
+        		}
+	        );
+	    },
+	    this.saveCandidate = function(data) {
+    		$log.log(data);
+	        return $http.post(
+        		'api/attachments/candidate',
+        		data,
+        		{
+                    transformRequest: angular.identity,
+                    headers: {'Content-Type': undefined}
+        		}
+	        );
 	    }
 	 }]);
 })();
