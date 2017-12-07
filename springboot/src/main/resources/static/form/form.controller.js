@@ -46,7 +46,7 @@
 		}
 		
 		form.upload = function(){
-			
+			FormService.uploadFile()
 		}
 	}
 })();
