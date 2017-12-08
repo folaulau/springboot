@@ -8,12 +8,12 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-    	$stateProvider.state('form', {
+    	$stateProvider.state('form-input', {
             parent: 'public',
-            url: '/form',
+            url: '/form-input',
             views: {
                 'main@': {
-                    templateUrl: '/form/form.html'
+                    templateUrl: '/form-input/form.html'
                 }
             }
         });

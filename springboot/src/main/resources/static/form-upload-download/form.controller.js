@@ -1,49 +1,21 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('FormController', FormController);
+	angular.module('springboot').controller('FormUploadDownloadController', FormUploadDownloadController);
 
-	FormController.$inject = [ '$window','$scope', '$http', '$log', '$state', 'FormService'];
+	FormUploadDownloadController.$inject = [ '$window','$scope', '$http', '$log', '$state', 'FormService'];
 
-	function FormController($window, $scope, $http, $log, $state, FormService) {
-		$log.log("form controller");
+	function FormUploadDownloadController($window, $scope, $http, $log, $state, FormService) {
+		$log.log("form upload download controller");
 		var form = this;
 		form.data = {};
 		form.currentUser = {};
 		form.files = [];
 		form.attachments = [];
+		form.download = {};
 		init();
 		
 		function init(){
-			get(2);
-		}
-		
-		function get(uid){
-			
-			FormService.getUser(uid).then(
-				function(user){
-					$log.log("success");
-					$log.log(user);
-					form.currentUser = user.data;
-				}).catch(function(error){
-					$log.log("error");
-					$log.log(error);
-			});
-			
-		}
-		
-		form.submit = function(){
-			var params = "name="+form.data.name+"&age="+form.data.age;
-			FormService.addUser(params, form.data).then(
-				function(user){
-					$log.log("success");
-					$log.log(user);
-					form.currentUser = user.data;
-				}).catch(function(error){
-					$log.log("error");
-					$log.log(error);
-				}
-			);
 		}
 		
 		//===============upload file to memory============
@@ -236,7 +208,7 @@
             $log.log("save candidate");
             $log.log(formData);
             
-        	FormService.saveCandidate(formData)
+        	FormService.saveMyCandidate(formData)
 			.then(function(result){
 				$log.log("success");
 				$log.log(result);
@@ -245,6 +217,18 @@
 				$log.log("error");
 				$log.log(error);
 			});
+		}
+		
+		
+		//===================Download================
+		form.downloadOneFile = function(filename){
+			$log.log("download one file: "+filename);
+			if(filename!=null && filename.length>0){
+				$window.open("/api/download/"+filename, '_blank');
+			}else{
+				$log.log("need filename");
+			}
+			
 		}
 	}
 })();

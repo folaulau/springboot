@@ -42,6 +42,10 @@ public class UserRestController {
 	@RequestMapping(value={"/{id}","/{id}/"}, method=RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> get(@PathVariable("id")int id){
 		log.info("get user by id: {}", id);
+//		if(1==1){
+//			throw new RuntimeException("test");
+//		}
+		
 		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
 	}
 }
