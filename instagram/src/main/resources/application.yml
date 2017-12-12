@@ -15,6 +15,7 @@ security:
       userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
     resource:
       userInfoUri: http://localhost:8081/auth/api/principal
+      
 spring:
   thymeleaf:
     cache: false

@@ -14,25 +14,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private AuthenticationManager authenticationManager;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception { // @formatter:off
+    protected void configure(HttpSecurity http) throws Exception {
+
         http.requestMatchers()
-            .antMatchers("/login", "/oauth/authorize")
-            .and()
-            .authorizeRequests()
-            .anyRequest()
-            .authenticated()
-            .and()
-            .formLogin()
-            .permitAll();
+                .antMatchers("/login", "/oauth/authorize")
+                .and()
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .formLogin()
+                .permitAll();
     }
 
+
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception { // @formatter:off
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
         auth.parentAuthenticationManager(authenticationManager)
-            .inMemoryAuthentication()
-            .withUser("john")
-            .password("123")
-            .roles("USER");
+                .inMemoryAuthentication()
+                .withUser("peter@gmail.com")
+                .password("peter")
+                .roles("USER");
     }
 
 }
