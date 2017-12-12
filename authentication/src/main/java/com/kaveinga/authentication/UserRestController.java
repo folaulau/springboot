@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class UserRestController {
 	
-    @RequestMapping("/user/me")
+    @RequestMapping("/principal")
     public Principal user(Principal principal) {
         System.out.println(principal);
         return principal;
