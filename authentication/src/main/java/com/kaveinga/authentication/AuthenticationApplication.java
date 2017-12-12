@@ -1,14 +1,14 @@
-package com.folaukaveinga.springboot;
+package com.kaveinga.authentication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
-
 @SpringBootApplication
-public class SpringbootApplication {
+public class AuthenticationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootApplication.class, args);
+		SpringApplication.run(AuthenticationApplication.class, args);
 	}
 }
