@@ -12,6 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	
 	@Autowired
 	private CustomLogoutSuccessHandler customLogoutSuccessHandler;
 	
@@ -20,7 +21,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.antMatcher("/**")
 				.authorizeRequests()
 				.antMatchers("/", "/login**").permitAll()
-				.antMatchers("/", "/logout**").permitAll()
 				.anyRequest()
 				.authenticated()
 				.and()

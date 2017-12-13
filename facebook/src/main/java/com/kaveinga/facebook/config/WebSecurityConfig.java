@@ -20,18 +20,6 @@ public class WebSecurityConfig extends WebMvcConfigurerAdapter {
     }
 
     @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        super.addViewControllers(registry);
-
-        registry.addViewController("/")
-                .setViewName("forward:/index");
-
-        registry.addViewController("/index");
-        registry.addViewController("/secure");
-
-    }
-
-    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
