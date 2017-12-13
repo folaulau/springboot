@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Spring Security SSO</title>
@@ -15,8 +15,11 @@
 		<br/>
         Your authorities are <span th:text="${#authentication.authorities}">authorities</span>        
 		<br/>
-		<a class="btn btn-link" href="http://localhost:8083/ui2/secure">Go To Facebook</a>
-		<a class="btn btn-link" href="http://localhost:8082/ui/logout">logout</a>
+		<a class="btn btn-link" href="http://localhost:8088/ui/secure">Go To Facebook</a>
+		<form method="POST" action="/ui/logout">
+             <input type="submit" class="btn btn-link" value="logout"/>
+             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        </form>
 	</div>
 </div>
 </body>

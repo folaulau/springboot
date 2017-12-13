@@ -1,6 +1,6 @@
 server:
-    port: 8083
-    context-path: /ui2
+    port: 8088
+    context-path: /ui
     session:
       cookie:
         name: FBUISESSION
@@ -11,11 +11,30 @@ security:
     client:
       clientId: ClientId
       clientSecret: secret
-      accessTokenUri: http://localhost:8081/auth/oauth/token
-      userAuthorizationUri: http://localhost:8081/auth/oauth/authorize
-    resource:
-      userInfoUri: http://localhost:8081/auth/api/principal
+      accessTokenUri: http://localhost:8087/auth/oauth/token
+      userAuthorizationUri: http://localhost:8087/auth/oauth/authorize
       
+    resource:
+      userInfoUri: http://localhost:8087/auth/api/principal
+      
+
 spring:
+  devtools:
+    restart:
+      enabled: true    
+    livereload:
+      enabled: true    
   thymeleaf:
-    cache: false
+     cache: false
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%-5level] %c{1}:%L - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%-5level] %c{1}:%L - %msg%n"
+  level:
+    root: TRACE
+    com.columbususa.ttaps: TRACE
+    org.springframework: TRACE
+    org.springframework.web: TRACE
+    org.springframework.security: TRACE
+  path: logs
