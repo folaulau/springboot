@@ -4,6 +4,8 @@ server:
     session:
       cookie:
         name: FBUISESSION
+    auth-logout-uri: http://localhost:8087/auth/logout
+    
 security:
   basic:
     enabled: false
@@ -32,9 +34,9 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%-5level] %c{1}:%L - %msg%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%-5level] %c{1}:%L - %msg%n"
   level:
-    root: TRACE
-    com.columbususa.ttaps: TRACE
-    org.springframework: TRACE
-    org.springframework.web: TRACE
-    org.springframework.security: TRACE
+    root: INFO
+    com.kaveinga.facebook: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
   path: logs

@@ -4,6 +4,17 @@ server:
     session:
       cookie:
         name: INSTUISESSION
+    auth-logout-uri: http://localhost:8087/auth/logout
+    
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false     
+   
 security:
   basic:
     enabled: false
@@ -16,14 +27,7 @@ security:
     resource:
       userInfoUri: http://localhost:8087/auth/api/principal
       
-spring:
-  devtools:
-    restart:
-      enabled: true    
-    livereload:
-      enabled: true    
-  thymeleaf:
-     cache: false
+
 
 logging:
   pattern:
@@ -31,6 +35,7 @@ logging:
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%-5level] %c{1}:%L - %msg%n"
   level:
     root: INFO
+    com.kaveinga.instagram: INFO
     org.springframework: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO

@@ -1,5 +1,8 @@
+
+
 package com.kaveinga.instagram.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,11 +13,24 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableOAuth2Sso
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
+	@Autowired
+	private CustomLogoutSuccessHandler customLogoutSuccessHandler;
+	
 	@Override
 	public void configure(final HttpSecurity http) throws Exception {
-		http.antMatcher("/**").authorizeRequests().antMatchers("/", "/login**").permitAll().anyRequest().authenticated().and().logout()
-				.deleteCookies("JSESSIONID", "CSRF-TOKEN", "INSTUISESSION").logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/").permitAll().and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+		http.antMatcher("/**")
+		.authorizeRequests()
+		.antMatchers("/", "/login**").permitAll()
+		.anyRequest()
+		.authenticated()
+		.and()
+			.logout()
+			.deleteCookies("JSESSIONID", "CSRF-TOKEN", "INSTUISESSION")
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessHandler(customLogoutSuccessHandler)
+			.permitAll()
+		.and()
+			.csrf()
+			.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 	}
 }

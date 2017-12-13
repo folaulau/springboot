@@ -13,7 +13,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private CustomLogoutHandler customLogoutHandler;
+	private CustomLogoutSuccessHandler customLogoutSuccessHandler;
 	
 	@Override
 	public void configure(final HttpSecurity http) throws Exception {
@@ -27,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.logout()
 					.deleteCookies("JSESSIONID", "CSRF-TOKEN", "FBUISESSION")
 					.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-					.addLogoutHandler(customLogoutHandler).permitAll()
+					.logoutSuccessHandler(customLogoutSuccessHandler)
+					.permitAll()
 				.and()
 					.csrf()
 					.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
