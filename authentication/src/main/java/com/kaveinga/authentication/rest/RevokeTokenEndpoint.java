@@ -1,4 +1,4 @@
-package com.kaveinga.authentication;
+package com.kaveinga.authentication.rest;
 
 
 import javax.annotation.Resource;

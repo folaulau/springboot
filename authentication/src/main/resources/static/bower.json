@@ -1,0 +1,21 @@
+{
+  "name": "auth",
+  "description": "authentication app",
+  "main": "index",
+  "keywords": [
+    "auth"
+  ],
+  "authors": [
+    "folau"
+  ],
+  "license": "yes",
+  "homepage": "home",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

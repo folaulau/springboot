@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -21,20 +22,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.requestMatchers()
-                .antMatchers("/login", "/oauth/authorize", "/logout")
+                .antMatchers("/login", "/oauth/authorize", "/logout", "/resources/**", "/node_modules/**")
                 .and()
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated()
+                		.authorizeRequests()
+                		.anyRequest()
+                		.authenticated()
                 .and()
-                .formLogin()
-                .permitAll()
+                		.formLogin()
+                		.loginPage("/login")
+                    .permitAll()
                 .and()
                 		.logout()
                 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 		.logoutSuccessHandler(customLogoutSuccessHandler)
                 		.permitAll();
     }
+    
+    @Override
+	public void configure(final WebSecurity web) throws Exception {
+		web
+		.ignoring()
+			.antMatchers("/resources/**")
+			.antMatchers("/node_modules/**");
+
+	}
 
 
     @Override

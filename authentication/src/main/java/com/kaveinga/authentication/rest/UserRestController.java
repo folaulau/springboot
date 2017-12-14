@@ -1,4 +1,4 @@
-package com.kaveinga.authentication;
+package com.kaveinga.authentication.rest;
 
 import java.security.Principal;
 import java.util.Date;
