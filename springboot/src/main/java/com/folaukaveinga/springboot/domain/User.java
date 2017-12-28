@@ -42,7 +42,7 @@ public class User implements Serializable {
 	@Column(name="age")
 	private int age;
 	
-	@OneToMany(mappedBy="user",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Address> addresses;
 
 	public User() {
