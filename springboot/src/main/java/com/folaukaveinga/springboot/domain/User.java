@@ -1,41 +1,67 @@
 package com.folaukaveinga.springboot.domain;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.fasterxml.jackson.core.JsonParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class User {
-	private int id;
+@Entity
+@Table(name="user")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Transient
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
+	private long id;
+	
+	@Column(name="name")
 	private String name;
+	
+	@Column(name="age")
 	private int age;
-	private Address address;
-	private MultipartFile file;
+	
+	@OneToMany(mappedBy="user",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	private List<Address> addresses;
 
 	public User() {
 		this(null,0);
 	}
 	public User(String name, int age) {
-		this(0,name,age, null);
+		this(0,name,age);
 	}
-	public User(int id, String name, int age, Address address) {
+	public User(int id, String name, int age) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
-		this.address = address;
 	}
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -51,6 +77,20 @@ public class User {
 		this.age = age;
 	}
 
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+	
+	public void addAddress(Address address) {
+		if(this.addresses == null){
+			this.addresses = new ArrayList<>();
+		}
+		this.addresses.add(address);
+	}
+	
 	@Override
 	public String toString() {
 		//System.out.println("filename: "+file.getOriginalFilename()+", file size: "+file.getSize());
@@ -71,20 +111,9 @@ public class User {
 		try {
 			return objectMapper.writeValueAsString(this);
 		} catch (JsonProcessingException e) {
-			return"";
+			return"{}";
 		}
 	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	public MultipartFile getFile() {
-		return file;
-	}
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
+
 
 }
