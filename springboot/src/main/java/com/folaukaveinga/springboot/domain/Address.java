@@ -39,6 +39,9 @@ public class Address {
 	private String state;
 	private String city;
 	
+//	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+//	private User user;
+	
 	public Address() {
 		this(null,null);
 	}
@@ -84,6 +87,13 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+//	public User getUser() {
+//		return user;
+//	}
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 	
 	@Override
 	public String toString() {
