@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -39,8 +40,9 @@ public class Address {
 	private String state;
 	private String city;
 	
-//	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-//	private User user;
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private User user;
 	
 	public Address() {
 		this(null,null);
@@ -88,12 +90,12 @@ public class Address {
 		this.city = city;
 	}
 
-//	public User getUser() {
-//		return user;
-//	}
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
 	@Override
 	public String toString() {

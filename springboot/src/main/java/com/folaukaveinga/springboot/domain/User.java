@@ -43,8 +43,7 @@ public class User implements Serializable {
 	@Column(name="age")
 	private int age;
 	
-	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
-	@JoinColumn(name = "user_id")
+	@OneToMany(mappedBy="user",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Address> addresses;
 
 	public User() {
