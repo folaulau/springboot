@@ -2,6 +2,12 @@ package com.folaukaveinga.springboot.domain;
 
 import java.io.IOException;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -10,7 +16,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Table(name="address")
+@Entity
 public class Address {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
 	private String street;
 	private String zipcode;
 	private String state;
@@ -60,6 +72,13 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
