@@ -84,12 +84,6 @@ public class User implements Serializable {
 	}
 
 	
-	@Override
-	public String toString() {
-		//System.out.println("filename: "+file.getOriginalFilename()+", file size: "+file.getSize());
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-	
 	public UserDetails getUserDetails() {
 		return userDetails;
 	}
@@ -102,6 +96,12 @@ public class User implements Serializable {
 	public Logger getLog() {
 		return log;
 	}
+	
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
 	public static User fromJson(String json){
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
