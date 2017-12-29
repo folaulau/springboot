@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -21,6 +22,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,6 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@JsonIgnore
 	@Transient
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
@@ -43,8 +47,9 @@ public class User implements Serializable {
 	@Column(name="age")
 	private int age;
 	
-	@OneToMany(mappedBy="user",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
-	private List<Address> addresses;
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER,orphanRemoval=true)
+	private UserDetails userDetails;
+	
 
 	public User() {
 		this(null,0);
@@ -78,19 +83,6 @@ public class User implements Serializable {
 		this.age = age;
 	}
 
-	public List<Address> getAddresses() {
-		return addresses;
-	}
-	public void setAddresses(List<Address> addresses) {
-		this.addresses = addresses;
-	}
-	
-	public void addAddress(Address address) {
-		if(this.addresses == null){
-			this.addresses = new ArrayList<>();
-		}
-		this.addresses.add(address);
-	}
 	
 	@Override
 	public String toString() {
@@ -98,6 +90,18 @@ public class User implements Serializable {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 	
+	public UserDetails getUserDetails() {
+		return userDetails;
+	}
+	public void setUserDetails(UserDetails userDetails) {
+		this.userDetails = userDetails;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public Logger getLog() {
+		return log;
+	}
 	public static User fromJson(String json){
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {

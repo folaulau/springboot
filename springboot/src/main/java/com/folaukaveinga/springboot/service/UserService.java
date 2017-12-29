@@ -7,10 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.folaukaveinga.springboot.domain.Address;
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.repository.UserRepository;
-import com.folaukaveinga.springboot.utility.RandomUtil;
 
 @Service
 public class UserService {
