@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello</title>
-</head>
+<%@ include file="header.jsp"%>
 <body>
-    Hello ${name}
+	<div class="row">
+		<div class="col-xs-4 col-xs-offset-4">
+			 Hello ${name}
+		</div>
+	</div>
 </body>
-</html>
+<%@ include file="footer.jsp"%>

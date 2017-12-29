@@ -16,7 +16,6 @@ public class User {
 	private String name;
 	private int age;
 	private Address address;
-	private MultipartFile file;
 
 	public User() {
 		this(null,0);
@@ -79,12 +78,6 @@ public class User {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-	}
-	public MultipartFile getFile() {
-		return file;
-	}
-	public void setFile(MultipartFile file) {
-		this.file = file;
 	}
 
 }

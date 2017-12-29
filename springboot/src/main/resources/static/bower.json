@@ -1,0 +1,20 @@
+{
+  "name": "springboot",
+  "description": "spring boot",
+  "main": "index",
+  "keywords": [
+    "spring",
+    "boot"
+  ],
+  "authors": [
+    "folaukaveinga"
+  ],
+  "license": "yes",
+  "homepage": "home",
+  "private": true,
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.8",
+    "jquery": "^3.2.1"
+  }
+}
