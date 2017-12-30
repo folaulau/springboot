@@ -4,14 +4,17 @@ public class User {
 	private String firstName;// givenName
 	private String lastName;// sn
 	private String displayName;// displayName
-	
+	private String department;
 	private String email;// mail
 	private String uid;// 
 	private String password;
 	
 	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+		this(null);
+	}
+	
+	public User(String uid) {
+		this.uid = uid;
 	}
 
 	public String getFirstName() {
@@ -56,6 +59,14 @@ public class User {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public void setPassword(String password) {

@@ -19,19 +19,25 @@ public class UserService {
 	private UserLdapRepository userLdapRepository;
 	
 	public User getUserByUid(String uid) {
+		boolean result = userLdapRepository.authenticate(uid, "benspassword");
+		System.out.println("result: "+result);
 		return userLdapRepository.getUserByDn(uid);
 	}
+
+	public boolean saveUser(User user) {
+		return userLdapRepository.create(user);
+	}
+	
 	
 	public List<User> getAllUsers() {
-		User user = new User();
-		user.setEmail(RandomStringUtils.randomAlphanumeric(15)+"@gmail.com");
-		user.setFirstName(RandomStringUtils.randomAlphanumeric(10));
-		user.setLastName(RandomStringUtils.randomAlphanumeric(10));
-		user.setDisplayName(RandomStringUtils.randomAlphanumeric(10));
-		user.setPassword("test12");
-		user.setUid(RandomStringUtils.randomAlphanumeric(10));
-		
-		userLdapRepository.create(user);
 		return userLdapRepository.getAllUsers();
+	}
+	
+	public List<User> getAllUsersByDepartment(String department) {
+		return userLdapRepository.getAllUsersByDeparment(department);
+	}
+	
+	public boolean deleteUser(String uid) {
+		return userLdapRepository.delete(uid);
 	}
 }
