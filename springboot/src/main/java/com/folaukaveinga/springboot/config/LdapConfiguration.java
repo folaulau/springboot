@@ -17,7 +17,7 @@ public class LdapConfiguration {
 
 	@Bean
 	public DefaultSpringSecurityContextSource defaultSpringSecurityContextSource() {
-		DefaultSpringSecurityContextSource contextSource = new DefaultSpringSecurityContextSource(Arrays.asList("ldap://localhost:8389/"),"dc=springframework,dc=org");
+		DefaultSpringSecurityContextSource contextSource = new DefaultSpringSecurityContextSource(Arrays.asList("ldap://localhost:10389/"),"dc=example,dc=com");
 		//contextSource.setAuthenticationSource(springSecurityAuthenticationSource());
 		return contextSource;
 	}

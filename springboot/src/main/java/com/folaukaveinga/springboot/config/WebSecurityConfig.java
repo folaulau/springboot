@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableGlobalMethodSecurity
 @Configuration
@@ -22,20 +23,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.csrf()
 	        .and()
-	        		.authorizeRequests()
-	        		.anyRequest().fullyAuthenticated()
-	        .and()
 	        		.formLogin()
 	        .and()
-		        .logout();
+		        .logout()
+		        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		        .logoutSuccessUrl("/login").permitAll()
+		    .and()
+				.authorizeRequests()
+					.antMatchers("/api/**").authenticated();
 	}
 
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
 			.ldapAuthentication()
-	        .userDnPatterns("uid={0},ou=people")
-	        .groupSearchBase("ou=groups")
+	        .userDnPatterns("uid={0},ou=Users")
+	        .groupSearchBase("ou=Users")
 	        .contextSource(defaultSpringSecurityContextSource)
 	        .passwordCompare()
 	        .passwordEncoder(new LdapShaPasswordEncoder())

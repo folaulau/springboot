@@ -3,6 +3,7 @@ package com.folaukaveinga.springboot.rest;
 import java.util.List;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -46,7 +47,7 @@ public class UserRestController {
 		user.setLastName(RandomStringUtils.randomAlphanumeric(10));
 		user.setDisplayName(RandomStringUtils.randomAlphanumeric(10));
 		user.setPassword("test12");
-		user.setUid(RandomStringUtils.randomAlphanumeric(10));
+		user.setUid(RandomUtils.nextInt(4000, 4999)+"");
 		return new ResponseEntity<>(userService.saveUser(user), HttpStatus.OK);
 	}
 	

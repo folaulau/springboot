@@ -22,14 +22,14 @@ import com.folaukaveinga.springboot.domain.User;
 
 @Repository
 public class UserLdapRepository {
-	public static final String BASE_DN = "dc=springframework,dc=org";
+	public static final String BASE_DN = "dc=example,dc=com";
 	
 	@Autowired
 	private LdapTemplate ldapTemplate;
 
 	public User getUserByDn(String uid) {
 		try {
-			return ldapTemplate.lookup("uid="+uid+",ou=people", new PersonAttributesMapper());
+			return ldapTemplate.lookup("uid="+uid+",ou=Users", new PersonAttributesMapper());
 		} catch (Exception e) {
 			System.err.println("Exception, msg: " + e.getMessage());
 			return new User();
@@ -42,7 +42,7 @@ public class UserLdapRepository {
 	}
 	
 	public List<User> getAllUsersByDeparment(String department) {
-		return ldapTemplate.search(query().where("objectclass").is("person").and("description").is(department), new PersonAttributesMapper());
+		return ldapTemplate.search(query().where("objectclass").is("person").and("departmentNumber").is(department), new PersonAttributesMapper());
 	}
 
 	private class PersonAttributesMapper implements AttributesMapper<User> {
@@ -81,7 +81,7 @@ public class UserLdapRepository {
 		DirContextAdapter context = new DirContextAdapter(dn);
 		context.setAttributeValues("objectclass",new String[] { "top", "person", "organizationalPerson", "inetOrgPerson" });
 
-		context.setAttributeValue("cn", user.getEmail());
+		context.setAttributeValue("cn", user.getDisplayName());
 		context.setAttributeValue("mail", user.getEmail());
 		context.setAttributeValue("uid", user.getUid());
 		context.setAttributeValue("givenName", user.getFirstName());
@@ -108,7 +108,7 @@ public class UserLdapRepository {
 		DirContextAdapter context = new DirContextAdapter(dn);
 		context.setAttributeValues("objectclass",new String[] { "top", "person", "organizationalPerson", "inetOrgPerson" });
 
-		context.setAttributeValue("cn", user.getEmail());
+		context.setAttributeValue("cn", user.getDisplayName());
 		context.setAttributeValue("mail", user.getEmail());
 		context.setAttributeValue("uid", user.getUid());
 		context.setAttributeValue("givenName", user.getFirstName());
@@ -166,7 +166,7 @@ public class UserLdapRepository {
 		try {
 			// if base not set in config file then use : LdapNameBuilder.newInstance(BASE_DN)
 			dn = LdapNameBuilder.newInstance()
-					.add("ou", "people")
+					.add("ou", "Users")
 					.add("uid", user.getUid())
 					.build();
 		} catch (Exception e) {

@@ -19,7 +19,7 @@ public class UserService {
 	private UserLdapRepository userLdapRepository;
 	
 	public User getUserByUid(String uid) {
-		boolean result = userLdapRepository.authenticate(uid, "benspassword");
+		boolean result = userLdapRepository.authenticate(uid, "test12");
 		System.out.println("result: "+result);
 		return userLdapRepository.getUserByDn(uid);
 	}
