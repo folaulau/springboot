@@ -85,6 +85,7 @@ public class UserLdapRepository {
 		context.setAttributeValue("mail", user.getEmail());
 		context.setAttributeValue("uid", user.getUid());
 		context.setAttributeValue("givenName", user.getFirstName());
+		context.setAttributeValue("department", "1700");
 		context.setAttributeValue("sn", user.getLastName());
 		context.setAttributeValue("displayName", user.getDisplayName());
 		context.setAttributeValue("mail", user.getEmail());
@@ -149,7 +150,7 @@ public class UserLdapRepository {
 		try {
 			
 			// either way works
-			ldapTemplate.authenticate(query().where("uid").is(uid), digestSHA(password));
+			ldapTemplate.authenticate(query().where("uid").is(uid), password);
 			//return this.ldapTemplate.authenticate("", "(uid=" + uid + ")", digestSHA(password));
 			return true;
 		} catch (Exception e) {
