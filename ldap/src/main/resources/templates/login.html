@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header"></head>
+<body> 
+	<br/>
+	<br/>
+	<br/>
+	<div class="row">
+		<div class="col-xs-12 col-md-6 col-md-offset-3">
+			<div class="row" th:if="${loginStatus=='success'}">
+				<div class="col-xs-12 col-md-12">
+					<div class = "alert alert-success">
+						<a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+   						<strong>login success</strong>
+					</div>
+				</div>
+			</div>
+			<div class="row" th:if="${loginStatus=='error'}">
+				<div class="col-xs-12 col-md-12">
+					<div class = "alert alert-danger">
+						<a href = "#" class = "close" data-dismiss = "alert">&times;</a>
+   						<strong>login error</strong>
+					</div>
+				</div>
+			</div>
+			<form action="/login" method="POST">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class = "form-group">
+		      				<label for = "name">UID</label> 
+		      				<input type="text" class="form-control" name="uid" value="4894"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class = "form-group">
+		      				<label for = "name">Password</label> 
+		      				<input type="password" class="form-control" name="password" value="Test123!"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class = "form-group">
+		      				<input class = "btn btn-default" type = "submit" value = "Submit"/>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+</body>
+<footer th:include="footer"></footer>
+</html>
