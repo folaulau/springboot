@@ -19,7 +19,6 @@ public class SpringSecurityContextSource {
 	@Value("${spring.ldap.urls}")
 	private String LDAP_URL;
 	
-
 	@Value("${spring.ldap.base}")
 	private String LDAP_BASE;
 	

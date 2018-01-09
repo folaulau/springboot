@@ -34,6 +34,14 @@ public class LdapUser implements Comparable<LdapUser> {
 		this.phone = phone;
 		this.email = email;
 	}
+	
+	public LdapUser(String firstName, String lastName,String department,String email,String password) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.department = department;
+		this.email = email;
+		this.password = password;
+	}
 
 	public LdapUser(final String id, final String cn, final String firstName, final String lastName, final String email, final String displayName,
 			final String department, final String loginName, final String password, final String type, final String ipPhone, final String joinDate) {

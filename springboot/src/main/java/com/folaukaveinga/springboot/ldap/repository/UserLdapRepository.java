@@ -7,6 +7,9 @@ import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 import javax.naming.directory.Attribute;
 import javax.naming.directory.Attributes;
+import javax.naming.directory.BasicAttribute;
+import javax.naming.directory.DirContext;
+import javax.naming.directory.ModificationItem;
 import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,23 +109,12 @@ public class UserLdapRepository {
 		if(dn==null)
 			return false;
 		
-		DirContextAdapter context = new DirContextAdapter(dn);
-		context.setAttributeValues("objectclass",new String[] { "top", "person", "organizationalPerson", "inetOrgPerson" });
-
-		context.setAttributeValue("cn", user.getDisplayName());
-		context.setAttributeValue("mail", user.getEmail());
-		context.setAttributeValue("uid", user.getUid());
-		context.setAttributeValue("givenName", user.getFirstName());
-		context.setAttributeValue("sn", user.getLastName());
-		context.setAttributeValue("displayName", user.getDisplayName());
-		context.setAttributeValue("mail", user.getEmail());
-		context.setAttributeValue("userPassword", digestSHA(user.getPassword()));
-
 		try {
-			ldapTemplate.modifyAttributes(context);
+			ModificationItem[] attrs = {new ModificationItem(DirContext.REPLACE_ATTRIBUTE, new BasicAttribute("mail", user.getEmail()))};
+			ldapTemplate.modifyAttributes(dn, attrs);
 			return true;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Exception, msg: "+e.getMessage());
 			return false;
 		}
 
