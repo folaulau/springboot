@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('springboot', ['ui.router', 'ngResource']);
+    angular.module('springboot', ['ui.router', 'ngResource', 'ngMessages']);
     
     angular.module('springboot').run(function($rootScope, $transitions, $timeout, $log, $location, $window) {
     	// test

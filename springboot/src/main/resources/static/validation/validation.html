@@ -1,0 +1,76 @@
+<style>
+.errorMessage{
+	color: red;
+}
+/* password requirements */
+.passwordRequirement{
+	list-style: none;
+}
+.passwordRequirement > li::before {
+	display: inline-block; 
+	width: 2em;
+	margin-left: -1em
+}
+.passwordRequirementValid::before{
+	content: "\2714"; 
+	color: green;
+}
+.passwordRequirementInvalid::before{
+	content: "\25C9"; 
+	color: red;
+}
+
+</style>
+<div class="row" ng-controller="ValidationController as validator">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
+		
+    	<h2>Hello from, Validation Page</h2>
+    	
+    	<h3>Password Validation</h3>
+    	<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<form action="" name="passwordValidation">
+					<div class="row">  
+						<div class="col-xs-12 col-sm-12">	
+							<h4>Password Requirements</h4>
+							<ul class="passwordRequirement">
+								<li class="passwordRequirementInvalid" id="lengthRequirement">Must be at least 10 characters in length</li>
+								<li class="passwordRequirementInvalid" id="numberRequirement">Must have at least one number</li>
+								<li class="passwordRequirementInvalid" id="uppercaseRequirement">Must have at least one uppercase character</li>
+								<li class="passwordRequirementInvalid" id="symbolRequirementi ">Must have at least one symbol: (~!@#$%^&*_-+=`|\(){}[]:;"'<>,.?/)</li>
+							</ul>
+						</div>
+					</div> 
+					<div class="row">  
+	                	<div class="col-xs-12 col-sm-12">	
+	                		<label>New Password <span class="asterisk">*</span></label>
+	                	</div>
+					</div>                                          
+	               	<div class="row">
+	                	<div class="col-xs-12 col-sm-12">	
+	                   		<input autofocus="true" ng-keyup="validator.validate()" ng-required="true" name="password" ng-model="validator.pwdData.password" class="form-control" type="password"/>
+	                	</div>
+					</div>
+	                <div class="row">  
+						<div class="col-xs-12 col-sm-12">	
+	                		<label>New Password Confirm <span class="asterisk">*</span></label>
+	                	</div>
+					</div>                                   
+	               	<div class="row">  
+	                	<div class="col-xs-12 col-sm-12">	
+	                		<input ng-required="true" ng-blur="validator.validate()" name="passwordConfirm" ng-model="validator.pwdData.passwordConfirm" class="form-control" type="password"/>
+	                	</div>
+					</div>
+					<div class="errorMessage" ng-if="validator.confirmPasswordStatus">Password not matched</div>
+					<br/>
+					<div class="row">  
+						<div class="col-xs-12 col-sm-12">	
+							<button class = "btn btn-default btn-lg btn-block" ng-click="validator.submitPasswordValidation()" ng-disabled="!validator.passwordValidationFormStatus">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+    	
+	</div>
+</div>
