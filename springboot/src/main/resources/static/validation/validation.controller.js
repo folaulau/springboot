@@ -24,7 +24,7 @@
 		}
 		
 		validator.validatePassword = function(password){
-			$log.log("password, "+password+", confirmPassword: "+validator.pwdData.passwordConfirm);
+			$log.log("password, "+password+", confirmPassword: "+validator.pwdData.confirmPassword);
 			let status = true;
 			
 			if(Validator.validateLength(password)){
@@ -48,36 +48,33 @@
 				$("#uppercaseRequirement").removeClass("passwordRequirementValid").addClass("passwordRequirementInvalid");
 			}
 			
-			return status;
-		}
-		
-		validator.validateConfirmPassword = function(passwordConfirm){
-			$log.log("password, "+validator.pwdData.password+", confirmPassword: "+passwordConfirm);
-			let status = true;
-			if(Validator.arePasswordsTheSame(validator.pwdData.password, passwordConfirm)){
-				validator.confirmPasswordStatus = false;
-				
+			if(Validator.hasSpecialCharacter(password)){
+				$("#symbolRequirement").removeClass("passwordRequirementInvalid").addClass("passwordRequirementValid");
 			}else{
 				status = false;
-				validator.confirmPasswordStatus = true;
+				$("#symbolRequirement").removeClass("passwordRequirementValid").addClass("passwordRequirementInvalid");
 			}
-			return status;
+			
+			$log.log("password status: "+status);
+			$scope.passwordValidation['password'].$setValidity("invalidPassword", status);
+			
 		}
 		
-		validator.validate = function(){
-			let pwdResult = validator.validatePassword(validator.pwdData.password);
+		validator.validateConfirmPassword = function(confirmPassword){
+			$log.log("password, "+validator.pwdData.password+", confirmPassword: "+confirmPassword);
+			let status = true;
 			
-			let confirmPwdResult = validator.validateConfirmPassword(validator.pwdData.passwordConfirm);
+			if(Validator.arePasswordsTheSame(validator.pwdData.password, validator.pwdData.confirmPassword)==false){
+				status = false;
+			}
 			
-			validator.passwordValidationFormStatus = (pwdResult && confirmPwdResult);
+			$log.log("confirm password status: "+status);
+			$scope.passwordValidation['confirmPassword'].$setValidity("invalidConfirmPassword", status);
 			
 		}
+		
 	}
 	
-	
-	
-	// directives
-	  
 	angular.module('springboot').directive("compareTo", [function() {
 		return {
 			require: "ngModel",
@@ -95,4 +92,5 @@
 				}
 		    };
 	}]);
+	
 })();

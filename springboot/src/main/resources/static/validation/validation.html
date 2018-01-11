@@ -37,40 +37,56 @@
 								<li class="passwordRequirementInvalid" id="lengthRequirement">Must be at least 10 characters in length</li>
 								<li class="passwordRequirementInvalid" id="numberRequirement">Must have at least one number</li>
 								<li class="passwordRequirementInvalid" id="uppercaseRequirement">Must have at least one uppercase character</li>
-								<li class="passwordRequirementInvalid" id="symbolRequirementi ">Must have at least one symbol: (~!@#$%^&*_-+=`|\(){}[]:;"'<>,.?/)</li>
+								<li class="passwordRequirementInvalid" id="symbolRequirement">Must have at least one symbol: (~!@#$%^&*_-+=`|\(){}[]:;"'<>,.?/)</li>
 							</ul>
 						</div>
 					</div> 
 					<div class="row">  
 	                	<div class="col-xs-12 col-sm-12">	
-	                		<label>New Password <span class="asterisk">*</span></label>
+	                		<label>New Password <span class="asterisk">*</span></label> {{validator.pwdData.password}}
 	                	</div>
 					</div>                                          
-	               	<div class="row">
+	               	<div class="row"><!--  autofocus="true" -->
 	                	<div class="col-xs-12 col-sm-12">	
-	                   		<input autofocus="true" ng-keyup="validator.validate()" ng-required="true" name="password" ng-model="validator.pwdData.password" class="form-control" type="password"/>
+	                   		<input ng-keyup="validator.validatePassword(validator.pwdData.password)" ng-required="true" name="password" ng-model="validator.pwdData.password" class="form-control" type="password"/>
 	                	</div>
 					</div>
+					<!-- password $dirty: {{passwordValidation.password.$dirty}}
+					<br>
+					password $touched: {{passwordValidation.password.$touched}}
+					<br>
+					password $valid: {{passwordValidation.password.$valid}}
+					<br>
+					password $invalid: {{passwordValidation.password.$invalid}} -->
+					<div class="errorMessage" ng-if="passwordValidation.password.$touched && passwordValidation.password.$invalid">Password not valid</div>
 	                <div class="row">  
 						<div class="col-xs-12 col-sm-12">	
-	                		<label>New Password Confirm <span class="asterisk">*</span></label>
-	                	</div>
-					</div>                                   
-	               	<div class="row">  
-	                	<div class="col-xs-12 col-sm-12">	
-	                		<input ng-required="true" ng-blur="validator.validate()" name="passwordConfirm" ng-model="validator.pwdData.passwordConfirm" class="form-control" type="password"/>
+	                		<label>New Password Confirm <span class="asterisk">*</span></label> {{validator.pwdData.confirmPassword}}
 	                	</div>
 					</div>
-					<div class="errorMessage" ng-if="validator.confirmPasswordStatus">Password not matched</div>
+					                                 
+	               	<div class="row">  
+	                	<div class="col-xs-12 col-sm-12">	
+	                		<input name="confirmPassword" ng-keyup="validator.validateConfirmPassword(validator.pwdData.confirmPassword)" compare-to="validator.pwdData.password" ng-model="validator.pwdData.confirmPassword" ng-required="true" class="form-control" type="password"/>
+	                	</div>
+					</div>
+					<!-- confirm password $valid: {{passwordValidation.confirmPassword.$valid}} -->
+					<div class="errorMessage" ng-if="passwordValidation.confirmPassword.$touched && passwordValidation.confirmPassword.$invalid">
+						Password not matched
+					</div>
 					<br/>
 					<div class="row">  
 						<div class="col-xs-12 col-sm-12">	
-							<button class = "btn btn-default btn-lg btn-block" ng-click="validator.submitPasswordValidation()" ng-disabled="!validator.passwordValidationFormStatus">Submit</button>
+							<button class = "btn btn-default btn-lg btn-block" ng-click="validator.submitPasswordValidation()" ng-disabled="passwordValidation.$invalid">Submit</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
-    	
+    		<br>
+    		<br>
+    		<br>
+    		<br>
+    		<br>
 	</div>
 </div>
