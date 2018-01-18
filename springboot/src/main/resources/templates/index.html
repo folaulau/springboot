@@ -2,6 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="header"></head>
 <header th:include="navbar"></header>
+<style>
+.alert {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+</style>
 <body>
 	<h1 style="text-align: center;">Javascript</h1>
 	<div id="elem">
@@ -48,6 +57,31 @@
 	    <li class="chapter">Chapter 2</li>
 	  </ul>
 	</div>
+	
+	<div id="outer">Hello <b>World</b></div>
+	
+	<div id="news">
+  		<h1>Headline!</h1>
+  		<p>Martians attack people!</p>
+	</div>
+	
+	<div id="hidden" hidden="true">With the attribute "hidden"</div>
+	
+	<!-- Attributes -->
+	<div id="customAttribute" color="blue">Blue</div>
+	
+	<ol id="list">
+  		<li>0</li>
+  		<li>1</li>
+  		<li>2</li>
+	</ol>
+	
+	<p>Somewhere in the page...</p>
+	<script>
+  		document.write('<b>Hello from JS</b>');
+	</script>
+	<p>The end</p>
+	
 </body>
 <footer th:include="footer"></footer>
 </html>
