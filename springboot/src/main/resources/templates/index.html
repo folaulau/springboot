@@ -2,8 +2,52 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="header"></head>
 <header th:include="navbar"></header>
-<body> 
+<body>
 	<h1 style="text-align: center;">Javascript</h1>
+	<div id="elem">
+		<div id="elem-content">Element</div>
+	</div>
+
+	<table id="table">
+		<tr>
+			<td>Your age:</td>
+
+			<td>
+				<label> 
+					<input type="radio" name="age" value="young" checked="checked"/> less than 18
+				</label> 
+				<label> 
+					<input type="radio" name="age" value="mature"/> from 18 to 50
+				</label> 
+				<label> 
+					<input type="radio" name="age" value="senior"/> more than 60
+				</label>
+			</td>
+		</tr>
+	</table>
+	
+	<form name="my-form">
+  		<div class="article">Article</div>
+  		<div class="long article">Long article</div>
+	</form>
+	
+	<ul>
+  		<li>The</li>
+  		<li>test</li>
+	</ul>
+	<ul>
+	  <li>has</li>
+	  <li>passed</li>
+	</ul>
+	
+	<h1>Contents</h1>
+
+	<div class="contents">
+	  <ul class="book">
+	    <li class="chapter">Chapter 1</li>
+	    <li class="chapter">Chapter 2</li>
+	  </ul>
+	</div>
 </body>
 <footer th:include="footer"></footer>
 </html>
