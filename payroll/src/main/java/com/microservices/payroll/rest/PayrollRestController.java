@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +19,7 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 
 @RestController
-public class HomeRestController implements Payment {
+public class PayrollRestController implements Payment {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Override
@@ -25,5 +27,14 @@ public class HomeRestController implements Payment {
 	public Pay getPay() {
 		log.info("get pay");
 		return new Pay(1,"december");
+	}
+
+	@Override
+	@PostMapping("/api/pay/save")
+	public Pay savePay(@RequestBody Pay pay) {
+		log.info("save pay");
+		pay.setUserId(pay.getUserId()*2);
+		log.info(pay.toString());
+		return new Pay(pay.getUserId(),"december");
 	}
 }

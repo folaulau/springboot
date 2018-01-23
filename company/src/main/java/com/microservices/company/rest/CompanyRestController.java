@@ -17,7 +17,7 @@ import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
 
 @RestController
-public class HomeRestController {
+public class CompanyRestController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 //	@Autowired
@@ -34,6 +34,14 @@ public class HomeRestController {
 		log.info("home rest page");
 		Pay pay = payrollClient.getPay();
 		log.info("Payroll status: {}",pay.toString());
+		return pay.toString();
+	}
+	
+	@RequestMapping(value={"/save","/save/"}, method = { RequestMethod.GET })
+	public String save(Model model) {
+		log.info("home rest page");
+		Pay pay = new Pay(5, "June");
+		pay = payrollClient.savePay(pay);
 		return pay.toString();
 	}
 }
