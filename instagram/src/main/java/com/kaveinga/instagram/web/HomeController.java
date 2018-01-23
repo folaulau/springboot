@@ -18,4 +18,10 @@ public class HomeController {
 		System.out.println("secure page");
 		return "secure";
 	}
+	
+	@GetMapping(value={"/access-denied","/access-denied/"})
+	public String accessDeny(Model model) {
+		System.out.println("access denied page");
+		return "access_denied";
+	}
 }

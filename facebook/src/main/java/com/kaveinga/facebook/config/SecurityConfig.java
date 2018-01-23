@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
 @EnableOAuth2Sso
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -20,15 +21,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(final HttpSecurity http) throws Exception {
 		http.antMatcher("/**")
 				.authorizeRequests()
-				.antMatchers("/", "/login**").permitAll()
+					.antMatchers("/", "/login**").permitAll()
+					.antMatchers("/secure/**")
+						.hasRole("FACEBOOK")
 				.anyRequest()
-				.authenticated()
+					.authenticated()
+				.and()
+					.exceptionHandling().accessDeniedPage("/access-denied")
 				.and()
 					.logout()
 					.deleteCookies("JSESSIONID", "CSRF-TOKEN", "FBUISESSION")
 					.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 					.logoutSuccessHandler(customLogoutSuccessHandler)
 					.permitAll()
+				
 				.and()
 					.csrf()
 					.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
