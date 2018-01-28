@@ -50,6 +50,9 @@ public class User implements Serializable {
 	@Column(name="age")
 	private int age;
 	
+	@Column(name="email")
+	private String email;
+	
 	@ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinTable(name = "user_address",
      joinColumns = @JoinColumn(name = "user_id"),
@@ -58,16 +61,17 @@ public class User implements Serializable {
 	private Set<Address> addresses;
 
 	public User() {
-		this(null,0);
+		this(null,0, null);
 	}
-	public User(String name, int age) {
-		this(0,name,age);
+	public User(String name, int age, String email) {
+		this(0,name,age, email);
 	}
-	public User(int id, String name, int age) {
+	public User(int id, String name, int age, String email) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
+		this.email = email;
 	}
 	
 	public long getId() {
@@ -90,6 +94,12 @@ public class User implements Serializable {
 	}
 
 
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public Set<Address> getAddresses() {
 		return addresses;
 	}

@@ -23,8 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.folaukaveinga.springboot.domain.User;
-import com.folaukaveinga.springboot.jms.Mail;
-import com.folaukaveinga.springboot.jms.SenderService;
 import com.folaukaveinga.springboot.service.UserService;
 
 

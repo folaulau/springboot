@@ -1,6 +1,8 @@
 package com.folaukaveinga.springboot.service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,36 @@ public class UserService {
 	public User get(long id){
 		log.info("get user by id: {}",id);
 		return userRepository.findOne(id);
+	}
+	
+	public User getByAge(int age){
+		log.info("get user by age: {}",age);
+		try {
+			return userRepository.findByAge(age).get();
+		} catch (InterruptedException | ExecutionException e) {
+			log.warn("Exception, msg: {}",e.getMessage());
+		}
+		return new User();
+	}
+	
+	public User getByName(String name){
+		log.info("get user by name: {}",name);
+		try {
+			return userRepository.findByName(name).get();
+		} catch (InterruptedException | ExecutionException e) {
+			log.warn("Exception, msg: {}",e.getMessage());
+		}
+		return new User();
+	}
+	
+	public User getByEmail(String email) {
+		log.info("get user by email: {}",email);
+		try {
+			return userRepository.findByEmail(email).get();
+		} catch (InterruptedException | ExecutionException e) {
+			log.warn("Exception, msg: {}",e.getMessage());
+		}
+		return new User();
 	}
 	
 	public List<User> getAll(){
