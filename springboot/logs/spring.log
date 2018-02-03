@@ -2523,3 +2523,780 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect 
 	at com.sun.proxy.$Proxy85.execute(Unknown Source)
 	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307)
 	... 36 common frames omitted
+2018-02-02 18:01:04 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4216 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:01:04 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:01:04 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2abcaa8c: startup date [Fri Feb 02 18:01:04 PST 2018]; root of context hierarchy
+2018-02-02 18:01:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$3ec54e69] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:01:06 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:01:06 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:01:06 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:01:06 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:01:06 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:01:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:01:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:01:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:01:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:01:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:01:08 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:01:08 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:01:08 [restartedMain] [ERROR] liquibase:64 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: Change Set classpath:db/changelog/db.changelog-master.yaml::1::folau failed.  Error: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+2018-02-02 18:01:08 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml::1::folau: Successfully released change log lock
+2018-02-02 18:01:08 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+2018-02-02 18:01:08 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:01:08 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:01:08 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79)
+	at liquibase.Liquibase.update(Liquibase.java:214)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 23 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582)
+	... 31 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect column specifier for column 'id'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:845)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:745)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy85.execute(Unknown Source)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307)
+	... 36 common frames omitted
+2018-02-02 18:03:05 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4225 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:03:05 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:03:05 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@907378f: startup date [Fri Feb 02 18:03:05 PST 2018]; root of context hierarchy
+2018-02-02 18:03:07 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$42c663af] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:03:07 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:03:07 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:03:07 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:03:07 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:03:07 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:03:08 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:03:09 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:03:09 [restartedMain] [ERROR] liquibase:64 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: Change Set classpath:db/changelog/db.changelog-master.yaml::1::folau failed.  Error: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+2018-02-02 18:03:09 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml::1::folau: Successfully released change log lock
+2018-02-02 18:03:09 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+2018-02-02 18:03:09 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:03:09 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:03:09 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79)
+	at liquibase.Liquibase.update(Liquibase.java:214)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 23 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Incorrect column specifier for column 'id' [Failed SQL: CREATE TABLE spring_boot.user (id LONG AUTO_INCREMENT NOT NULL, street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL, CONSTRAINT PK_USER PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582)
+	... 31 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Incorrect column specifier for column 'id'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:845)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:745)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy85.execute(Unknown Source)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307)
+	... 36 common frames omitted
+2018-02-02 18:03:48 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4254 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:03:48 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:03:48 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d2c5264: startup date [Fri Feb 02 18:03:48 PST 2018]; root of context hierarchy
+2018-02-02 18:03:49 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$7dee65c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:03:49 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:03:50 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:03:50 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:03:50 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:03:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:03:51 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:03:51 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:03:51 [restartedMain] [ERROR] liquibase:64 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: Change Set classpath:db/changelog/db.changelog-master.yaml::1::folau failed.  Error: Table 'user' already exists [Failed SQL: CREATE TABLE spring_boot.user (street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL)]
+2018-02-02 18:03:51 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml::1::folau: Successfully released change log lock
+2018-02-02 18:03:51 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Table 'user' already exists [Failed SQL: CREATE TABLE spring_boot.user (street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL)]
+2018-02-02 18:03:51 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:03:51 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:03:51 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Table 'user' already exists [Failed SQL: CREATE TABLE spring_boot.user (street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:db/changelog/db.changelog-master.yaml::1::folau:
+     Reason: liquibase.exception.DatabaseException: Table 'user' already exists [Failed SQL: CREATE TABLE spring_boot.user (street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:619)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:51)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:79)
+	at liquibase.Liquibase.update(Liquibase.java:214)
+	at liquibase.Liquibase.update(Liquibase.java:192)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 23 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Table 'user' already exists [Failed SQL: CREATE TABLE spring_boot.user (street VARCHAR(255) NOT NULL, city VARCHAR(255) NOT NULL, state VARCHAR(255) NOT NULL, zipcode VARCHAR(255) NOT NULL)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:309)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:113)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1277)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1259)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:582)
+	... 31 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'user' already exists
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:845)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:745)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy85.execute(Unknown Source)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:307)
+	... 36 common frames omitted
+2018-02-02 18:04:29 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:04:29 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:04:30 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@642fbf75: startup date [Fri Feb 02 18:04:30 PST 2018]; root of context hierarchy
+2018-02-02 18:04:31 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:04:31 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:04:31 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:04:31 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:04:31 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:04:31 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:04:32 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - Creating database history table with name: spring_boot.DATABASECHANGELOG
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: Table user created
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: ChangeSet classpath:db/changelog/db.changelog-master.yaml::1::folau ran successfully in 22ms
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::2::folau: New row inserted into user
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::2::folau: ChangeSet classpath:db/changelog/db.changelog-master.yaml::2::folau ran successfully in 2ms
+2018-02-02 18:04:33 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.Version:37 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-02-02 18:04:33 [restartedMain] [INFO ] o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-02-02 18:04:34 [restartedMain] [INFO ] o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2018-02-02 18:04:34 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:04:36 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2018-02-02 18:04:36 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-02-02 18:04:36 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-02-02 18:04:36 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8082 (http)
+2018-02-02 18:04:36 [restartedMain] [INFO ] c.f.s.SpringbootApplication:57 - Started SpringbootApplication in 6.892 seconds (JVM running for 7.479)
+2018-02-02 18:07:53 [Thread-7] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@642fbf75: startup date [Fri Feb 02 18:04:30 PST 2018]; root of context hierarchy
+2018-02-02 18:07:53 [Thread-7] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-02-02 18:07:53 [Thread-7] [WARN ] o.s.b.f.s.DisposableBeanAdapter:281 - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+2018-02-02 18:07:53 [Thread-7] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2018-02-02 18:07:53 [Thread-7] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:07:54 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:07:54 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@633e870: startup date [Fri Feb 02 18:07:54 PST 2018]; root of context hierarchy
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:07:54 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:07:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:07:54 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:07:55 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:07:55 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:07:55 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:e36b4330e1a83dec8a9e9f1a43c07f9f
+
+2018-02-02 18:07:55 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:07:55 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:07:55 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:e36b4330e1a83dec8a9e9f1a43c07f9f
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:e36b4330e1a83dec8a9e9f1a43c07f9f
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:266) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:210) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 23 common frames omitted
+2018-02-02 18:08:41 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:08:41 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:08:41 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@342946cd: startup date [Fri Feb 02 18:08:41 PST 2018]; root of context hierarchy
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:08:42 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:08:42 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:08:42 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:08:42 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:08:42 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:d99f81d380140b2f518a10cfa340b874
+
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:08:42 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:08:42 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:d99f81d380140b2f518a10cfa340b874
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:368c84d877fee4b2628f8afcea3d257b
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:d99f81d380140b2f518a10cfa340b874
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:266) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:210) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 23 common frames omitted
+2018-02-02 18:09:24 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:09:24 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:09:24 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2bb2bb66: startup date [Fri Feb 02 18:09:24 PST 2018]; root of context hierarchy
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:09:25 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:09:25 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:09:25 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:09:25 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:09:25 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:6b2b2cac44d25ffe341dad88d020e2c3
+
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:09:25 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:09:25 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:6b2b2cac44d25ffe341dad88d020e2c3
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:6b2b2cac44d25ffe341dad88d020e2c3
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:266) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:210) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 23 common frames omitted
+2018-02-02 18:17:09 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:17:09 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@28190738: startup date [Fri Feb 02 18:17:09 PST 2018]; root of context hierarchy
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:17:09 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:17:09 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:17:09 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:17:09 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:17:09 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:ab183948e2bf33c299d649137e718b5a
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:922665f0f3d6ae8134a3e905983f14d8
+
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:17:09 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:17:09 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:ab183948e2bf33c299d649137e718b5a
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:922665f0f3d6ae8134a3e905983f14d8
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     2 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::1::folau was: 7:346ff6fc790a4c1b6a7af4900365e3ed but is now: 7:ab183948e2bf33c299d649137e718b5a
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:a8685880d93b7c36d6470b23531ab9a0 but is now: 7:922665f0f3d6ae8134a3e905983f14d8
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:266) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:210) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 23 common frames omitted
+2018-02-02 18:19:09 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:19:09 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:19:09 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@41010e3c: startup date [Fri Feb 02 18:19:09 PST 2018]; root of context hierarchy
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:19:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - Creating database history table with name: spring_boot.DATABASECHANGELOG
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: Table user created
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::1::folau: ChangeSet classpath:db/changelog/db.changelog-master.yaml::1::folau ran successfully in 24ms
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::2::folau: New row inserted into user
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::2::folau: ChangeSet classpath:db/changelog/db.changelog-master.yaml::2::folau ran successfully in 3ms
+2018-02-02 18:19:10 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2018-02-02 18:19:10 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:19:11 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2018-02-02 18:19:11 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-02-02 18:19:11 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-02-02 18:19:11 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8082 (http)
+2018-02-02 18:19:11 [restartedMain] [INFO ] c.f.s.SpringbootApplication:57 - Started SpringbootApplication in 1.8 seconds (JVM running for 882.483)
+2018-02-02 18:20:32 [Thread-11] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@41010e3c: startup date [Fri Feb 02 18:19:09 PST 2018]; root of context hierarchy
+2018-02-02 18:20:32 [Thread-11] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-02-02 18:20:32 [Thread-11] [WARN ] o.s.b.f.s.DisposableBeanAdapter:281 - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+2018-02-02 18:20:32 [Thread-11] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2018-02-02 18:20:32 [Thread-11] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:20:32 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:20:32 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d05acc3: startup date [Fri Feb 02 18:20:32 PST 2018]; root of context hierarchy
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:20:32 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:20:32 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:20:33 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:20:33 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:20:33 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:20:33 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:20:33 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:20:33 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:20:33 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:20:33 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:20:33 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:922665f0f3d6ae8134a3e905983f14d8 but is now: 7:a44e93b91e62fe4e425c67b9043e6715
+
+2018-02-02 18:20:33 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Stopping service [Tomcat]
+2018-02-02 18:20:33 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-02 18:20:33 [restartedMain] [ERROR] o.s.b.SpringApplication:771 - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:922665f0f3d6ae8134a3e905983f14d8 but is now: 7:a44e93b91e62fe4e425c67b9043e6715
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.folaukaveinga.springboot.SpringbootApplication.main(SpringbootApplication.java:18) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_144]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_144]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_144]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_144]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:db/changelog/db.changelog-master.yaml::2::folau was: 7:922665f0f3d6ae8134a3e905983f14d8 but is now: 7:a44e93b91e62fe4e425c67b9043e6715
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:266) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:210) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:192) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:431) ~[liquibase-core-3.5.3.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:388) ~[liquibase-core-3.5.3.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 23 common frames omitted
+2018-02-02 18:21:25 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:21:25 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:21:25 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4f19eaa3: startup date [Fri Feb 02 18:21:25 PST 2018]; root of context hierarchy
+2018-02-02 18:21:25 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:21:26 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:21:26 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:21:26 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:21:26 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::3::folau: New row inserted into user
+2018-02-02 18:21:26 [restartedMain] [INFO ] liquibase:92 - classpath:db/changelog/db.changelog-master.yaml: classpath:db/changelog/db.changelog-master.yaml::3::folau: ChangeSet classpath:db/changelog/db.changelog-master.yaml::3::folau ran successfully in 3ms
+2018-02-02 18:21:26 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-02-02 18:21:26 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-02-02 18:21:27 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8082 (http)
+2018-02-02 18:21:27 [restartedMain] [INFO ] c.f.s.SpringbootApplication:57 - Started SpringbootApplication in 1.646 seconds (JVM running for 1018.225)
+2018-02-02 18:22:09 [Thread-34] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4f19eaa3: startup date [Fri Feb 02 18:21:25 PST 2018]; root of context hierarchy
+2018-02-02 18:22:09 [Thread-34] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-02-02 18:22:09 [Thread-34] [WARN ] o.s.b.f.s.DisposableBeanAdapter:281 - Invocation of destroy method failed on bean with name 'classPathFileSystemWatcher': java.lang.NullPointerException
+2018-02-02 18:22:09 [Thread-34] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2018-02-02 18:22:09 [Thread-34] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:22:10 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 4256 (/Users/folaukaveinga/Github/springboot/springboot/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot)
+2018-02-02 18:22:10 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1292ca82: startup date [Fri Feb 02 18:22:10 PST 2018]; root of context hierarchy
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$35212b48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-02 18:22:10 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-02 18:22:10 [restartedMain] [INFO ] liquibase:92 - Successfully acquired change log lock
+2018-02-02 18:22:10 [restartedMain] [INFO ] liquibase:92 - Reading from spring_boot.DATABASECHANGELOG
+2018-02-02 18:22:10 [restartedMain] [INFO ] liquibase:92 - Successfully released change log lock
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2018-02-02 18:22:10 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-02 18:22:11 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2018-02-02 18:22:11 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-02-02 18:22:11 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-02-02 18:22:11 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8082 (http)
+2018-02-02 18:22:11 [restartedMain] [INFO ] c.f.s.SpringbootApplication:57 - Started SpringbootApplication in 1.434 seconds (JVM running for 1062.611)
+2018-02-02 18:22:51 [RMI TCP Connection(4)-127.0.0.1] [INFO ] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2018-02-02 18:22:51 [RMI TCP Connection(3)-127.0.0.1] [INFO ] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2018-02-02 18:22:51 [RMI TCP Connection(4)-127.0.0.1] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1292ca82: startup date [Fri Feb 02 18:22:10 PST 2018]; root of context hierarchy
+2018-02-02 18:22:51 [RMI TCP Connection(4)-127.0.0.1] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-02-02 18:22:51 [RMI TCP Connection(4)-127.0.0.1] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2018-02-02 18:22:51 [RMI TCP Connection(4)-127.0.0.1] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'

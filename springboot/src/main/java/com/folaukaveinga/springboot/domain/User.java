@@ -42,7 +42,7 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
-	private long id;
+	private int id;
 	
 	@Column(name="name")
 	private String name;
@@ -52,13 +52,6 @@ public class User implements Serializable {
 	
 	@Column(name="email")
 	private String email;
-	
-	@ManyToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinTable(name = "user_address",
-     joinColumns = @JoinColumn(name = "user_id"),
-     inverseJoinColumns = @JoinColumn(name = "address_id")
-	)
-	private Set<Address> addresses;
 
 	public User() {
 		this(null,0, null);
@@ -74,10 +67,10 @@ public class User implements Serializable {
 		this.email = email;
 	}
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -100,12 +93,7 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Set<Address> getAddresses() {
-		return addresses;
-	}
-	public void setAddresses(Set<Address> addresses) {
-		this.addresses = addresses;
-	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

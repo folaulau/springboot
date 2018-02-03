@@ -8,31 +8,19 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: long
+                  type: int
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
-                  name: street
+                  name: email
                   type: varchar(255)
-                  constraints:
-                    nullable: false
               - column:
-                  name: city
+                  name: name
                   type: varchar(255)
-                  constraints:
-                    nullable: false
               - column:
-                  name: state
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: zipcode
-                  type: varchar(255)
-                  constraints:
-                    nullable: false
+                  name: age
+                  type: int
   - changeSet:
       id: 2
       author: folau
@@ -41,17 +29,27 @@ databaseChangeLog:
             tableName: user
             columns:
               - column:
-                  name: id
-                  value: 1
+                  name: name
+                  value: Folau Kaveinga
               - column:
-                  name: street
-                  value: El Segundo
+                  name: email
+                  value: folaudev@gmail.com
               - column:
-                  name: city
-                  value: El Segundo
+                  name: age
+                  value: 32
+  - changeSet:
+      id: 3
+      author: folau
+      changes:
+        - insert:
+            tableName: user
+            columns:
               - column:
-                  name: state
-                  value: CA
+                  name: name
+                  value: King Kaveinga
               - column:
-                  name: zipcode
-                  value: 90304
+                  name: email
+                  value: King@gmail.com
+              - column:
+                  name: age
+                  value: 5
