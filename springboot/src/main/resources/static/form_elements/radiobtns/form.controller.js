@@ -27,10 +27,11 @@
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
 			form.data.fieldRequired = "yes";
+			form.data.other = "no";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
 			form.data.values.push("value1");
 			form.data.values.push("value2");
-			form.data.values.push("value3");
+			form.data.values.push("other");
 		}
 		
 		form.addValue = function(){
@@ -89,7 +90,7 @@
 						
 						
 						var object = {};
-						object['radioField'] = demo.form.attr;
+						object['radioField'] = demo.form.otherValue;
 						demo.form = object;
 						
 					}

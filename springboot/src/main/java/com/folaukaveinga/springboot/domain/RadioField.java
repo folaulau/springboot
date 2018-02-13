@@ -11,7 +11,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class RadioField extends FormField{
-	
+	private String other;
 	private List<String> values;
 
 	public List<String> getValues() {
@@ -20,6 +20,14 @@ public class RadioField extends FormField{
 
 	public void setValues(List<String> values) {
 		this.values = values;
+	}
+
+	public String getOther() {
+		return other;
+	}
+
+	public void setOther(String other) {
+		this.other = other;
 	}
 
 	public String printAsJson(){
