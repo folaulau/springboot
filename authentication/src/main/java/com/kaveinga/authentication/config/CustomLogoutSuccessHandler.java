@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
@@ -17,11 +19,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler implements LogoutSuccessHandler {
-
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	
 	@Override
 	public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {
-		System.out.println("log out success");
+		log.info("log out success");
 		//String logoutResult = rest.getForObject(oAuthLogoutUrl, String.class);
 		//System.out.println("logoutResult: "+logoutResult);
 		String referrer = request.getHeader(HttpHeaders.REFERER);
@@ -30,12 +33,12 @@ public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler im
 		String host = url.getHost();
 		int port = url.getPort();
 		String protocol = url.getProtocol();
-		System.out.println("referrer: "+referrer);
-		System.out.println("host: "+host);
-		System.out.println("protocol: "+protocol);
-		System.out.println("port: "+port);
-		String redirectUrl = protocol+"://"+host+":"+port+"/ui";
-		System.out.println("redirect to: "+redirectUrl);
+		log.info("referrer: "+referrer);
+		log.info("host: "+host);
+		log.info("protocol: "+protocol);
+		log.info("port: "+port);
+		String redirectUrl = protocol+"://"+host+":"+port+"/";
+		log.info("redirect to: "+redirectUrl);
 		response.sendRedirect(redirectUrl);
 		super.onLogoutSuccess(request, response, authentication);
 	}

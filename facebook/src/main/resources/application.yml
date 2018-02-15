@@ -1,6 +1,5 @@
 server:
     port: 8088
-    context-path: /ui
     session:
       cookie:
         name: FBUISESSION
@@ -40,3 +39,4 @@ logging:
     org.springframework.web: INFO
     org.springframework.security: INFO
   path: logs
+  

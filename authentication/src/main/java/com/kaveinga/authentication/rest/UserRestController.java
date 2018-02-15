@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
-
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	private TokenStore tokenStore;
 
@@ -35,22 +38,22 @@ public class UserRestController {
 
 	@GetMapping("/principal")
 	public Principal user(HttpServletRequest request) {
-		System.out.println("getting principal");
+		log.info("getting principal");
 		Principal principal = request.getUserPrincipal();
-		System.out.println("principal name: " + principal.getName());
-
+		log.info("principal name: " + principal.getName());
+		log.info(principal.toString());
 		return principal;
 	}
 
 	@RequestMapping(value = "/token/revoke", method = RequestMethod.GET)
 	public ResponseEntity<Boolean> revokeAccessToken(@RequestParam(name = "access_token") String accessToken) {
-		System.out.println("revoke access token: " + accessToken);
+		log.info("revoke access token: " + accessToken);
 		try {
 			OAuth2AccessToken authAccessToken = tokenStore.readAccessToken(accessToken);
 			if (authAccessToken != null) {
-				System.out.println("token expired: " + authAccessToken.isExpired());
+				log.info("token expired: " + authAccessToken.isExpired());
 
-				System.out.println("expiration date: " + authAccessToken.getExpiration());
+				log.info("expiration date: " + authAccessToken.getExpiration());
 
 				tokenStore.removeAccessToken(authAccessToken);
 			}
@@ -58,7 +61,7 @@ public class UserRestController {
 			OAuth2RefreshToken authRefreshToken = authAccessToken.getRefreshToken();
 
 			if (authRefreshToken != null) {
-				System.out.println("authRefreshToken value: " + authRefreshToken.getValue());
+				log.info("authRefreshToken value: " + authRefreshToken.getValue());
 				tokenStore.removeRefreshToken(authRefreshToken);
 			}
 
@@ -66,7 +69,7 @@ public class UserRestController {
 
 			return new ResponseEntity<>(result, HttpStatus.OK);
 		} catch (Exception e) {
-			System.out.println("Exception, revokeAccessToken -> msg: " + e.getMessage());
+			log.error("Exception, revokeAccessToken -> msg: " + e.getMessage());
 			return new ResponseEntity<>(false, HttpStatus.OK);
 		}
 

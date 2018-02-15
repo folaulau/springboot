@@ -3,8 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Spring Security SSO Client 2</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" th:href="@{/css/index.css}" />
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 		<br/>
         Your authorities are <span th:text="${#authentication.authorities}">authorities</span>        
 		<br/>
-		<a class="btn btn-link" href="http://localhost:8089/ui/secure">Go To Instagram</a>
-		<form method="POST" action="/ui/logout">
+		<a class="btn btn-link" href="http://localhost:8089/secure">Go To Instagram</a>
+		<form method="POST" action="/logout">
              <input type="submit" class="btn btn-link" value="logout"/>
              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
         </form>
