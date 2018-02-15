@@ -24,8 +24,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(final HttpSecurity http) throws Exception {
 		http.antMatcher("/**")
 				.authorizeRequests()
-					.antMatchers("/", "/login**").permitAll()
-					.antMatchers("/secure/**")
+					.antMatchers("/login**","/public").permitAll()
+					.antMatchers("/**")
 						.hasRole("FACEBOOK")
 				.anyRequest()
 					.authenticated()

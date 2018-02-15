@@ -16,12 +16,12 @@ public class AccessController {
 	@GetMapping(value= {"/login","/login/"})
 	public String login(HttpServletRequest request) {
 		String referrer = request.getHeader(HttpHeaders.REFERER);
-		log.info("display login page, referrer: {}", referrer);
-		
-		if(referrer!=null && referrer.isEmpty()==false) {
-			return "login";
-		}else {
-			return "nologin";
-		}
+		log.info("display login page, referrer: {}, ssn: {}", referrer, request.getSession().getId());
+		return "login";
+//		if(referrer!=null && referrer.isEmpty()==false) {
+//			return "login";
+//		}else {
+//			return "nologin";
+//		}
 	}
 }

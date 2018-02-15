@@ -4,7 +4,10 @@ server:
       cookie:
         name: FBUISESSION
     auth-logout-uri: http://localhost:8087/auth/logout
-    
+
+banner:
+  location: classpath:config/banner.txt
+  
 security:
   basic:
     enabled: false
@@ -39,4 +42,4 @@ logging:
     org.springframework.web: INFO
     org.springframework.security: INFO
   path: logs
-  
+ 

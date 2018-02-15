@@ -5,6 +5,9 @@ server:
         name: INSTUISESSION
     auth-logout-uri: http://localhost:8087/auth/logout
     
+banner:
+  location: classpath:config/banner.txt
+  
 spring:
   devtools:
     livereload:

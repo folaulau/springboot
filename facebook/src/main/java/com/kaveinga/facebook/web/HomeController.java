@@ -20,14 +20,8 @@ public class HomeController {
 	private HttpSession ssn;
 	
 	@GetMapping(value={"","/"})
-	public String home(Model model) {
-		log.info("home page");
-		return "index";
-	}
-	
-	@GetMapping(value={"/secure","/secure/"})
-	public String secure(Model model, HttpServletRequest request) {
-		log.info("secure page, ssn id: {}", ssn.getId());
+	public String home(Model model, HttpServletRequest request) {
+		log.info("home/secured page ssn id: {}", ssn.getId());
 		try {
 			Principal principal = request.getUserPrincipal();
 			log.info("principal name: " + principal.getName());
@@ -35,8 +29,27 @@ public class HomeController {
 		} catch (Exception e) {
 			log.warn("Principal exception, msg: {}",e.getMessage());
 		}
-		return "secure";
+		return "index";
 	}
+	
+	@GetMapping(value={"/public","/public/"})
+	public String showPublic(Model model) {
+		log.info("public page");
+		return "public";
+	}
+	
+//	@GetMapping(value={"/secure","/secure/"})
+//	public String secure(Model model, HttpServletRequest request) {
+//		log.info("secure page, ssn id: {}", ssn.getId());
+//		try {
+//			Principal principal = request.getUserPrincipal();
+//			log.info("principal name: " + principal.getName());
+//			log.info(principal.toString());
+//		} catch (Exception e) {
+//			log.warn("Principal exception, msg: {}",e.getMessage());
+//		}
+//		return "secure";
+//	}
 	
 	@GetMapping(value={"/access-denied","/access-denied/"})
 	public String accessDeny(Model model) {

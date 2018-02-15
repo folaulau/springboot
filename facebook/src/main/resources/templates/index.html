@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Spring Security SSO Client 2</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" th:href="@{/css/index.css}" />
 </head>
 
 <body>
 <div class="container">
 	<div class="col-sm-12">
-		<h1>Spring Security SSO Client Facebook</h1>
-		<a class="btn btn-link" href="secure">Go Home</a>
+		<h1>Facebook Secured Page</h1>
+		Welcome, <span th:text="${#authentication.name}">Name</span>
+		<br/>
+        Your authorities are <span th:text="${#authentication.authorities}">authorities</span>        
+		<br/>
+		<a class="btn btn-link" href="http://localhost:8089/">Go To Instagram</a>
+		<form method="POST" action="/logout">
+             <input type="submit" class="btn btn-link" value="logout"/>
+             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        </form>
 	</div>
 </div>
 </body>
