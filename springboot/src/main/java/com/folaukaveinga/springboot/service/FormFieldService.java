@@ -15,10 +15,4 @@ public class FormFieldService {
 		log.info(formField.printAsJson());
 		return formField;
 	}
-	
-	
-	public InputField saveInputField(InputField inputField) {
-		log.info(inputField.printAsJson());
-		return inputField;
-	}
 }

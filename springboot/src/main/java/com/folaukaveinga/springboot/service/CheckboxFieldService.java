@@ -4,14 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.folaukaveinga.springboot.domain.CheckboxField;
 import com.folaukaveinga.springboot.domain.RadioField;
 
 @Service
-public class RadioFieldService {
+public class CheckboxFieldService {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	public RadioField save(RadioField radioField) {
-		log.info(radioField.printAsJson());
-		return radioField;
+	public CheckboxField save(CheckboxField checkboxField) {
+		log.info(checkboxField.printAsJson());
+		return checkboxField;
 	}
 }

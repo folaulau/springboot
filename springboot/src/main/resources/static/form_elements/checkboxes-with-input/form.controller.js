@@ -1,15 +1,16 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('CheckboxController', CheckboxController);
+	angular.module('springboot').controller('CheckboxWithInputController', CheckboxWithInputController);
 
-	CheckboxController.$inject = [ '$window','$scope', '$http', '$uibModal', '$log', '$state', 'CheckboxService'];
+	CheckboxWithInputController.$inject = [ '$window','$scope', '$http', '$uibModal', '$log', '$state', 'CheckboxWithInputService'];
 
-	function CheckboxController($window, $scope, $http, $uibModal, $log, $state, CheckboxService) {
-		$log.log("Checkbox controller");
+	function CheckboxWithInputController($window, $scope, $http, $uibModal, $log, $state, CheckboxWithInputService) {
+		$log.log("Checkbox with input controller");
 		var form = this;
 		form.data = {};
 		form.data.values = [];
+		form.data.inputValues = [];
 		form.transient = {};
 		form.transient.counts = [];
 		init();
@@ -26,8 +27,7 @@
 			form.data.fieldName = "test name";
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
-			form.data.fieldRequired = "yes";
-			form.data.other = "no";
+			form.data.fieldRequired = "no";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
 			form.data.values.push("value1");
 			form.data.values.push("value2");
@@ -48,7 +48,7 @@
 		}
 		
 		form.submit = function(){
-			CheckboxService.addField(form.data).then(function(data){
+			CheckboxWithInputService.addFieldWithInput(form.data).then(function(data){
 				$log.log("good");
 				$log.log(data);
 			}).catch(function(error){
@@ -77,7 +77,7 @@
 						$log.log("demo setup");
 						for(let i=0;i<demo.formData.values.length;i++){
 							$log.log(demo.formData.values[i]);
-							demo.checkboxes.push({value: demo.formData.values[i], title: demo.formData.values[i], checked: false});
+							demo.checkboxes.push({value: demo.formData.values[i], input: demo.formData.inputValues[i], title: demo.formData.values[i], checked: false});
 						}
 					}
 					
@@ -102,10 +102,10 @@
 						for(let i=0;i<demo.checkboxes.length;i++){
 							let checkbox = demo.checkboxes[i];
 							if(checkbox.checked==true){
-								$log.log("checked value: "+checkbox.value);
+								$log.log("checked value: "+checkbox.value+", checked input: "+checkbox.input);
 								finalValues.push(checkbox.value);
 							}else{
-								$log.log("unchecked value: "+checkbox.value);
+								$log.log("unchecked value: "+checkbox.value+", checked input: "+checkbox.input);
 							}
 						}
 						

@@ -1,12 +1,12 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('CheckboxController', CheckboxController);
+	angular.module('springboot').controller('RadioBtnController', RadioBtnController);
 
-	CheckboxController.$inject = [ '$window','$scope', '$http', '$uibModal', '$log', '$state', 'CheckboxService'];
+	RadioBtnController.$inject = [ '$window','$scope', '$http', '$uibModal', '$log', '$state', 'RadioBtnService'];
 
-	function CheckboxController($window, $scope, $http, $uibModal, $log, $state, CheckboxService) {
-		$log.log("Checkbox controller");
+	function RadioBtnController($window, $scope, $http, $uibModal, $log, $state, RadioBtnService) {
+		$log.log("radio btn controller");
 		var form = this;
 		form.data = {};
 		form.data.values = [];
@@ -39,8 +39,6 @@
 			form.transient.counts.push(form.transient.counts.length);
 		}
 		
-		
-		
 		form.takeOut = function(index){
 			$log.log("take out "+index);
 			form.data.values.splice(index,1);
@@ -48,7 +46,7 @@
 		}
 		
 		form.submit = function(){
-			CheckboxService.addField(form.data).then(function(data){
+			RadioBtnService.add(form.data).then(function(data){
 				$log.log("good");
 				$log.log(data);
 			}).catch(function(error){
@@ -69,26 +67,10 @@
 					demo.errorMsg = "";
 					demo.error = false;
 					demo.form = {};
-					demo.checkboxes = [];
-					demo.other = false;
 					setup();
 					
 					function setup(){
 						$log.log("demo setup");
-						for(let i=0;i<demo.formData.values.length;i++){
-							$log.log(demo.formData.values[i]);
-							demo.checkboxes.push({value: demo.formData.values[i], title: demo.formData.values[i], checked: false});
-						}
-					}
-					
-					demo.checkValue = function(){
-						$log.log("check value");
-						for(let i=0;i<demo.checkboxes.length;i++){
-							let checkbox = demo.checkboxes[i];
-							if(checkbox.checked==true && checkbox.value=="other"){
-								demo.other = true;
-							}
-						}
 					}
 					
 					demo.ok = function(){
@@ -96,32 +78,20 @@
 					}
 					
 					demo.save = function(){
-						
-						var finalValues = [];
-						
-						for(let i=0;i<demo.checkboxes.length;i++){
-							let checkbox = demo.checkboxes[i];
-							if(checkbox.checked==true){
-								$log.log("checked value: "+checkbox.value);
-								finalValues.push(checkbox.value);
-							}else{
-								$log.log("unchecked value: "+checkbox.value);
-							}
-						}
-						
 						if(demo.formData.fieldRequired=='yes'){
 							$log.log("field: "+demo.form.attr);
-							if(finalValues.length==0){
+							if(demo.form.attr==null){
 								$log.log("field is null");
 								demo.error = true;
-								return;
 							}else{
 								demo.error = false;
 							}
 						}
 						
-						demo.form = finalValues;
 						
+						var object = {};
+						object['radioField'] = demo.form.otherValue;
+						demo.form = object;
 						
 					}
 				},
@@ -134,5 +104,6 @@
 	          $log.info('Modal dismissed at: ' + new Date());
 	        });
 		}
+
 	}
 })();

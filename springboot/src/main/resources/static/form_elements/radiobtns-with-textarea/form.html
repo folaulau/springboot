@@ -1,7 +1,8 @@
-<div class="row" ng-controller="CheckboxController as form">
+<div class="row" ng-controller="RadioBtnController as form">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
 		
-    		<h2>Hello from, Checkboxes</h2>
+    		<h2>Radio Button Fields</h2>
+    		
     		<div>{{form.data}}</div>
     		<br>
     		<br>
@@ -81,14 +82,15 @@
       					({{formData.fieldHelperDescription}})
 					</span>
 					<span class="text-danger" ng-if="error">{{formData.fieldRequiredErrorMessage}}</span>
-		   			<div class = "form-group" ng-repeat="(key, value) in checkboxes track by $index">
+		   			<div class = "form-group" ng-repeat="count in transient.counts track by $index">
 		      			<div class = "radio">
    							<label>
-								<input type = "checkbox" ng-model="value.checked" name = "values" ng-change="checkValue()"> {{value.title}}
+								
+      							<input type = "radio" ng-model="form.attr" name = "values" value = "{{formData.values[$index]}}"> {{formData.values[$index]}}
    							</label>
 						</div>
 					</div>
-					<div class = "form-group" ng-if="formData.other=='yes' || other==true">
+					<div class = "form-group" ng-if="formData.other=='yes' && form.attr=='other'">
       					<label for = "name">Other</label>
       					<input type = "text" ng-model="formData.otherValue" class = "form-control" placeholder = "">
    					</div>

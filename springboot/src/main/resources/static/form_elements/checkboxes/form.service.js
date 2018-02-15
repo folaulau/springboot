@@ -1,17 +1,17 @@
 (function() {
 	'use strict';
-	 angular.module('springboot').service('FormService', [ '$http', function($http) {
+	 angular.module('springboot').service('CheckboxService', [ '$http', function($http) {
 			
-	    this.getUser = function getUser(userId) {
+		 this.getById = function(id) {
 	        return $http({
 	            method : 'GET',
-	            url : 'api/users/' + userId
+	            url : '/api/field/checkbox/' + id
 	        });
 	    },
-	    this.addUser = function addUser(params, user) {
+	    this.addField = function(field) {
 	        return $http.post(
-	        		'api/users?'+params,
-	        		user
+	        		'/api/field/checkbox',
+	        		field
 	        );
 	    }
 	 }]);
