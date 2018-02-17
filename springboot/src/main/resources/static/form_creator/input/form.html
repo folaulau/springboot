@@ -1,13 +1,11 @@
-<div class="row" ng-controller="RadioBtnWithTextareaController as form">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
+<div class="row" ng-controller="InputController as form">
+	<div class="col-xs-12 col-md-12">
 		
-    		<h2>Radio Button with Textarea Field</h2>
+    		<h2>Input Fields</h2>
     		
     		<div>{{form.data}}</div>
     		<br>
-    		<br>
     		<form role = "form">
-    			
 		   <div class = "form-group">
 		      <label for = "name">Field Name</label>
 		      <input type = "text" ng-model="form.data.fieldName" class = "form-control" placeholder = "Enter Name">
@@ -19,36 +17,6 @@
 		   <div class = "form-group">
 		      <label for = "name">Field Attribute</label>
 		      <input type = "text" ng-model="form.data.fieldAttribute" class = "form-control" placeholder = "Enter Field Attribute">
-		   </div>
-		   <b>Field Values</b>
-		   <div class = "row" ng-repeat="count in form.transient.counts track by $index">
-		   		<div class="col-xs-12 col-md-6">
-		   			<div class = "form-group">
-		      			<label for = "name"></label>
-		      			<input type = "text" ng-model="form.data.values[$index]" class = "form-control" placeholder = "Enter Field Attribute">
-		   			</div>
-		   		</div>
-		   		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-1" ng-if="$index>0">
-					<div class="form-group">
-						<label>Remove</label>
-						<br>
-					   <button type="button" class="btn btn-default" ng-click="form.takeOut($index)">
-	 						<i class="fa fa-minus text-danger"></i>
-     				   </button>
-					</div>
-				</div>
-		   </div>
-		   <div class="row">
-				<div class="col-xs-12">
-					<button type="button" class="btn btn-default" ng-click="form.addValue()">
-						<i class="fa fa-plus"></i> <span id="addText">Add</span>
-					</button>
-				</div>
-		   </div>
-		   <div class = "checkbox">
-   		   	  <label>
-      			<input type="checkbox" name="other" ng-model="form.data.textarea" ng-true-value="'yes'" ng-false-value="'no'"> textarea
-   			  </label>
 		   </div>
 		   <div class = "radio">
 			   <label>
@@ -67,7 +35,6 @@
 		      <label for = "name">Error Message</label>
 		      <input type = "text" ng-model="form.data.fieldRequiredErrorMessage" class = "form-control" placeholder = "Enter error message">
 		   </div>
-		   
 		   <button type = "button" ng-click="form.submit()" class = "btn btn-default">Submit</button>
 		   <button type = "button" ng-click="form.demo()" class = "btn btn-default">Demo</button>
 		</form>
@@ -77,22 +44,13 @@
         		</div>
         		<div class="modal-body">
             		<form role = "form">
-					<label>{{formData.fieldName}}</label>
-					<span>
-      					({{formData.fieldHelperDescription}})
-					</span>
-					<span class="text-danger" ng-if="error">{{formData.fieldRequiredErrorMessage}}</span>
-		   			<div class = "form-group" ng-repeat="count in transient.counts track by $index">
-		      			<div class = "radio">
-   							<label>
-      							<input type = "radio" ng-model="form.attr" name = "values" value = "{{formData.values[$index]}}"> {{formData.values[$index]}}
-   							</label>
-						</div>
+		   			<div class = "form-group">
+		      			<label for = "name">{{formData.fieldName}}</label> <span class="text-danger" ng-if="error">{{formData.fieldRequiredErrorMessage}}</span>
+		      			<input type = "text" ng-model="field" class = "form-control" placeholder = "Enter Name">
+		   				<span class = "help-block">
+      						{{formData.fieldHelperDescription}}
+						</span>
 					</div>
-					<div class = "form-group" ng-if="formData.textarea=='yes' && form.attr=='other'">
-      					<label for = "name">Textarea</label>
-      					<textarea rows="4" cols="50" ng-model="formData.otherValue" class = "form-control"></textarea>
-   					</div>
 				</form>
 				Field: {{field}}
 				<br>

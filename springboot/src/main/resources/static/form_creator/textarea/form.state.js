@@ -8,12 +8,12 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-    	$stateProvider.state('form-radio-btn-with-textarea', {
+    	$stateProvider.state('form-textarea', {
             parent: 'public',
-            url: '/radio-with-textarea',
+            url: '/textarea',
             views: {
                 'main@': {
-                    templateUrl: '/form_elements/radiobtns-with-textarea/form.html'
+                    templateUrl: '/form_creator/textarea/form.html'
                 }
             }
         });

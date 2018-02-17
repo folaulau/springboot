@@ -10,34 +10,31 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class RadioField extends FormField{
-	private String other;
-	private List<String> values;
-	private String textarea;
-
-	public List<String> getValues() {
-		return values;
+public class Form {
+	private List<FormField> fields;
+	
+	public Form() {
+		super();
 	}
 
-	public void setValues(List<String> values) {
-		this.values = values;
+	
+	public Form(List<FormField> fields) {
+		super();
+		this.fields = fields;
 	}
 
-	public String getOther() {
-		return other;
+
+
+
+	public List<FormField> getFields() {
+		return fields;
 	}
 
-	public void setOther(String other) {
-		this.other = other;
+
+	public void setFields(List<FormField> fields) {
+		this.fields = fields;
 	}
 
-	public String getTextarea() {
-		return textarea;
-	}
-
-	public void setTextarea(String textarea) {
-		this.textarea = textarea;
-	}
 
 	public String printAsJson(){
 		ObjectMapper objMapper = new ObjectMapper();

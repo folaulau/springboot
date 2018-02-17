@@ -3,9 +3,9 @@
 
 	angular.module('springboot').controller('RadioBtnWithTextareaController', RadioBtnWithTextareaController);
 
-	RadioBtnWithTextareaController.$inject = [ '$window','$scope', '$http', '$uibModal', '$log', '$state', 'RadioBtnWithTextareaService'];
+	RadioBtnWithTextareaController.$inject = [ '$window','$scope', '$rootScope', '$http', '$uibModal', '$log', '$state', 'RadioBtnWithTextareaService'];
 
-	function RadioBtnWithTextareaController($window, $scope, $http, $uibModal, $log, $state, RadioBtnWithTextareaService) {
+	function RadioBtnWithTextareaController($window, $scope, $rootScope, $http, $uibModal, $log, $state, RadioBtnWithTextareaService) {
 		$log.log("radio btn with textarea controller");
 		var form = this;
 		form.data = {};
@@ -27,6 +27,7 @@
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
 			form.data.fieldRequired = "yes";
+			form.data.fieldType = "radiobtn";
 			form.data.textarea = "no";
 			form.data.other = "no";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
@@ -47,13 +48,15 @@
 		}
 		
 		form.submit = function(){
-			RadioBtnWithTextareaService.add(form.data).then(function(data){
-				$log.log("good");
-				$log.log(data);
-			}).catch(function(error){
-				$log.log("error");
-				$log.log(error);
-			});
+//			RadioBtnWithTextareaService.add(form.data).then(function(data){
+//				$log.log("good");
+//				$log.log(data);
+//			}).catch(function(error){
+//				$log.log("error");
+//				$log.log(error);
+//			});
+			$log.log("submit radiobtn with textarea");
+			$rootScope.$emit('addField', angular.toJson(form.data,true));
 		}
 		
 		form.demo = function(){

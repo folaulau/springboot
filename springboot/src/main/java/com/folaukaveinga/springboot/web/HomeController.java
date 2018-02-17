@@ -22,4 +22,10 @@ public class HomeController {
 		log.info("form elements");
 		return "form_elements/index";
 	}
+	
+	@RequestMapping(value={"/form-creator","/form-creator/"}, method = { RequestMethod.GET })
+	public String showFormCreator(Model model) {
+		log.info("form creator");
+		return "form_creator/index";
+	}
 }

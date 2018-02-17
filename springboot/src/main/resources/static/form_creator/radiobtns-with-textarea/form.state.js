@@ -13,7 +13,7 @@
             url: '/radio-with-textarea',
             views: {
                 'main@': {
-                    templateUrl: '/form_elements/radiobtns-with-textarea/form.html'
+                    templateUrl: '/form_creator/radiobtns-with-textarea/form.html'
                 }
             }
         });

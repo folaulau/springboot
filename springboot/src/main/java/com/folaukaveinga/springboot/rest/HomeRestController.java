@@ -18,9 +18,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeRestController {
 	
-	@RequestMapping(value={"/send-mail/{message}","/send-mail/{message}/"}, method=RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Boolean> sendMail(@PathVariable("message")String message){
-		
-		return new ResponseEntity<>(null, HttpStatus.OK);
-	}
 }

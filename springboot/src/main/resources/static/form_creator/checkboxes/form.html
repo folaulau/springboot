@@ -1,8 +1,7 @@
-<div class="row" ng-controller="RadioBtnWithTextareaController as form">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-lg-offset-3">
+<div class="row" ng-controller="CheckboxController as form">
+	<div class="col-xs-12 col-md-12">
 		
-    		<h2>Radio Button with Textarea Field</h2>
-    		
+    		<h2>Hello from, Checkboxes</h2>
     		<div>{{form.data}}</div>
     		<br>
     		<br>
@@ -47,7 +46,7 @@
 		   </div>
 		   <div class = "checkbox">
    		   	  <label>
-      			<input type="checkbox" name="other" ng-model="form.data.textarea" ng-true-value="'yes'" ng-false-value="'no'"> textarea
+      			<input type="checkbox" name="other" ng-model="form.data.other" ng-true-value="'yes'" ng-false-value="'no'"> Other
    			  </label>
 		   </div>
 		   <div class = "radio">
@@ -82,16 +81,16 @@
       					({{formData.fieldHelperDescription}})
 					</span>
 					<span class="text-danger" ng-if="error">{{formData.fieldRequiredErrorMessage}}</span>
-		   			<div class = "form-group" ng-repeat="count in transient.counts track by $index">
+		   			<div class = "form-group" ng-repeat="(key, value) in checkboxes track by $index">
 		      			<div class = "radio">
    							<label>
-      							<input type = "radio" ng-model="form.attr" name = "values" value = "{{formData.values[$index]}}"> {{formData.values[$index]}}
+								<input type = "checkbox" ng-model="value.checked" name = "values" ng-change="checkValue()"> {{value.title}}
    							</label>
 						</div>
 					</div>
-					<div class = "form-group" ng-if="formData.textarea=='yes' && form.attr=='other'">
-      					<label for = "name">Textarea</label>
-      					<textarea rows="4" cols="50" ng-model="formData.otherValue" class = "form-control"></textarea>
+					<div class = "form-group" ng-if="formData.other=='yes' || other==true">
+      					<label for = "name">Other</label>
+      					<input type = "text" ng-model="formData.otherValue" class = "form-control" placeholder = "">
    					</div>
 				</form>
 				Field: {{field}}

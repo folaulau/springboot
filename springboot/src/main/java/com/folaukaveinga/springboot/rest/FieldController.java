@@ -18,11 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.folaukaveinga.springboot.domain.CheckboxField;
+import com.folaukaveinga.springboot.domain.Form;
 import com.folaukaveinga.springboot.domain.InputField;
 import com.folaukaveinga.springboot.domain.RadioField;
 import com.folaukaveinga.springboot.domain.TextareaField;
 import com.folaukaveinga.springboot.service.CheckboxFieldService;
 import com.folaukaveinga.springboot.service.FormFieldService;
+import com.folaukaveinga.springboot.service.FormService;
 import com.folaukaveinga.springboot.service.InputFieldService;
 import com.folaukaveinga.springboot.service.RadioFieldService;
 import com.folaukaveinga.springboot.service.TextareaFieldService;
@@ -35,6 +37,9 @@ public class FieldController {
 	
 	@Autowired
 	private FormFieldService formFieldService;
+	
+	@Autowired
+	private FormService formService;
 	
 	@Autowired
 	private CheckboxFieldService checkboxFieldService;
@@ -82,10 +87,25 @@ public class FieldController {
 		return new ResponseEntity<>(checkboxField, HttpStatus.OK);
 	}
 	
+	
+	@RequestMapping(value={"/radio-with-textarea","/radio-with-textarea/"}, method=RequestMethod.POST)
+	public ResponseEntity<RadioField> saveRadioWithTextarea(@RequestBody RadioField radioField){
+		log.info("save radio btns with textarea field");
+		radioField = radioFieldService.save(radioField);
+		return new ResponseEntity<>(radioField, HttpStatus.OK);
+	}
+	
 	@RequestMapping(value={"/textarea","/textarea/"}, method=RequestMethod.POST)
 	public ResponseEntity<TextareaField> saveTextarea(@RequestBody TextareaField textareaField){
 		log.info("save textarea field");
 		textareaField = textareaFieldService.save(textareaField);
 		return new ResponseEntity<>(textareaField, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value={"/form","/form/"}, method=RequestMethod.POST)
+	public ResponseEntity<Form> saveForm(@RequestBody Form form){
+		log.info("save textarea field");
+		form = formService.save(form);
+		return new ResponseEntity<>(form, HttpStatus.OK);
 	}
 }

@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	 angular.module('springboot').service('RadioBtnWithTextareaService', [ '$http', function($http) {
+	 angular.module('springboot').service('RadioBtnService', [ '$http', function($http) {
 			
 	    this.get = function(id) {
 	        return $http({
@@ -10,7 +10,7 @@
 	    },
 	    this.add = function(field) {
 	        return $http.post(
-	        		'/api/field/radio-with-textarea',
+	        		'/api/field/radio',
 	        		field
 	        );
 	    }
