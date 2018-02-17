@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class InputField extends FormField{
 
+	public static final String TYPE = "input";
+	
 	public String printAsJson(){
 		ObjectMapper objMapper = new ObjectMapper();
 		try {

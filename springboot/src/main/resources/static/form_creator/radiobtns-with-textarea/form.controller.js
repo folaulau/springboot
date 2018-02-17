@@ -12,6 +12,7 @@
 		form.data.values = [];
 		form.transient = {};
 		form.transient.counts = [];
+		form.showDetailData = false;
 		init();
 		
 		function init(){
@@ -34,6 +35,14 @@
 			form.data.values.push("value1");
 			form.data.values.push("value2");
 			form.data.values.push("other");
+		}
+		
+		form.showData = function(){
+			form.showDetailData = true;
+		}
+		
+		form.hideData = function(){
+			form.showDetailData = false;
 		}
 		
 		form.addValue = function(){

@@ -12,6 +12,7 @@
 		form.data.values = [];
 		form.transient = {};
 		form.transient.counts = [];
+		form.showDetailData = false;
 		init();
 		
 		function init(){
@@ -39,7 +40,13 @@
 			$log.log("add value");
 			form.transient.counts.push(form.transient.counts.length);
 		}
+		form.showData = function(){
+			form.showDetailData = true;
+		}
 		
+		form.hideData = function(){
+			form.showDetailData = false;
+		}
 		
 		
 		form.takeOut = function(index){

@@ -11,6 +11,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class CheckboxField extends FormField{
+	
+	public static final String TYPE = "checkbox";
+	
 	private String other;
 	private List<String> values;
 	private List<String> inputValues;

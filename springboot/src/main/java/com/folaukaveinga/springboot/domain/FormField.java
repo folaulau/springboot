@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FormField {
+	private String fieldType;
 	private String fieldName;
 	private String fieldHelperDescription;
 	private String fieldAttribute;
@@ -91,5 +92,13 @@ public class FormField {
 	@Override
 	public boolean equals(Object other) {
 		return EqualsBuilder.reflectionEquals(this, other);
+	}
+
+	public String getFieldType() {
+		return fieldType;
+	}
+
+	public void setFieldType(String fieldType) {
+		this.fieldType = fieldType;
 	}
 }

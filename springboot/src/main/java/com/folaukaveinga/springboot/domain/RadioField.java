@@ -11,6 +11,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class RadioField extends FormField{
+	
+	public static final String TYPE = "radiobtn";
+	
 	private String other;
 	private List<String> values;
 	private String textarea;

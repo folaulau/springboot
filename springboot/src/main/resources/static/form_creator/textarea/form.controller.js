@@ -9,7 +9,7 @@
 		$log.log("textarea controller");
 		var form = this;
 		form.data = {};
-		
+		form.showDetailData = false;
 		init();
 		
 		function init(){
@@ -28,6 +28,14 @@
 		form.submit = function(){
 			$log.log("submit textarea");
 			$rootScope.$emit('addField', angular.toJson(form.data,true));
+		}
+		
+		form.showData = function(){
+			form.showDetailData = true;
+		}
+		
+		form.hideData = function(){
+			form.showDetailData = false;
 		}
 		
 		form.demo = function(){

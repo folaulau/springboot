@@ -9,7 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TextareaField extends FormField{
-
+	public static final String TYPE = "textarea";
 	public String printAsJson(){
 		ObjectMapper objMapper = new ObjectMapper();
 		try {

@@ -9,6 +9,7 @@
 		$log.log("creator input controller");
 		var form = this;
 		form.data = {};
+		form.showDetailData = false;
 		
 		init();
 		
@@ -23,6 +24,14 @@
 			form.data.fieldRequired = "yes";
 			form.data.fieldType = "input";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
+		}
+		
+		form.showData = function(){
+			form.showDetailData = true;
+		}
+		
+		form.hideData = function(){
+			form.showDetailData = false;
 		}
 		
 		form.submit = function(){
