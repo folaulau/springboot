@@ -25,7 +25,7 @@
 		}
 		
 		function prefill(){
-			form.data.fieldName = "test name";
+			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
 			form.data.fieldType = "checkbox";
@@ -34,6 +34,18 @@
 			form.data.values.push("value1");
 			form.data.values.push("value2");
 			form.data.values.push("other");
+		}
+		
+		form.clear = function(){
+			$log.log("clear form");
+			form.data.fieldQuestion = "";
+			form.data.fieldHelperDescription = "";
+			form.data.fieldAttribute = "";
+			form.data.fieldType = "checkbox";
+			form.data.fieldRequired = "no";
+			form.data.fieldRequiredErrorMessage = "test required error msg";
+			form.data.values = [];
+			form.transient.counts = [];
 		}
 		
 		form.addValue = function(){
@@ -95,6 +107,7 @@
 						$log.log("check value");
 						for(let i=0;i<demo.checkboxes.length;i++){
 							let checkbox = demo.checkboxes[i];
+							//$log.log("checked value: "+checkbox.value+", checked input: "+checkbox.input);
 							if(checkbox.checked==true && checkbox.value=="other"){
 								demo.other = true;
 							}
@@ -113,7 +126,12 @@
 							let checkbox = demo.checkboxes[i];
 							if(checkbox.checked==true){
 								$log.log("checked value: "+checkbox.value+", checked input: "+checkbox.input);
-								finalValues.push(checkbox.value);
+								
+								let value = {};
+								value.check = checkbox.value;
+								value.input = checkbox.input;
+								
+								finalValues.push(value);
 							}else{
 								$log.log("unchecked value: "+checkbox.value+", checked input: "+checkbox.input);
 							}

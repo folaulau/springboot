@@ -24,10 +24,10 @@
 		}
 		
 		function prefill(){
-			form.data.fieldName = "test name";
+			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
-			form.data.fieldRequired = "yes";
+			form.data.fieldRequired = "no";
 			form.data.fieldType = "radiobtn";
 			form.data.textarea = "no";
 			form.data.other = "no";
@@ -35,6 +35,17 @@
 			form.data.values.push("value1");
 			form.data.values.push("value2");
 			form.data.values.push("other");
+		}
+		
+		form.clear = function(){
+			form.data.fieldQuestion = "";
+			form.data.fieldHelperDescription = "";
+			form.data.fieldAttribute = "";
+			form.data.fieldRequired = "no";
+			form.data.fieldType = "textarea";
+			form.data.fieldRequiredErrorMessage = "test required error msg";
+			form.data.values = [];
+			form.transient.counts = [];
 		}
 		
 		form.showData = function(){
@@ -80,6 +91,7 @@
 					demo.errorMsg = "";
 					demo.error = false;
 					demo.form = {};
+					demo.field = {};
 					setup();
 					
 					function setup(){
@@ -103,7 +115,12 @@
 						
 						
 						var object = {};
-						object['radioField'] = demo.form.otherValue;
+						if(demo.field.attr=="other"){
+							object['radioField'] = demo.formData.otherValue;
+						}else{
+							object['radioField'] = demo.field.attr;
+						}
+						
 						demo.form = object;
 						
 					}

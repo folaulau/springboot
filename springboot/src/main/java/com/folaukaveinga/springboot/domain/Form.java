@@ -33,14 +33,7 @@ public class Form {
 
 
 	public void setFields(List<FormField> fields) {
-		for(FormField ff : fields) {
-			this.addField(ff);
-//			if(ff.getFieldType().equals(InputField.TYPE)) {
-//				this.addField((InputField)ff);
-//			}else {
-//				this.addField(ff);
-//			}
-		}
+		this.fields = fields;
 	}
 	
 	public void addField(FormField field) {

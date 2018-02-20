@@ -24,16 +24,28 @@
 		}
 		
 		function prefill(){
-			form.data.fieldName = "test name";
+			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
-			form.data.fieldRequired = "yes";
+			form.data.fieldRequired = "no";
 			form.data.fieldType= "checkbox";
 			form.data.other = "no";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
 			form.data.values.push("value1");
 			form.data.values.push("value2");
 			form.data.values.push("other");
+		}
+		
+		form.clear = function(){
+			$log.log("clear form");
+			form.data.fieldQuestion = "";
+			form.data.fieldHelperDescription = "";
+			form.data.fieldAttribute = "";
+			form.data.fieldType = "checkbox";
+			form.data.fieldRequired = "no";
+			form.data.fieldRequiredErrorMessage = "test required error msg";
+			form.data.values = [];
+			form.transient.counts = [];
 		}
 		
 		form.addValue = function(){
@@ -111,7 +123,10 @@
 						
 						for(let i=0;i<demo.checkboxes.length;i++){
 							let checkbox = demo.checkboxes[i];
-							if(checkbox.checked==true){
+							if(checkbox.checked==true && checkbox.value=="other"){
+								$log.log("other value: "+demo.formData.otherValue);
+								finalValues.push(demo.formData.otherValue);
+							}else if(checkbox.checked==true){
 								$log.log("checked value: "+checkbox.value);
 								finalValues.push(checkbox.value);
 							}else{

@@ -36,9 +36,14 @@
 		form.addValue = function(){
 			$log.log("add value");
 			form.transient.counts.push(form.transient.counts.length);
+			
 		}
 		
-		
+		form.edit = function(index){
+			$log.log("edit form with index #"+index);
+			let field = form.data.fields[index];
+			$log.log(field);
+		}
 		
 		form.takeOut = function(index){
 			$log.log("take out "+index);

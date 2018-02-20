@@ -1,12 +1,12 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('InputController', InputController);
+	angular.module('springboot').controller('DemoInputController', DemoInputController);
 
-	InputController.$inject = [ '$window','$scope', '$rootScope', '$http', '$log', '$state', 'InputService','$uibModal'];
+	DemoInputController.$inject = [ '$window','$scope', '$rootScope', '$http', '$log', '$state', 'InputService','$uibModal'];
 
-	function InputController($window, $scope, $rootScope, $http, $log, $state, InputService, $uibModal) {
-		$log.log("creator input controller");
+	function DemoInputController($window, $scope, $rootScope, $http, $log, $state, InputService, $uibModal) {
+		$log.log("demo input controller");
 		var form = this;
 		form.data = {};
 		form.showDetailData = false;

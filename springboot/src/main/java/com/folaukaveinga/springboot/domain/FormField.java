@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FormField {
 	private String fieldType;
-	private String fieldName;
+	private String fieldQuestion;
 	private String fieldHelperDescription;
 	private String fieldAttribute;
 	private String fieldRequired;
@@ -20,22 +20,14 @@ public class FormField {
 		super();
 	}
 
-	public FormField(String fieldName, String fieldHelperDescription, String fieldAttribute, String fieldRequired,
+	public FormField(String fieldQuestion, String fieldHelperDescription, String fieldAttribute, String fieldRequired,
 			String fieldRequiredErrorMessage) {
 		super();
-		this.fieldName = fieldName;
+		this.fieldQuestion = fieldQuestion;
 		this.fieldHelperDescription = fieldHelperDescription;
 		this.fieldAttribute = fieldAttribute;
 		this.fieldRequired = fieldRequired;
 		this.fieldRequiredErrorMessage = fieldRequiredErrorMessage;
-	}
-
-	public String getFieldName() {
-		return fieldName;
-	}
-
-	public void setFieldName(String fieldName) {
-		this.fieldName = fieldName;
 	}
 	
 	public String getFieldHelperDescription() {
@@ -69,6 +61,22 @@ public class FormField {
 	public void setFieldRequiredErrorMessage(String fieldRequiredErrorMessage) {
 		this.fieldRequiredErrorMessage = fieldRequiredErrorMessage;
 	}
+	
+	public String getFieldType() {
+		return fieldType;
+	}
+
+	public void setFieldType(String fieldType) {
+		this.fieldType = fieldType;
+	}
+	
+	public String getFieldQuestion() {
+		return fieldQuestion;
+	}
+
+	public void setFieldQuestion(String fieldQuestion) {
+		this.fieldQuestion = fieldQuestion;
+	}
 
 	public String printAsJson(){
 		ObjectMapper objMapper = new ObjectMapper();
@@ -92,13 +100,5 @@ public class FormField {
 	@Override
 	public boolean equals(Object other) {
 		return EqualsBuilder.reflectionEquals(this, other);
-	}
-
-	public String getFieldType() {
-		return fieldType;
-	}
-
-	public void setFieldType(String fieldType) {
-		this.fieldType = fieldType;
 	}
 }

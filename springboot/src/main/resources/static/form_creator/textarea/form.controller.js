@@ -17,10 +17,10 @@
 		}
 		
 		function prefill(){
-			form.data.fieldName = "test name";
+			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
 			form.data.fieldAttribute = "testName";
-			form.data.fieldRequired = "yes";
+			form.data.fieldRequired = "no";
 			form.data.fieldType = "textarea";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
 		}
@@ -28,6 +28,15 @@
 		form.submit = function(){
 			$log.log("submit textarea");
 			$rootScope.$emit('addField', angular.toJson(form.data,true));
+		}
+		
+		form.clear = function(){
+			form.data.fieldQuestion = "";
+			form.data.fieldHelperDescription = "";
+			form.data.fieldAttribute = "";
+			form.data.fieldRequired = "no";
+			form.data.fieldType = "textarea";
+			form.data.fieldRequiredErrorMessage = "test required error msg";
 		}
 		
 		form.showData = function(){
