@@ -23,19 +23,25 @@
 		// url will be nested (/form/profile)
 		.state('form.profile', {
 			url : '/',
-			templateUrl : 'profile/profile.html'
+			templateUrl : 'profile/view.html'
 		})
 
 		// url will be /form/interests
-		.state('form.interests', {
+		.state('form.career', {
 			url : '/',
-			templateUrl : 'form-interests.html'
+			templateUrl : 'career/view.html'
 		})
 
 		// url will be /form/payment
 		.state('form.payment', {
 			url : '/',
-			templateUrl : 'form-payment.html'
+			templateUrl : 'payment/view.html'
+		})
+		
+		// url will be /form/payment
+		.state('form.reading', {
+			url : '/',
+			templateUrl : 'reading/view.html'
 		});
 
 		// catch all route

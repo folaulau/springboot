@@ -1,0 +1,29 @@
+<div class="row" ng-controller="paymentController as payment">
+	<div class="col-xs-12">
+		<h4>Payment</h4>
+		<div class="row">
+			<div class="col-xs-12">
+				<form name="profileForm">
+					<div class="form-group">
+			    			<label for="name">What is you payment type?</label>
+		    				<input type="text" class="form-control" name="name" ng-model="payment.data.paymentType">
+					</div>
+				</form>
+				<div class="row">
+			  	  	<div class="col-xs-6" style="text-align: right">
+			  	  		<button type="button" class="btn btn-default" ng-click="payment.back()">back</button>
+			  	  	</div>
+			  	  	<div class="col-xs-6" style="text-align: left">
+			  	  		<button type="button" class="btn btn-default" ng-click="payment.next()">next</button>
+			  	  	</div>
+			  	  </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				Field Data
+				<pre>{{payment.data | json}}</pre>
+			</div>
+		</div>
+	</div>
+</div>

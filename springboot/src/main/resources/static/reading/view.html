@@ -1,0 +1,29 @@
+<div class="row" ng-controller="readingController as reading">
+	<div class="col-xs-12">
+		<h4>Career</h4>
+		<div class="row">
+			<div class="col-xs-12">
+				<form name="profileForm">
+					<div class="form-group">
+		    				<label for="name">What book are you reading now?</label>
+		    				<input type="text" class="form-control" name="name" ng-model="reading.data.book">
+					</div>
+				</form>
+				<div class="row">
+			  	  	<div class="col-xs-6" style="text-align: right">
+			  	  		<button type="button" class="btn btn-default" ng-click="reading.back()">back</button>
+			  	  	</div>
+			  	  	<div class="col-xs-6" style="text-align: left">
+			  	  		<button type="button" class="btn btn-default" ng-click="reading.next()">next</button>
+			  	  	</div>
+			  	  </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				Field Data
+				<pre>{{reading.data | json}}</pre>
+			</div>
+		</div>
+	</div>
+</div>

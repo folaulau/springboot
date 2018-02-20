@@ -1,0 +1,29 @@
+<div class="row" ng-controller="careerController as career">
+	<div class="col-xs-12">
+		<h4>Career</h4>
+		<div class="row">
+			<div class="col-xs-12">
+				<form name="profileForm">
+					<div class="form-group">
+			    			<label for="name">What is your current job?</label>
+			    			<input type="text" class="form-control" name="name" ng-model="career.data.job">
+					</div>
+				</form>
+				<div class="row">
+			  	  	<div class="col-xs-6" style="text-align: right">
+			  	  		<button type="button" class="btn btn-default" ng-click="career.back()">back</button>
+			  	  	</div>
+			  	  	<div class="col-xs-6" style="text-align: left">
+			  	  		<button type="button" class="btn btn-default" ng-click="career.next()">next</button>
+			  	  	</div>
+			  	  </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				Field Data
+				<pre>{{career.data | json}}</pre>
+			</div>
+		</div>
+	</div>
+</div>
