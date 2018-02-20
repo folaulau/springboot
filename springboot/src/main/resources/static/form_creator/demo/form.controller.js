@@ -25,7 +25,15 @@
 		
 		form.next = function(){
 			$log.log("next");
-			$state.go("form-demo.input");
+			$state.go("form-demo.checkbox");
+		}
+		
+		form.showData = function(){
+			form.showDetailData = true;
+		}
+		
+		form.hideData = function(){
+			form.showDetailData = false;
 		}
 	}
 })();

@@ -1,15 +1,15 @@
-<div class="row" ng-controller="DemoInputController as form">
+<div class="row" ng-controller="TextAreaController as form">
 	<div class="col-xs-12 col-md-12">
 		<form role = "form">
    			<div class = "form-group">
       			<label for = "name">{{form.data.fieldQuestion}}</label> <span class="text-danger" ng-if="error">{{form.data.fieldRequiredErrorMessage}}</span>
-      			<input type = "text" ng-model="form.data.field" class = "form-control" placeholder = "Enter Name">
+      			<textarea ng-model="field" class = "form-control" rows="4" cols="50"></textarea>
    				<span class = "help-block">
-    						{{formData.fieldHelperDescription}}
+    						{{form.data.fieldHelperDescription}}
 				</span>
 			</div>
 		</form>
-<!-- 		Field: {{form.data.field}}
+<!-- 		Field: {{field}}
 		<br>
 		<b>Form</b>
 		<br>

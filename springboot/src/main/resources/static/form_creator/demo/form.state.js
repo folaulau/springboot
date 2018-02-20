@@ -17,14 +17,21 @@
                 }
             }
         }).state('form-demo.input', {
-			url: "/input",
-			views: {
-                'main@': {
-                		templateUrl: '/form_creator/demo/input/form.html'
-                }
-            }
+			url: "/",
+			templateUrl: '/form_creator/demo/input/form.html'
+        }).state('form-demo.textarea', {
+			url: "/",
+			templateUrl: '/form_creator/demo/textarea/form.html'
+			
+        }).state('form-demo.checkbox', {
+			url: "/",
+			templateUrl: '/form_creator/demo/checkboxes/form.html'
+			
+        }).state('form-demo.radiobtn', {
+			url: "/",
+			templateUrl: '/form_creator/demo/radiobtns/form.html'
 			
         });
-    		$urlRouterProvider.otherwise('/demo/input');
+    		$urlRouterProvider.otherwise('/demo/');
     }
 })();
