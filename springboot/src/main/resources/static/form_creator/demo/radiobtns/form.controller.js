@@ -1,13 +1,14 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('RadioBtnController', RadioBtnController);
+	angular.module('springboot').controller('DemoRadioBtnController', DemoRadioBtnController);
 
-	RadioBtnController.$inject = [ '$window','$scope', '$rootScope', '$http', '$uibModal', '$log', '$state', 'RadioBtnService'];
+	DemoRadioBtnController.$inject = [ '$window','$scope', '$rootScope', '$http', '$uibModal', '$log', '$state', 'RadioBtnService'];
 
-	function RadioBtnController($window, $scope, $rootScope, $http, $uibModal, $log, $state, RadioBtnService) {
-		$log.log("radio btn controller");
+	function DemoRadioBtnController($window, $scope, $rootScope, $http, $uibModal, $log, $state, RadioBtnService) {
+		$log.log("demo radiobtn controller");
 		var form = this;
+		form.field = "something";
 		form.data = {};
 		form.data.values = [];
 		form.transient = {};

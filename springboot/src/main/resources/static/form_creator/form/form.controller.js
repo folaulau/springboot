@@ -76,6 +76,12 @@
 			});
 		}
 		
+		form.demo = function(){
+			$log.log("send data to demo");
+			$rootScope.formData = form.data;
+			$state.go("form-demo");
+		}
+		
 		
 	}
 })();

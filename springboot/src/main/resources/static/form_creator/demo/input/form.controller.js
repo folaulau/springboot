@@ -14,6 +14,9 @@
 		init();
 		
 		function init(){
+			$log.log("parent data");
+			$log.log($scope.$parent.data);
+			
 			prefill();
 		}
 		

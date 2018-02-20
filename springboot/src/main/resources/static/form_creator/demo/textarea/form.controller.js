@@ -1,12 +1,12 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('TextAreaController', TextAreaController);
+	angular.module('springboot').controller('DemoTextAreaController', DemoTextAreaController);
 
-	TextAreaController.$inject = [ '$window','$scope', '$rootScope', '$http', '$log', '$state', 'TextareaService','$uibModal', 'FormService'];
+	DemoTextAreaController.$inject = [ '$window','$scope', '$rootScope', '$http', '$log', '$state', 'TextareaService','$uibModal', 'FormService'];
 
-	function TextAreaController($window, $scope, $rootScope, $http, $log, $state, TextareaService, $uibModal, FormService) {
-		$log.log("textarea controller");
+	function DemoTextAreaController($window, $scope, $rootScope, $http, $log, $state, TextareaService, $uibModal, FormService) {
+		$log.log("demo textarea controller");
 		var form = this;
 		form.data = {};
 		init();

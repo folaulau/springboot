@@ -1,17 +1,19 @@
 (function() {
 	'use strict';
 
-	angular.module('springboot').controller('CheckboxController', CheckboxController);
+	angular.module('springboot').controller('DemoCheckboxController', DemoCheckboxController);
 
-	CheckboxController.$inject = [ '$window','$scope', '$rootScope', '$http', '$uibModal', '$log', '$state', 'CheckboxService'];
+	DemoCheckboxController.$inject = [ '$window','$scope', '$rootScope', '$http', '$uibModal', '$log', '$state', 'CheckboxService'];
 
-	function CheckboxController($window, $scope, $rootScope, $http, $uibModal, $log, $state, CheckboxService) {
-		$log.log("Checkbox controller");
+	function DemoCheckboxController($window, $scope, $rootScope, $http, $uibModal, $log, $state, CheckboxService) {
+		$log.log("Demo Checkbox controller");
 		var form = this;
 		form.data = {};
 		form.data.values = [];
+		form.checkboxes = [];
 		form.transient = {};
 		form.transient.counts = [];
+		form.other = false;
 		form.showDetailData = false;
 		init();
 		
@@ -34,6 +36,22 @@
 			form.data.values.push("value1");
 			form.data.values.push("value2");
 			form.data.values.push("other");
+			
+			for(let i=0;i<form.data.values.length;i++){
+				form.checkboxes.push({value: form.data.values[i], title: form.data.values[i], checked: false});
+			}
+		}
+		
+		form.checkValue = function(){
+			$log.log("check value");
+			for(let i=0;i<form.checkboxes.length;i++){
+				let checkbox = form.checkboxes[i];
+				$log.log(checkbox);
+				if(checkbox.checked==true && checkbox.value=="other"){
+					$log.log("display other");
+					form.other = true;
+				}
+			}
 		}
 	}
 })();
