@@ -9,49 +9,85 @@
 		$log.log("Demo Checkbox controller");
 		var form = this;
 		form.data = {};
-		form.data.values = [];
-		form.checkboxes = [];
-		form.transient = {};
-		form.transient.counts = [];
+		form.element = {};
+		form.data.checkboxes = [];
 		form.other = false;
-		form.showDetailData = false;
+		form.otherValue = "";
+		
+		form.nextBtn = {};
+		form.backBtn = {};
+		form.submitBtn = {};
+		form.nextBtn.disabled = false;
+		form.nextBtn.displayed = true;
+		form.backBtn.disabled = false;
+		form.backBtn.displayed = true;
+		form.submitBtn.disabled = false;
+		form.submitBtn.displayed = false;
+		
 		init();
 		
 		function init(){
-			prefill();
+			$log.log("step: "+$scope.$parent.step);
+			$log.log($scope.$parent.elements[$scope.$parent.step]);
+			form.element = $scope.$parent.elements[$scope.$parent.step];
 			
-			form.transient.counts.push(1);
-			form.transient.counts.push(2);
-			form.transient.counts.push(3);
+			for(let i=0;i<form.element.values.length;i++){
+				form.data.checkboxes.push({value: form.element.values[i], title: form.element.values[i], checked: false});
+			}
+			
+			setup();
 		}
 		
-		function prefill(){
-			form.data.fieldQuestion = "What is ?";
-			form.data.fieldHelperDescription = "test helper";
-			form.data.fieldAttribute = "testName";
-			form.data.fieldRequired = "no";
-			form.data.fieldType= "checkbox";
-			form.data.other = "no";
-			form.data.fieldRequiredErrorMessage = "test required error msg";
-			form.data.values.push("value1");
-			form.data.values.push("value2");
-			form.data.values.push("other");
-			
-			for(let i=0;i<form.data.values.length;i++){
-				form.checkboxes.push({value: form.data.values[i], title: form.data.values[i], checked: false});
+		function setup(){
+			$log.log("setup, step: "+$scope.$parent.step+", size: "+$scope.$parent.elementSize);
+			if($scope.$parent.step==0){
+				form.backBtn.disabled = true;
+			}
+			if(($scope.$parent.step+1)==$scope.$parent.elementSize){
+				form.nextBtn.disabled = true;
+				form.nextBtn.displayed = false;
+				form.submitBtn.displayed = true;
 			}
 		}
 		
 		form.checkValue = function(){
 			$log.log("check value");
-			for(let i=0;i<form.checkboxes.length;i++){
-				let checkbox = form.checkboxes[i];
-				$log.log(checkbox);
+			for(let i=0;i<form.data.checkboxes.length;i++){
+				let checkbox = form.data.checkboxes[i];
 				if(checkbox.checked==true && checkbox.value=="other"){
-					$log.log("display other");
 					form.other = true;
+					break;
 				}
 			}
+		}
+		
+		form.next = function(){
+			$log.log("next");
+			let values = [];
+			for(let i=0;i<form.data.checkboxes.length;i++){
+				let checkbox = form.data.checkboxes[i];
+				if(checkbox.checked==true){
+					if(checkbox.value=="other"){
+						form.other = true;
+						values.push(form.data.otherValue);
+					}else{
+						values.push(checkbox.value);
+					}
+				}
+			}
+			$log.log("key: "+form.element.fieldAttribute+", values: "+values);
+			$scope.$parent.addToData(form.element.fieldAttribute,values);
+			$scope.$parent.next();
+		}
+		
+		form.back = function(){
+			$log.log("back");
+			$scope.$parent.back();
+		}
+		
+		form.submit = function(){
+			$log.log("submit");
+			$scope.$parent.submit();
 		}
 	}
 })();

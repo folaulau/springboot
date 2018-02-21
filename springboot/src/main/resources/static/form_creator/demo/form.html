@@ -1,37 +1,13 @@
-<div class="row" ng-controller="DemoController as form">
+<div class="row" ng-controller="DemoController">
 	<div class="col-xs-12 col-md-12">
 		
     		<h2>Demo</h2>
-    		<div class="row">
-    			<div class="col-xs-12">
-    				<div class="row">
-    					<div class="col-xs-12">
-    						<button type = "button" ng-if="form.showDetailData==false" ng-click="form.showData()" class = "btn btn-default">Show Data <i class="fa fa-plus"></i></button>
-    						<button type = "button" ng-if="form.showDetailData==true" ng-click="form.hideData()" class = "btn btn-default">Hide Data <i class="fa fa-minus"></i></button>
-    					</div>
-    				</div>
-    				<div class="row" ng-if="form.showDetailData==true">
-		    			<div class="col-xs-12">
-		    				<br>
-		    				<pre>{{form.data | json}}</pre>
-		    			</div>
-		    		</div>
-    			</div>
-    		</div>
-    		<br>
     		<form role = "form">
 		   <div class="row">
     			 <div class="col-xs-12 col-md-12" ui-view></div>
     		   </div>
-    		   <div class="row">
-    			 <div class="col-xs-6 col-md-6" style="text-align: right">
-    			 	<button type = "button" ng-click="form.back()" class = "btn btn-default">Back</button>
-    			 </div>
-    			 <div class="col-xs-6 col-md-6" style="text-align: left" >
-    			 	<button type = "button" ng-disabled="!goNext" ng-click="form.next()" class = "btn btn-default">Next</button>
-    			 </div>
-    		   </div>
 		</form>
+		<pre>{{data | json}}</pre>
 	</div>
 </div>
 <br>

@@ -26,7 +26,7 @@
 		function prefill(){
 			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
-			form.data.fieldAttribute = "testName";
+			form.data.fieldAttribute = "testRadioBtn";
 			form.data.fieldRequired = "no";
 			form.data.fieldType = "radiobtn";
 			form.data.textarea = "no";

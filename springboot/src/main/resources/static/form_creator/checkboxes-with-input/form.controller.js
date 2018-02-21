@@ -27,7 +27,7 @@
 		function prefill(){
 			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
-			form.data.fieldAttribute = "testName";
+			form.data.fieldAttribute = "testCheckboxInput";
 			form.data.fieldType = "checkbox";
 			form.data.fieldRequired = "no";
 			form.data.fieldRequiredErrorMessage = "test required error msg";

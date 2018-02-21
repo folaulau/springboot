@@ -7,13 +7,12 @@
 
 	function DemoController($window, $scope, $rootScope, $http, $log, $state, InputService, $uibModal) {
 		$log.log("demo controller");
-		var form = this;
+		var form = $scope;
 		form.data = {};
-		form.showDetailData = false;
-		$scope.goNext = false;
+		form.elements = {};
+		form.step = 0;
+		form.elementSize = 0;
 		init();
-		//$state.transitionTo('form-demo.input');
-		//$state.go("form-demo.input");
 		
 		function init(){
 			$log.log($rootScope.formData);
@@ -21,46 +20,44 @@
 				$state.go("form-input");
 				return;
 			}else{
-				form.data = $rootScope.formData;
-				$scope.data = $rootScope.formData;
+				form.elements = $rootScope.formData.fields;
+				form.elementSize = form.elements.length;
 			}
-			let firstField = form.data.fields[0];
-			$log.log("first go to "+firstField.fieldType);
-			$state.go("form-demo."+firstField.fieldType);
+			start();
+		}
+		
+		function start(){
+			let field = form.elements[form.step];
+			$log.log("start, go to "+field.fieldType);
+			$state.go("form-demo."+field.fieldType);
+		}
+		
+		form.addToData = function(key,value){
+			$log.log("add to data");
+			$log.log("key: "+key+", value: "+value);
+			form.data[key] = value;
+			$log.log(form.data);
 		}
 		
 		form.back = function(){
-			$log.log("back");
-			if($state.$current.name=="form-demo.input"){
-				$state.go("form-demo.checkbox");
-	    		}else if($state.$current.name=="form-demo.textarea"){
-	    			$state.go("form-demo.input");
-	    		}else if($state.$current.name=="form-demo.radiobtn"){
-	    			$state.go("form-demo.textarea");
-	    		}else if($state.$current.name=="form-demo.checkbox"){
-	    			$state.go("form-demo.radiobtn");
-	    		}
+			form.step--;
+			let field = form.elements[form.step];
+			$log.log("back, go to "+field.fieldType);
+			$state.go("form-demo."+field.fieldType,{ reload: true, inherit: true, notify: true });
 		}
 		
 		form.next = function(){
-			$log.log("next");
-			if($state.$current.name=="form-demo.input"){
-				$state.go("form-demo.textarea");
-	    		}else if($state.$current.name=="form-demo.textarea"){
-	    			$state.go("form-demo.radiobtn");
-	    		}else if($state.$current.name=="form-demo.radiobtn"){
-	    			$state.go("form-demo.checkbox");
-	    		}else if($state.$current.name=="form-demo.checkbox"){
-	    			$state.go("form-demo.input");
-	    		}
-		}
-		
-		form.showData = function(){
-			form.showDetailData = true;
-		}
-		
-		form.hideData = function(){
-			form.showDetailData = false;
+			form.step++;
+			let field = form.elements[form.step];
+			$log.log("next, go to "+field.fieldType);
+			$log.log("form-demo."+field.fieldType+"=="+$state.current.name);
+			if("form-demo."+field.fieldType==$state.current.name){
+				$log.log("refresh");
+				$state.go("form-demo."+field.fieldType, {}, { reload: true });
+			}else{
+				$state.go("form-demo."+field.fieldType);
+			}
+			
 		}
 	}
 })();

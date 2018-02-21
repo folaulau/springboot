@@ -19,7 +19,7 @@
 		function prefill(){
 			form.data.fieldQuestion = "What is ?";
 			form.data.fieldHelperDescription = "test helper";
-			form.data.fieldAttribute = "testName";
+			form.data.fieldAttribute = "testTextarea";
 			form.data.fieldRequired = "no";
 			form.data.fieldType = "textarea";
 			form.data.fieldRequiredErrorMessage = "test required error msg";
