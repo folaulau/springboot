@@ -1,0 +1,48 @@
+<div class="row" ng-controller="DemoCheckboxController as form">
+	<div class="col-xs-12 col-md-12">
+		<form role = "form">
+			<label>{{form.element.fieldQuestion}}</label>
+			<span>
+    					({{form.element.fieldHelperDescription}})
+			</span>
+			<span class="text-danger" ng-if="error">{{form.element.fieldRequiredErrorMessage}}</span>
+   			<div class="row">
+   				<div class="col-xs-12">
+   					<div class = "form-group" ng-repeat="(key, value) in form.data.checkboxes track by $index">
+		      			<div class = "radio">
+		 					<label>
+								<input type = "checkbox" ng-model="value.checked" name = "values" ng-change="form.checkValue()"> {{value.title}}
+		 					</label>
+						</div>
+					</div>
+   				</div>
+   			</div>
+   			<div class="row">
+   				<div class="col-xs-12">
+   					<div class = "form-group" ng-if="form.other==true">
+		    				<label for = "name"></label>
+		    				<input type = "text" ng-model="form.data.otherValue" class = "form-control">
+		 			</div>
+   				</div>
+   			</div>
+			
+		</form>
+		<pre>{{form.data | json}}</pre>
+		<div class="row">
+    			 <div class="col-xs-6 col-md-6" style="text-align: right">
+    			 	<button type = "button" ng-click="form.back()" class = "btn btn-default" ng-disabled="form.backBtn.disabled" ng-if="form.backBtn.displayed">Back</button>
+    			 </div>
+    			 <div class="col-xs-6 col-md-6" style="text-align: left" ng-if="form.nextBtn.displayed">
+    			 	<button type = "button" ng-click="form.next()" class = "btn btn-default" ng-disabled="form.nextBtn.disabled" >Next</button>
+    			 </div>
+    			 <div class="col-xs-6 col-md-6" style="text-align: left" ng-if="form.submitBtn.displayed">
+    			 	<button type = "button" ng-click="form.next()" class = "btn btn-default" ng-disabled="form.submitBtn.disabled">Submit</button>
+    			 </div>
+    		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>

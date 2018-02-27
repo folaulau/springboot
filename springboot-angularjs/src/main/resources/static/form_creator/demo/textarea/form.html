@@ -1,0 +1,26 @@
+<div class="row" ng-controller="DemoTextAreaController as form">
+	<div class="col-xs-12 col-md-12">
+		<form role = "form">
+   			<div class = "form-group">
+      			<label for = "name">{{form.element.fieldQuestion}}</label> <span class="text-danger" ng-if="error">{{form.element.fieldRequiredErrorMessage}}</span>
+      			<textarea ng-model="form.data[form.element.fieldAttribute]" class = "form-control" rows="4" cols="50"></textarea>
+   				<span class = "help-block">
+    						{{form.element.fieldHelperDescription}}
+				</span>
+			</div>
+		</form>
+		<pre>{{form.data | json}}</pre>
+		<div class="row">
+    			 <div class="col-xs-6 col-md-6" style="text-align: right">
+    			 	<button type = "button" ng-click="form.back()" class = "btn btn-default" ng-disabled="form.backBtn.disabled" ng-if="form.backBtn.displayed">Back</button>
+    			 </div>
+    			 <div class="col-xs-6 col-md-6" style="text-align: left" ng-if="form.nextBtn.displayed">
+    			 	<button type = "button" ng-click="form.next()" class = "btn btn-default" ng-disabled="form.nextBtn.disabled" >Next</button>
+    			 </div>
+    			 <div class="col-xs-6 col-md-6" style="text-align: left" ng-if="form.submitBtn.displayed">
+    			 	<button type = "button" ng-click="form.next()" class = "btn btn-default" ng-disabled="form.submitBtn.disabled">Submit</button>
+    			 </div>
+    		</div>
+	</div>
+</div>
+<br>
