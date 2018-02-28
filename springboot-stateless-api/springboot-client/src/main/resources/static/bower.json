@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/folaulau/springboot",
+  "authors": [
+    "Folau Kaveinga <folaukaveinga@hotmail.com>"
+  ],
+  "description": "client",
+  "main": "",
+  "license": "yes",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-resource": "^1.6.9",
+    "angular-ui-router": "^1.0.15",
+    "angular-messages": "^1.6.9"
+  }
+}
