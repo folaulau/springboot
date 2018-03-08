@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import com.folaukaveinga.api.model.User;
 
+@SuppressWarnings("serial")
 public class UserAuthentication implements Authentication{
 	
 	private User user;
@@ -24,12 +25,7 @@ public class UserAuthentication implements Authentication{
 	
 	public UserAuthentication(boolean authenticated) {
 		this(null,authenticated,null,null);
-		setUser(new User(5,"Folau","folaukavienga@gmial.com","2323423423","test","active"));
-		
-		setAuthenticated(true);
 	}
-	
-	
 	
 	public UserAuthentication(User user, boolean authenticated, String ipAddress, String token) {
 		super();
@@ -38,6 +34,11 @@ public class UserAuthentication implements Authentication{
 		this.ipAddress = ipAddress;
 		this.token = token;
 		this.auths = new ArrayList<>();
+		
+		// custom
+		setUser(new User(5,"Folau","folaukavienga@gmial.com","2323423423","test","active"));
+		addAuth("USER");
+		setAuthenticated(true);
 	}
 
 	@Override
@@ -47,8 +48,9 @@ public class UserAuthentication implements Authentication{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		addAuth("ADMIN");
+		
 		 List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+		 //grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
 		 for(String auth:auths) {
 			 grantedAuthorities.add(new SimpleGrantedAuthority(auth));
 		 }
@@ -62,19 +64,16 @@ public class UserAuthentication implements Authentication{
 
 	@Override
 	public User getDetails() {
-		// TODO Auto-generated method stub
 		return user;
 	}
 
 	@Override
 	public Object getPrincipal() {
-		// TODO Auto-generated method stub
 		return user.getEmail();
 	}
 
 	@Override
 	public boolean isAuthenticated() {
-		// TODO Auto-generated method stub
 		return authenticated;
 	}
 
@@ -116,6 +115,9 @@ public class UserAuthentication implements Authentication{
 	}
 	
 	public void addAuth(String auth) {
+		if(this.auths==null) {
+			this.auths = new ArrayList<>();
+		}
 		this.auths.add(auth);
 	}
 

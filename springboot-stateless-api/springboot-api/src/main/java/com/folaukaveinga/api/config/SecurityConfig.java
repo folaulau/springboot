@@ -27,6 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		  http
+		  	.exceptionHandling()
+		  	.and()
 		  		.anonymous()
 			.and()
 				.servletApi()
@@ -34,8 +36,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.headers()
 			.and()
 				.authorizeRequests()
-		    			.antMatchers("/api/login/**").permitAll()
-		    			.anyRequest().authenticated()
+				.antMatchers(HttpMethod.POST, "/api/login").permitAll()
+		    		.anyRequest()
+		    			.hasAnyAuthority("USER")
 		    .and()
 		    		.addFilterBefore(new LoginFilter(new AntPathRequestMatcher("/api/login")), UsernamePasswordAuthenticationFilter.class)
 		    		.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
@@ -43,6 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("username").password("test");
+		auth.inMemoryAuthentication()
+			.withUser("username")
+			.password("test12")
+			.authorities("USER");
 	}
 }
