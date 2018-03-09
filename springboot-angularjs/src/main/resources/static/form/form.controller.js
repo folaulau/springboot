@@ -44,5 +44,24 @@
 				}
 			);
 		}
+		
+		form.submitForm = function(){
+			let formData = {};
+			formData['username'] = "folauk";
+			formData['password'] = "password";
+			
+			$log.log("submit form");
+			$http({
+		        method : "POST",
+		        url : "/api/field/in-field",
+		        data: formData
+		    }).then(function mySuccess(response) {
+		        $log.log("success");
+		        $log.log(response);
+		    }, function myError(response) {
+		    		$log.log("error");
+		        $log.log(response);
+		    });
+		}
 	}
 })();

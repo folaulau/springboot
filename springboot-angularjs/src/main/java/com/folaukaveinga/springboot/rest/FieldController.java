@@ -1,10 +1,13 @@
 package com.folaukaveinga.springboot.rest;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -107,5 +110,26 @@ public class FieldController {
 		log.info("save textarea field");
 		form = formService.save(form);
 		return new ResponseEntity<>(form, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value={"/in-field","/in-field/"}, method=RequestMethod.POST)
+	public ResponseEntity<String> inField(HttpServletRequest request) throws IOException{
+		log.info("save textarea field");
+		StringBuilder sb = new StringBuilder();
+        BufferedReader br = request.getReader();
+        String str = null;
+        while ((str = br.readLine()) != null) {
+            sb.append(str);
+        }
+        System.out.println(sb.toString());
+        JSONObject jObj = new JSONObject(sb.toString());
+        String username = jObj.getString("username");
+        String password = jObj.getString("password");
+		
+		//String username = request.getParameter("username");
+		//String password = request.getParameter("password");
+		log.info("username: {}",username);
+		log.info("password: {}",password);
+		return new ResponseEntity<>("good", HttpStatus.OK);
 	}
 }
