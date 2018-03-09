@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,6 +19,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.folaukaveinga.api.security.AuthFilter;
+import com.folaukaveinga.api.security.CustomAuthenticationProvider;
 import com.folaukaveinga.api.security.LoginFilter;
 
 @Configuration
@@ -27,13 +29,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private AuthFilter authFilter;
+	
+	@Autowired
+    private AuthenticationManager authenticationManager;
+	
+	@Bean
+	public AuthenticationProvider customAuthenticationProvider() {
+		return new CustomAuthenticationProvider();
+	}
+	
+	@Bean
+	public AntPathRequestMatcher loginAntPathRequestMatcher() {
+		return new AntPathRequestMatcher("/api/login");
+	}
+	
+	@Bean
+	public LoginFilter loginFilter() {
+		return new LoginFilter(loginAntPathRequestMatcher(), authenticationManager);
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().authorizeRequests().antMatchers(HttpMethod.POST, "/api/login").permitAll()
 				.anyRequest().hasAnyAuthority("USER").and()
-				.addFilterBefore(new LoginFilter(new AntPathRequestMatcher("/api/login")),
-						UsernamePasswordAuthenticationFilter.class)
+				.addFilterBefore(loginFilter(),UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
 
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -42,6 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("username").password("test12").authorities("USER");
+		//auth.authenticationProvider(customAuthenticationProvider());
 	}
 
 	@Bean

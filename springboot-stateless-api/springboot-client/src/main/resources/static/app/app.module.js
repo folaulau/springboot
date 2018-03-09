@@ -9,8 +9,9 @@
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	});
 	
-	angular.module('client').run(function($rootScope, $timeout, $log, $window) {
+	angular.module('client').run(function($http, $rootScope, $timeout, $log, $window) {
 		$log.log("client run method");
+		$http.defaults.headers.common.Authorization = 'Basic YmVlcDpib29w';
 	});
 
 })();

@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import com.folaukaveinga.api.model.User;
@@ -14,8 +15,11 @@ import com.folaukaveinga.api.model.User;
 public class UserCache {
 	
 	private static final String KEY = "User";
+	
+	@Autowired
 	private RedisTemplate<String, Object> redisTemplate;
-	private HashOperations hashOperations;
+	
+	private HashOperations<String, Object, Object> hashOperations;
 
 	@Autowired
 	public UserCache(RedisTemplate<String, Object> redisTemplate) {
@@ -24,12 +28,12 @@ public class UserCache {
 
 	@PostConstruct
 	public void init() {
+		ValueOperations<String, Object> ops = this.redisTemplate.opsForValue();
 		this.hashOperations = this.redisTemplate.opsForHash();
 	}
 
-	public User add(String token, User user) {
+	public void add(String token, User user) {
 		this.hashOperations.put(KEY, token, user);
-		return user;
 	}
 
 	public User findUser(String token) {

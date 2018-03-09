@@ -28,7 +28,7 @@ public class JwtTokenUtil implements Serializable {
     private String secret = "secret";
 
     //@Value("${jwt.expiration}")
-    private Long expiration = 5L;
+    private Long expiration = 600L;
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
