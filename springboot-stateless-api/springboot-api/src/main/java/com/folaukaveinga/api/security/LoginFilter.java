@@ -1,6 +1,7 @@
 package com.folaukaveinga.api.security;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -30,6 +31,11 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 		log.info("authenticate login");
 		final String username = request.getParameter("username");
 		final String password = request.getParameter("password");
+		
+		Enumeration<String> en = request.getParameterNames();
+		while(en.hasMoreElements()) {
+			log.info("parameter: "+en.nextElement());
+		}
 		
 		log.info("username: {}",username);
 		log.info("password: {}",password);
