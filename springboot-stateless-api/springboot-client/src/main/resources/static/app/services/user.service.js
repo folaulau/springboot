@@ -15,9 +15,9 @@
 				method : 'GET',
 				isArray : true
 			},
-			'get' : {
+			'getAdmin' : {
 				method : 'GET',
-				url: host+"/api/users/:id",
+				url: host+'/api/users/admin',
 				transformResponse : function(data) {
 					if (data) {
 						data = angular.fromJson(data);
@@ -25,9 +25,9 @@
 					return data;
 				}
 			},
-			'getCurrent' : {
+			'getUser' : {
 				method : 'GET',
-				url: "/api/users/current/ssn",
+				url: host+'/api/users/',
 				transformResponse : function(data) {
 					if (data) {
 						data = angular.fromJson(data);
@@ -35,37 +35,14 @@
 					return data;
 				}
 			},
-			'getCurrentUserData' : {
+			'getPublic' : {
 				method : 'GET',
-				url: "/api/users/current/:id",
+				url: host+'/api/public',
 				transformResponse : function(data) {
 					if (data) {
 						data = angular.fromJson(data);
 					}
 					return data;
-				}
-			},
-			'getAll' : {
-				method : 'GET',
-				isArray: true,
-				transformResponse : function(data) {
-					if (data) {
-						data = angular.fromJson(data);
-					}
-					return data;
-				}
-			},
-			'updateCurrent' : {
-				method : 'PUT',
-				url: 'api/agent/current',
-				transformRequest : function(data) {
-					return angular.toJson(data);
-				}
-			},
-			'update' : {
-				method : 'PUT',
-				transformRequest : function(data) {
-					return angular.toJson(data);
 				}
 			},
 			'login' : {

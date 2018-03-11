@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import com.folaukaveinga.api.model.User;
+
 @Component
 public class JwtTokenUtil implements Serializable {
 
@@ -25,7 +27,7 @@ public class JwtTokenUtil implements Serializable {
     private Clock clock = DefaultClock.INSTANCE;
 
     //@Value("${jwt.secret}")
-    private String secret = "secret";
+    private String secret = "folau-secret-key";
 
     //@Value("${jwt.expiration}")
     private Long expiration = 600L;
@@ -68,15 +70,18 @@ public class JwtTokenUtil implements Serializable {
         return false;
     }
 
-    public String generateToken(String username) {
+    public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, username);
+        claims.put("id", user.getId());
+        claims.put("email", user.getEmail());
+        claims.put("roles", user.getRoles());
+        return doGenerateToken(claims, user.getEmail());
     }
     
-    public String generateToken(UserDetails userDetails) {
-        Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, userDetails.getUsername());
-    }
+//    public String generateToken(UserDetails userDetails) {
+//        Map<String, Object> claims = new HashMap<>();
+//        return doGenerateToken(claims, userDetails.getUsername());
+//    }
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         final Date createdDate = clock.now();

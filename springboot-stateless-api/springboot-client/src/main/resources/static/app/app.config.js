@@ -28,6 +28,7 @@
 			responseError : function(error) {
 				if (error.status === 401 || error.status === 403) {
 					TokenStorage.clear();
+					$log.log("token cleared!");
 				}
 				return $q.reject(error);
 			}

@@ -1,6 +1,7 @@
 package com.folaukaveinga.api.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,15 +16,13 @@ public class UserService implements UserDAO {
 	List<User> users = new ArrayList<>();
 	
 	{
-		users.add(new User(1));
-		users.add(new User(2));
-		users.add(new User(3));
-		users.add(new User(4));
+		users.add(new User(1,"user@gmail.com","$2a$10$OKzfs9hLkJMD5lka8ha11e41dbfzAHTvzqPuf/.GbW.5ja4hp.ola", Arrays.asList("ROLE_USER")));
+		users.add(new User(2,"admin@gmail.com","$2a$10$86jJXgGwQvUEVVHkBiRl.uVHOREUbsf9ptE0ctc.GNqggwDeCAhX6", Arrays.asList("ROLE_USER","ROLE_ADMIN")));
+		users.add(new User(3,"disabled@gmail.com","$2a$10$OKzfs9hLkJMD5lka8ha11e41dbfzAHTvzqPuf/.GbW.5ja4hp.ola", Arrays.asList("ROLE_DISABLED")));
 	}
 
 	@Override
 	public User saveUser(User user) {
-		user.setStatus("saved");
 		return user;
 	}
 
@@ -34,7 +33,7 @@ public class UserService implements UserDAO {
 				return user;
 			}
 		}
-		return null;
+		return new User();
 	}
 
 	@Override
@@ -48,10 +47,19 @@ public class UserService implements UserDAO {
 		while (it.hasNext()) {
 			User u = it.next();
 			if(user.getId()==u.getId()) {
-				
 				it.remove();
 			}
 		}
+	}
+
+	@Override
+	public User getUserByEmail(String email) {
+		for(User user : users) {
+			if(user.getEmail().equals(email)) {
+				return user;
+			}
+		}
+		return new User();
 	}
 
 }

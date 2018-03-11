@@ -12,27 +12,17 @@
 <script th:src="@{/bower_components/angular-ui-router/release/angular-ui-router.js}"></script>
 <script th:src="@{/bower_components/angular-messages/angular-messages.js}"></script>
 
+<!-- jwt-decode -->
+<script th:src="@{/bower_components/jwt-decode/build/jwt-decode.js}"></script>
+
 <!-- app setup -->
 <script th:src="@{/app/app.module.js}"></script>
 <script th:src="@{/app/app.state.js}"></script>
 <script th:src="@{/app/app.config.js}"></script>
-<script th:src="@{/app/navbar.js}"></script>
 
 <!-- home -->
 <script th:src="@{/app/home/home.state.js}"></script>
 <script th:src="@{/app/home/home.controller.js}"></script>
-
-<!-- login -->
-<script th:src="@{/app/login/login.state.js}"></script>
-<script th:src="@{/app/login/login.controller.js}"></script>
-
-<!-- logout -->
-<script th:src="@{/app/logout/logout.state.js}"></script>
-<script th:src="@{/app/logout/logout.controller.js}"></script>
-
-<!-- user -->
-<script th:src="@{/app/user/user.state.js}"></script>
-<script th:src="@{/app/user/user.controller.js}"></script>
 
 <!-- user - service -->
 <script th:src="@{/app/services/user.service.js}"></script>

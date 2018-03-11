@@ -1,6 +1,7 @@
 package com.folaukaveinga.api.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -18,24 +19,28 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import com.folaukaveinga.api.security.AuthFilter;
-import com.folaukaveinga.api.security.CustomAuthenticationProvider;
+import com.folaukaveinga.api.security.AuthenticationFilter;
 import com.folaukaveinga.api.security.LoginFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled=true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private AuthFilter authFilter;
+	private AuthenticationFilter authFilter;
 	
 	@Autowired
     private AuthenticationManager authenticationManager;
 	
+	
+	// this bean makes sure a request is not duplicated
 	@Bean
-	public AuthenticationProvider customAuthenticationProvider() {
-		return new CustomAuthenticationProvider();
+	public FilterRegistrationBean filterRegistrationBean() {
+		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+		filterRegistrationBean.setFilter(authFilter);
+		filterRegistrationBean.setEnabled(false);
+		return filterRegistrationBean;
 	}
 	
 	@Bean
@@ -50,18 +55,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable().authorizeRequests().antMatchers(HttpMethod.POST, "/api/login").permitAll()
-				.anyRequest().hasAnyAuthority("USER").and()
+		http.cors().and().csrf().disable()
+				.authorizeRequests()
+					.antMatchers(HttpMethod.POST, "/api/login").permitAll()
+					.antMatchers("/api/public", "/api/public/**").permitAll()
+				.anyRequest().authenticated()
+				.and()
 				.addFilterBefore(loginFilter(),UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
 
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-	}
-
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("username").password("test12").authorities("USER");
-		//auth.authenticationProvider(customAuthenticationProvider());
 	}
 
 	@Bean

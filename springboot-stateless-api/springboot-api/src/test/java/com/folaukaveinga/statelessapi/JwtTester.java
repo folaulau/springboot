@@ -29,35 +29,35 @@ public class JwtTester {
 	
 	@Test
 	public void test() {
-		String username = "folaukaveinga@gmail.com";
-		String jwtToken = twtTokenUtil.generateToken(username);
-		
-		
-		String confirmedUsername = twtTokenUtil.getUsernameFromToken(jwtToken);
-		
-		System.out.println("username: "+username);
-		System.out.println("confirmedUsername: "+confirmedUsername);
-		System.out.println("token: "+jwtToken);
-		
-		try {
-			Thread.sleep(1000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		boolean result = twtTokenUtil.isTokenExpired(jwtToken);
-		
-		System.out.println("result: "+result);
-		
-		try {
-			Thread.sleep(1000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		result = twtTokenUtil.isTokenExpired(jwtToken);
-		
-		System.out.println("result: "+result);
+//		String username = "folaukaveinga@gmail.com";
+//		String jwtToken = twtTokenUtil.generateToken(username);
+//		
+//		
+//		String confirmedUsername = twtTokenUtil.getUsernameFromToken(jwtToken);
+//		
+//		System.out.println("username: "+username);
+//		System.out.println("confirmedUsername: "+confirmedUsername);
+//		System.out.println("token: "+jwtToken);
+//		
+//		try {
+//			Thread.sleep(1000);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		
+//		boolean result = twtTokenUtil.isTokenExpired(jwtToken);
+//		
+//		System.out.println("result: "+result);
+//		
+//		try {
+//			Thread.sleep(1000);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//		
+//		result = twtTokenUtil.isTokenExpired(jwtToken);
+//		
+//		System.out.println("result: "+result);
 		
 	}
 

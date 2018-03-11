@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.folaukaveinga.api.dao.UserDAO;
+import com.folaukaveinga.api.model.Status;
 import com.folaukaveinga.api.model.User;
 
 @RestController
@@ -27,19 +29,17 @@ public class UserController {
 	@Autowired
 	private UserDAO userService;
 	
-	
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
-	public ResponseEntity<List<User>> getAllUsers(HttpServletRequest request, HttpServletResponse response){
-		log.info("get all users");
-		List<User> users = userService.getAllUsers();
-		return new ResponseEntity<>(users, HttpStatus.OK);
+	public ResponseEntity<Status> getUser(HttpServletRequest request, HttpServletResponse response){
+		log.info("get user required role USER");
+		return new ResponseEntity<>(new Status("good","Hello from role USER"), HttpStatus.OK);
 	}
 	
-	
-	@RequestMapping(value={"/{id}","/{id}/"}, method=RequestMethod.GET)
-	public ResponseEntity<User> getUserById(@PathVariable long id){
-		log.info("get user by id: {}",id);
-		User user = userService.getUserById(id);
-		return new ResponseEntity<>(user, HttpStatus.OK);
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+	@RequestMapping(value={"/admin","/admin/"}, method=RequestMethod.GET)
+	public ResponseEntity<Status> admin(){
+		log.info("get user required role ADMIN");
+		return new ResponseEntity<>(new Status("good","Hello from role ADMIN"), HttpStatus.OK);
 	}
 }
