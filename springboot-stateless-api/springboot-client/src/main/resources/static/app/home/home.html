@@ -1,0 +1,104 @@
+<div class="row" ng-controller="RestApiController as rest">
+	<div class="col-xs-12 col-md-10 col-md-offset-1">
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-12" style="text-align: center;">
+				<h1>Rest API</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<div ng-if="rest.userAuthenticated==false" class = "alert alert-danger">You are not logged in.</div>
+				<div ng-if="rest.userAuthenticated" class = "alert alert-success">You are currently logged in.</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<div class="panel panel-default" ng-if="rest.userAuthenticated==false">
+		            <div class="panel-heading">
+		               <h3 class="panel-title">Login</h3>
+		            </div>
+		            <div class="panel-body">
+		               <form id="loginForm">
+		                  <div class="form-group">
+		                     <input type="text" class="form-control" ng-model="rest.loginData.username">
+		                  </div>
+		                  <div class="form-group">
+		                     <input type="password" class="form-control" ng-model="rest.loginData.password">
+		                  </div>
+		                  <div class="well">
+		                     Try one of the following logins
+		                     <ul>
+		                        <li>admin@gmail.com & admin</li>
+		                        <li>user@gmail.com & password</li>
+		                        <li>disabled@gmail.com & password</li>
+		                     </ul>
+		                  </div>
+		                  <button type="button" class="btn btn-default" ng-click="rest.login()">login</button>
+		               </form>
+		            </div>
+		         </div>
+		         <div class="panel panel-default" ng-if="rest.userAuthenticated">
+		            <div class="panel-heading">
+		               <h3 class="panel-title">User Info</h3>
+		            </div>
+		            <div class="panel-body">
+		               	<div class="row">
+							<div class="col-xs-12 col-md-12">
+								<pre>{{rest.userData | json}}</pre>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-xs-12 col-md-12">
+								<button type="button" class="btn btn-default" ng-click="rest.logout()">logout</button>
+							</div>
+						</div>
+		            </div>
+		         </div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class="panel panel-default">
+				            <div class="panel-heading">
+				               <h3 class="panel-title">Rest Calls</h3>
+				            </div>
+				            <div class="panel-body">
+				            		<div class="row">
+									<div class="col-xs-12 col-md-4">
+										<button type="button" class="btn btn-default btn-block" ng-click="rest.callPublicService()">public service</button>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<button type="button" class="btn btn-default btn-block" ng-click="rest.callPropectedService()">user service</button>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<button type="button" class="btn btn-default btn-block" ng-click="rest.callAdminService()">admin service</button>
+									</div>
+								</div>
+								<br>
+				               <div class="row">
+									<div class="col-xs-12 col-md-12">
+										<b>Response</b>
+									</div>
+							   </div>
+							   <br>
+							   <div class="row">
+									<div class="col-xs-12 col-md-12">
+										<pre>{{rest.response | json}}</pre>
+									</div>
+							   </div>
+				            </div>
+				         </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
