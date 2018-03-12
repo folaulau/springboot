@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.filter.GenericFilterBean;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.folaukaveinga.api.model.Status;
 import com.folaukaveinga.api.model.User;
 @Service
 public class AuthenticationFilter extends GenericFilterBean{
@@ -48,10 +49,10 @@ public class AuthenticationFilter extends GenericFilterBean{
 			httpResponse.setStatus(HttpServletResponse.SC_OK);
 			filterChain.doFilter(request, response);
 		}else {
-			log.info("Not authorized");
+			log.info("Not Authorized");
 			response.setCharacterEncoding("UTF-8");
 			httpResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			httpResponse.getWriter().write("Not authorized");
+			httpResponse.getWriter().write(new ObjectMapper().writeValueAsString(new Status("error","Not Authorized")));
 		}
 	}
 

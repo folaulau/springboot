@@ -10,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -34,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private AuthenticationManager authenticationManager;
 	
 	
-	// this bean makes sure a request is not duplicated
+	// this bean makes sure a request is not only handled once
 	@Bean
 	public FilterRegistrationBean filterRegistrationBean() {
 		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
@@ -61,16 +62,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.antMatchers("/api/public", "/api/public/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
-				.addFilterBefore(loginFilter(),UsernamePasswordAuthenticationFilter.class)
+				.addFilterBefore(loginFilter(), UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
 
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
-
-	@Bean
-	public CorsConfigurationSource corsConfigurationSource() {
-		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-		return source;
+	
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		
+		// ignore public rest calls
+		web.ignoring().antMatchers("/api/public/**");
 	}
 }
