@@ -15,10 +15,10 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	@Async
-	public Future<User> findByAge(int age);
+	public Future<List<User>> findByAge(int age);
 	
 	@Async
-	public CompletableFuture<User> findByName(String name);
+	public CompletableFuture<List<User>> findByName(String name);
 	
 	@Async
 	public ListenableFuture<User> findByEmail(String email);

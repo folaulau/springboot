@@ -22,6 +22,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
@@ -35,10 +37,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Table(name="user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	@JsonIgnore
-	@Transient
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -114,13 +112,29 @@ public class User implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public Logger getLog() {
-		return log;
-	}
 	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(17, 37).
+			       append(name).
+			       append(age).
+			       append(email).
+			       toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		User otherUser = (User)other;
+		return new EqualsBuilder()
+                .append(this.name, otherUser.name)
+                .append(this.age, otherUser.age)
+                .append(this.email, otherUser.email)
+                .isEquals();
 	}
 
 	public static User fromJson(String json){
