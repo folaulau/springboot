@@ -1,0 +1,117 @@
+<div class="row" ng-controller="FormUploadDownloadController as form">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+		<h1>Upload File(s)</h1>
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Upload Single File</h3>
+				<form role = "form">
+					<div ng-repeat="attachment in form.attachments">
+						{{attachment.name}}
+						<br>
+					</div>
+				   <div class = "form-group">
+				      <label for = "inputfile">File</label>
+				      <input type = "file" id = "file">
+				      <p class = "help-block">Example of upload file here.</p>
+				   </div>
+				   <button type = "button" ng-click="form.uploadFile()" class = "btn btn-default">Upload One File</button>
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Upload Multiple Files</h3>
+				<form role = "form">
+					<div ng-repeat="attachment in form.attachments">
+						{{attachment.name}}
+						<br>
+					</div>
+				   <div class = "form-group">
+				      <label for = "inputfile">Files</label>
+				      <input type = "file" id = "files" multiple>
+				      <p class = "help-block">Example of upload multiple files here.</p>
+				   </div>
+				   <button type = "button" ng-click="form.uploadFiles()" class = "btn btn-default">Upload Multiple Files</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Upload One Attachment - File within an Object</h3>
+				<form role = "form">
+					<div ng-repeat="attachment in form.attachments">
+						{{attachment.name}}
+						<br>
+					</div>
+				   <div class = "form-group">
+				      <label for = "inputfile">Attachment</label>
+				      <input type = "file" id = "attachment">
+				      <p class = "help-block">Example of upload one attachment here.</p>
+				   </div>
+				   <button type = "button" ng-click="form.uploadAttachment()" class = "btn btn-default">Upload One Attachment</button>
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Upload Mulitple Attachments - File within an Object</h3>
+				<form role = "form">
+					<div ng-repeat="attachment in form.attachments">
+						{{attachment.name}}
+						<br>
+						
+					</div>
+				   <div class = "form-group">
+				      <label for = "inputfile">Attachments</label>
+				      <input type = "file" id = "attachments" multiple>
+				      <p class = "help-block">Example of upload multiple attachments here.</p>
+				   </div>
+				   <button type = "button" ng-click="form.uploadAttachments()" class = "btn btn-default">Upload Multiple Attachment</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Upload Mulitple Attachments - List of files within an Object</h3>
+				<form role = "form">
+					<div ng-repeat="attachment in form.attachments">
+						{{attachment.name}}
+						<br>
+						
+					</div>
+				   <div class = "form-group">
+				      <label for = "inputfile">Candidate Attachment</label>
+				      <input type = "file" id = "candidateFile">
+				      <p class = "help-block">Example of upload one attachment here.</p>
+				   </div>
+				   <button type = "button" ng-click="form.saveCandidate()" class = "btn btn-default">Save Candidate</button>
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			</div>
+		</div>
+		<br>
+		<h1>Dowload File(s)</h1>
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+				<h3>Download one file (<i>file should be in program root folder</i>)</h3>
+				<div class = "form-group">
+			      <label for = "name">Filename</label>
+			      <input type = "text" ng-model="form.download.filename" class = "form-control" id = "name" placeholder = "Enter Name">
+			   	</div>
+				<form role = "form">
+				   <button type = "button" ng-click="form.downloadOneFile(form.download.filename)" class = "btn btn-default">Download</button>
+				</form>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
