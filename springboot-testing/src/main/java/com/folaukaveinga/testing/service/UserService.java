@@ -71,4 +71,14 @@ public class UserService {
 	public User update(User user) {
 		return userRepository.save(user);
 	}
+	
+	public boolean remove(long id) {
+		try {
+			userRepository.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
 }

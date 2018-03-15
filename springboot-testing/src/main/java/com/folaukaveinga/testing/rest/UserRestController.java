@@ -53,10 +53,16 @@ public class UserRestController {
 		return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value={"/update","/update/"}, method=RequestMethod.POST)
+	@RequestMapping(value={"/update","/update/"}, method=RequestMethod.PATCH)
 	public ResponseEntity<User> update(@RequestBody User user){
-		log.info("update user: "+user.toString());
+		log.info("patching user: "+user.toString());
 		return new ResponseEntity<>(userService.update(user), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value={"/remove/{id}","/remove/{id}/"}, method=RequestMethod.DELETE)
+	public ResponseEntity<Boolean> remove(@PathVariable long id){
+		log.info("remove user with id: {}",id);
+		return new ResponseEntity<>(userService.remove(id), HttpStatus.OK);
 	}
 
 }
