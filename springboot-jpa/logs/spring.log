@@ -2180,3 +2180,117 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2018-01-26 01:02:00 [JPA-THREAD-1] [INFO ] o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2018-01-26 01:02:00 [Thread-4] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
 2018-01-26 01:02:00 [Thread-4] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-21 00:31:52 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro.local with PID 16718 (/Users/fkaveinga/Github/springboot/springboot-jpa/target/classes started by fkaveinga in /Users/fkaveinga/Github/springboot/springboot-jpa)
+2018-03-21 00:31:52 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-03-21 00:31:52 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d2fd867: startup date [Wed Mar 21 00:31:52 PDT 2018]; root of context hierarchy
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:270 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$ba1441c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-03-21 00:31:53 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatEmbeddedServletContainerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.config.internalCacheAdvisor' defined in class path resource [org/springframework/cache/annotation/ProxyCachingConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor]: Factory method 'cacheAdvisor' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cacheAutoConfigurationValidator': Unsatisfied dependency expressed through field 'cacheManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/RedisCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.data.redis.core.RedisTemplate<java.lang.Object, java.lang.Object>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2018-03-21 00:31:53 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-21 00:31:53 [restartedMain] [ERROR] o.s.b.d.LoggingFailureAnalysisReporter:42 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method cacheManager in org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration required a bean of type 'org.springframework.data.redis.core.RedisTemplate' that could not be found.
+	- Bean method 'redisTemplate' in 'RedisAutoConfiguration.RedisConfiguration' not loaded because @ConditionalOnMissingBean (names: redisTemplate; SearchStrategy: all) found bean 'redisTemplate'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.data.redis.core.RedisTemplate' in your configuration.
+
+2018-03-21 00:32:55 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro.local with PID 16719 (/Users/fkaveinga/Github/springboot/springboot-jpa/target/classes started by fkaveinga in /Users/fkaveinga/Github/springboot/springboot-jpa)
+2018-03-21 00:32:55 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-03-21 00:32:55 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@27702ddf: startup date [Wed Mar 21 00:32:55 PDT 2018]; root of context hierarchy
+2018-03-21 00:32:55 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:32:55 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:32:55 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:270 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-21 00:32:56 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$fcc433a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-21 00:32:56 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-03-21 00:32:56 [restartedMain] [WARN ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:551 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatEmbeddedServletContainerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.config.internalCacheAdvisor' defined in class path resource [org/springframework/cache/annotation/ProxyCachingConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor]: Factory method 'cacheAdvisor' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cacheAutoConfigurationValidator': Unsatisfied dependency expressed through field 'cacheManager'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cacheManager' defined in class path resource [org/springframework/boot/autoconfigure/cache/RedisCacheConfiguration.class]: Unsatisfied dependency expressed through method 'cacheManager' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.data.redis.core.RedisTemplate<java.lang.Object, java.lang.Object>' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2018-03-21 00:32:56 [restartedMain] [INFO ] o.s.b.a.l.AutoConfigurationReportLoggingInitializer:101 - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-03-21 00:32:56 [restartedMain] [ERROR] o.s.b.d.LoggingFailureAnalysisReporter:42 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method cacheManager in org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration required a bean of type 'org.springframework.data.redis.core.RedisTemplate' that could not be found.
+	- Bean method 'redisTemplate' in 'RedisAutoConfiguration.RedisConfiguration' not loaded because @ConditionalOnMissingBean (names: redisTemplate; SearchStrategy: all) found bean 'redisTemplate'
+
+
+Action:
+
+Consider revisiting the conditions above or defining a bean of type 'org.springframework.data.redis.core.RedisTemplate' in your configuration.
+
+2018-03-21 00:35:47 [restartedMain] [INFO ] c.f.s.SpringbootApplication:48 - Starting SpringbootApplication on Folaus-MacBook-Pro.local with PID 16741 (/Users/fkaveinga/Github/springboot/springboot-jpa/target/classes started by fkaveinga in /Users/fkaveinga/Github/springboot/springboot-jpa)
+2018-03-21 00:35:47 [restartedMain] [INFO ] c.f.s.SpringbootApplication:597 - The following profiles are active: dev
+2018-03-21 00:35:47 [restartedMain] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:583 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d2fd867: startup date [Wed Mar 21 00:35:47 PDT 2018]; root of context hierarchy
+2018-03-21 00:35:48 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:35:48 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:165 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-21 00:35:48 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:270 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-21 00:35:48 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:327 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$ba1441c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-21 00:35:48 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:165 - Initializing ExecutorService 
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:89 - Tomcat initialized with port(s): 8082 (http)
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.a.c.c.StandardService:179 - Starting service [Tomcat]
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-21 00:35:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.h.Version:37 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2018-03-21 00:35:54 [restartedMain] [INFO ] o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-21 00:35:55 [restartedMain] [INFO ] o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-21 00:35:55 [restartedMain] [INFO ] o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2018-03-21 00:35:55 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-21 00:35:56 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:58 - LiveReload server is running on port 35729
+2018-03-21 00:35:56 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2018-03-21 00:35:56 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:343 - Starting beans in phase 2147483647
+2018-03-21 00:35:56 [restartedMain] [INFO ] o.s.b.c.e.t.TomcatEmbeddedServletContainer:201 - Tomcat started on port(s): 8082 (http)
+2018-03-21 00:36:01 [restartedMain] [INFO ] c.f.s.SpringbootApplication:57 - Started SpringbootApplication in 24.285 seconds (JVM running for 29.767)
+2018-03-21 00:36:11 [http-nio-8082-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-21 00:36:11 [http-nio-8082-exec-1] [INFO ] c.f.s.r.UserRestController:51 - get all users
+2018-03-21 00:36:11 [http-nio-8082-exec-1] [INFO ] o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-21 00:36:24 [http-nio-8082-exec-3] [INFO ] c.f.s.r.UserRestController:51 - get all users
+2018-03-21 00:36:33 [http-nio-8082-exec-4] [INFO ] c.f.s.r.UserRestController:51 - get all users
+2018-03-21 00:36:39 [http-nio-8082-exec-5] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 1
+2018-03-21 00:36:39 [http-nio-8082-exec-5] [INFO ] c.f.s.s.UserService:33 - get user by id: 1
+2018-03-21 00:36:44 [http-nio-8082-exec-6] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 1
+2018-03-21 00:36:55 [http-nio-8082-exec-7] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:36:55 [http-nio-8082-exec-7] [INFO ] c.f.s.s.UserService:33 - get user by id: 2
+2018-03-21 00:37:02 [http-nio-8082-exec-8] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:08 [http-nio-8082-exec-9] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:08 [http-nio-8082-exec-10] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:08 [http-nio-8082-exec-2] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:09 [http-nio-8082-exec-1] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:09 [http-nio-8082-exec-3] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:09 [http-nio-8082-exec-4] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:10 [http-nio-8082-exec-5] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:10 [http-nio-8082-exec-6] [INFO ] c.f.s.r.UserRestController:45 - get user by id: 2
+2018-03-21 00:37:53 [http-nio-8082-exec-7] [INFO ] c.f.s.r.UserRestController:51 - get all users
+2018-03-21 00:38:01 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2018-03-21 00:38:01 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:984 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d2fd867: startup date [Wed Mar 21 00:35:47 PDT 2018]; root of context hierarchy
+2018-03-21 00:38:01 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.c.s.DefaultLifecycleProcessor:358 - Stopping beans in phase 2147483647
+2018-03-21 00:38:01 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2018-03-21 00:38:01 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:548 - Closing JPA EntityManagerFactory for persistence unit 'default'
