@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.folaukaveinga.testing.domain.User;
@@ -28,6 +29,7 @@ public class UserService {
 	}
 	
 	// cache this query
+	@Cacheable(value = "user_id")
 	public User get(long id){
 		log.info("get user by id: {}",id);
 		return userRepository.getOne(id);
@@ -42,7 +44,7 @@ public class UserService {
 		}
 		return new User();
 	}
-	
+	@Cacheable(value = "user_name")
 	public User getByName(String name){
 		log.info("get user by name: {}",name);
 		try {
@@ -63,6 +65,7 @@ public class UserService {
 		return new User();
 	}
 	
+	@Cacheable(value = "user_all")
 	public List<User> getAll(){
 		return userRepository.findAll();
 	}
