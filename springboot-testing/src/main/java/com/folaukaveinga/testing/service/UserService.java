@@ -27,6 +27,7 @@ public class UserService {
 		return user;
 	}
 	
+	// cache this query
 	public User get(long id){
 		log.info("get user by id: {}",id);
 		return userRepository.getOne(id);
