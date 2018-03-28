@@ -1,2 +1,2 @@
 DROP DATABASE `spring_boot`;
-CREATE SCHEMA `spring_boot` ;
+CREATE SCHEMA `spring_boot`;

@@ -19,11 +19,25 @@ public class Home implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column(name = "name")
 	private String name;
+	
+	public Home() {
+		this(null);
+	}
+	
+	public Home(String name) {
+		this(0,name);
+	}
+
+	public Home(long id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 
 	public long getId() {
 		return id;

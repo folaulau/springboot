@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -23,15 +24,30 @@ public class Car implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column(name = "name")
 	private String name;
 	
+	@JsonIgnoreProperties("car")
 	@ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
     private User user;
+	
+	public Car() {
+		this(null);
+	}
+	
+	public Car(String name) {
+		this(0,name,null);
+	}
+
+	public Car(long id, String name, User user) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.user = user;
+	}
 
 	public long getId() {
 		return id;

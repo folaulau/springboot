@@ -59,8 +59,8 @@ public class UserServiceTest {
 	@Test
 	public void testGetByEmail() {
 		System.out.println("test getByEmail");
-		User user = userService.getByEmail("folaudev@gmail.com");
-		System.out.println(user.toString());
+		//User user = userService.getByEmail("folaudev@gmail.com");
+		//System.out.println(user.toString());
 		System.out.println("getByEmail done!");
 	}
 

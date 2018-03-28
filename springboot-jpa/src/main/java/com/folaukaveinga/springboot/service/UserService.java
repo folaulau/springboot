@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.repository.UserRepository;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 @Service
 public class UserService {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -31,7 +34,7 @@ public class UserService {
 	@Cacheable(value = "user_id")
 	public User get(long id){
 		log.info("get user by id: {}",id);
-		return userRepository.findOne(id);
+		return userRepository.getOne(id);
 	}
 	
 	public User getByAge(int age){
@@ -54,14 +57,25 @@ public class UserService {
 		return new User();
 	}
 	
-	public User getByEmail(String email) {
+	public Mono<User> getByEmail(String email) {
 		log.info("get user by email: {}",email);
 		try {
-			return userRepository.findByEmail(email).get();
-		} catch (InterruptedException | ExecutionException e) {
+			return userRepository.findByEmail(email);
+		} catch (Exception e) {
 			log.warn("Exception, msg: {}",e.getMessage());
+			return null;
 		}
-		return new User();
+		
+	}
+	
+	public Flux<User> getByLastName(String lastname) {
+		log.info("get user by lastname: {}",lastname);
+		try {
+			return userRepository.findByLastName(lastname);
+		} catch (Exception e) {
+			log.warn("Exception, msg: {}",e.getMessage());
+			return null;
+		}
 	}
 	
 	@Cacheable(value = "user_all")

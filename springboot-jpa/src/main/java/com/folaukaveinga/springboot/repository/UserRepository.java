@@ -8,6 +8,10 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.util.concurrent.ListenableFuture;
 
 import com.folaukaveinga.springboot.domain.User;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 import java.lang.String;
 import java.util.List;
 
@@ -16,9 +20,12 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	@Async
 	public Future<User> findByAge(int age);
 	
-	@Async
-	public CompletableFuture<User> findByName(String name);
+	
+	Flux<User> findByLastName(String lastName);
+
 	
 	@Async
-	public ListenableFuture<User> findByEmail(String email);
+	public CompletableFuture<User> findByName(String name);
+
+	Mono<User> findByEmail(String email);
 }

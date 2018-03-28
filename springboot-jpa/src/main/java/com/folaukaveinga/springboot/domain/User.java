@@ -3,6 +3,7 @@ package com.folaukaveinga.springboot.domain;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -32,6 +33,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -50,7 +52,7 @@ public class User implements Serializable {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long id;
 
@@ -62,25 +64,26 @@ public class User implements Serializable {
 
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "last_name")
+	private String lastName;
 
 	@Type(type = "true_false")
 	private Boolean active;
 
-	@JsonInclude(value = Include.NON_NULL)
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "user_address", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "address_id"))
 	private Set<Address> addresses;
 
 	// bidirectional one to many
-	@JsonInclude(value = Include.NON_NULL)
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true, fetch = FetchType.LAZY)
-	@Fetch(value = FetchMode.SUBSELECT)
+	@JsonIgnoreProperties("user")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
 	private Set<Car> cars;
 
 	// unidirectional one to many
-	@JsonInclude(value = Include.NON_NULL)
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-	@Fetch(value = FetchMode.SUBSELECT)
+	@JsonIgnoreProperties("user")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private Set<Home> homes;
 
@@ -139,6 +142,13 @@ public class User implements Serializable {
 	public void setAddresses(Set<Address> addresses) {
 		this.addresses = addresses;
 	}
+	
+	public void addAddress(Address address) {
+		if(this.addresses == null){
+			this.addresses = new HashSet<>();
+		}
+		this.addresses.add(address);
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -152,6 +162,14 @@ public class User implements Serializable {
 		return active;
 	}
 
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
@@ -163,6 +181,13 @@ public class User implements Serializable {
 	public void setCars(Set<Car> cars) {
 		this.cars = cars;
 	}
+	
+	public void addCar(Car car) {
+		if(this.cars == null){
+			this.cars = new HashSet<>();
+		}
+		this.cars.add(car);
+	}
 
 	public Set<Home> getHomes() {
 		return homes;
@@ -170,6 +195,13 @@ public class User implements Serializable {
 
 	public void setHomes(Set<Home> homes) {
 		this.homes = homes;
+	}
+	
+	public void addHome(Home home) {
+		if(this.homes == null){
+			this.homes = new HashSet<>();
+		}
+		this.homes.add(home);
 	}
 
 	@Override
