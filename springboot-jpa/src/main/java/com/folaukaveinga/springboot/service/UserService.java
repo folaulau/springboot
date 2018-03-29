@@ -57,26 +57,26 @@ public class UserService {
 		return new User();
 	}
 	
-	public Mono<User> getByEmail(String email) {
-		log.info("get user by email: {}",email);
-		try {
-			return userRepository.findByEmail(email);
-		} catch (Exception e) {
-			log.warn("Exception, msg: {}",e.getMessage());
-			return null;
-		}
-		
-	}
+//	public Mono<User> getByEmail(String email) {
+//		log.info("get user by email: {}",email);
+//		try {
+//			return userRepository.findByEmail(email);
+//		} catch (Exception e) {
+//			log.warn("Exception, msg: {}",e.getMessage());
+//			return null;
+//		}
+//		
+//	}
 	
-	public Flux<User> getByLastName(String lastname) {
-		log.info("get user by lastname: {}",lastname);
-		try {
-			return userRepository.findByLastName(lastname);
-		} catch (Exception e) {
-			log.warn("Exception, msg: {}",e.getMessage());
-			return null;
-		}
-	}
+//	public Flux<User> getByLastName(String lastname) {
+//		log.info("get user by lastname: {}",lastname);
+//		try {
+//			return userRepository.findByLastName(lastname);
+//		} catch (Exception e) {
+//			log.warn("Exception, msg: {}",e.getMessage());
+//			return null;
+//		}
+//	}
 	
 	@Cacheable(value = "user_all")
 	public List<User> getAll(){

@@ -8627,3 +8627,1042 @@ Caused by: org.hibernate.HibernateException: A collection with cascade="all-dele
 2018-03-28 00:55:13 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
 2018-03-28 00:55:13 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=zkASS,age=-1201574684,email=FVxcvayeMM,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=32, name=AOvrYlFq]],homes=[Home [id=30, name=nKexwvca]]]
 2018-03-28 00:55:13 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:01:19 [Thread-165] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@21ce472f: startup date [Wed Mar 28 00:55:11 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:19 [Thread-165] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:01:19 [Thread-165] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:01:19 [Thread-165] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:01:19 [Thread-165] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:19 [Thread-165] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:01:19 [Thread-165] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:01:19 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:01:19 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:01:19 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8d0d13c: startup date [Wed Mar 28 01:01:19 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:01:20 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:01:20 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:01:20 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:01:20 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:21 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:01:21 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.834 seconds (JVM running for 2720.31)
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=pmbQi,age=2067325808,email=yDNKTrWxtk,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=33, name=CpypNmvs]],homes=[Home [id=31, name=WPezArCG]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=JrGDN,age=-662615244,email=IqZAnMfdUB,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=34, name=HRFxvVON]],homes=[Home [id=32, name=XxjfWZyR]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=XUdsZ,age=-1517010406,email=mSnscHdpIk,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=35, name=TJBTgftZ]],homes=[Home [id=33, name=wdbPvbdM]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=bKtLm,age=1274413066,email=gTviQLtIXS,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=36, name=BYkpiEGY]],homes=[Home [id=34, name=mpmVgott]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=GisNw,age=-1577900038,email=acxrzmnwlD,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=37, name=KZDJKuCC]],homes=[Home [id=35, name=GqdPrMcO]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=tbuMS,age=-953006080,email=cGhvPKHSoA,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=38, name=FWJrIOEQ]],homes=[Home [id=36, name=fZOimLuT]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=wJyfk,age=1257133186,email=GdNVuPwcVy,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=39, name=oubsJYWL]],homes=[Home [id=37, name=ygMTqYiI]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=GYyPF,age=1798217128,email=lTxPIMWxEw,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=40, name=XxagJFbQ]],homes=[Home [id=38, name=OfGykNRf]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=ntcGr,age=513622964,email=DWyKuUXuug,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=41, name=blEAyFzh]],homes=[Home [id=39, name=EABWPXEi]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:22 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=JVXsK,age=1630819842,email=EcNyHnDxSx,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=42, name=GHywbujE]],homes=[Home [id=40, name=NMaONaYZ]]]
+2018-03-28 01:01:22 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:01:26 [Thread-171] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8d0d13c: startup date [Wed Mar 28 01:01:19 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:26 [Thread-171] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:01:26 [Thread-171] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:01:26 [Thread-171] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:01:26 [Thread-171] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:26 [Thread-171] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:01:26 [Thread-171] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:01:27 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:01:27 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@641814b1: startup date [Wed Mar 28 01:01:27 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:01:27 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:01:27 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:01:28 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:01:28 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:01:28 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:28 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:01:28 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:01:28 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:28 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.287 seconds (JVM running for 2727.292)
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=Peveb,age=1333879214,email=zuJnZPbvOJ,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=43, name=TwZIDLQt]],homes=[Home [id=41, name=vIsBisqG]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=SZmjx,age=1658425396,email=zqaKCqbUqx,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=44, name=wmSqSzpt]],homes=[Home [id=42, name=YrYPOZuC]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=dQyZM,age=-709336184,email=SxPOvlouOU,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=45, name=PZRtBiGq]],homes=[Home [id=43, name=Gzziqjzd]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=nUPyu,age=513797240,email=lvCLsknqXB,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=46, name=vYEtpGYy]],homes=[Home [id=44, name=sYfiBSvG]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=mOJgU,age=314235230,email=KJAjAXtTCF,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=47, name=UNcpoNtr]],homes=[Home [id=45, name=oLLTiHym]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=mzwXr,age=-1437385128,email=DJBqafxvoE,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=48, name=ADAQSMIO]],homes=[Home [id=46, name=nELFtHlc]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=CcGHP,age=-794210896,email=fHysIvnkZc,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=49, name=ENGLqooh]],homes=[Home [id=47, name=GMknkpjn]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=CEGMO,age=207924760,email=SROkwYLdLg,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=50, name=vfDzKtHq]],homes=[Home [id=48, name=NTfUFKrg]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=xuRdd,age=1132168680,email=SHPnoUUwBO,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=51, name=qYCcycRq]],homes=[Home [id=49, name=LheBBKpI]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:29 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=OpVpW,age=-665715340,email=VSUVDqnkVB,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=52, name=FTczAVbg]],homes=[Home [id=50, name=rKGmFWEy]]]
+2018-03-28 01:01:29 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:01:57 [Thread-177] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@641814b1: startup date [Wed Mar 28 01:01:27 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:57 [Thread-177] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:01:57 [Thread-177] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:01:57 [Thread-177] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:01:57 [Thread-177] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:57 [Thread-177] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:01:57 [Thread-177] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:01:57 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:01:57 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2233300f: startup date [Wed Mar 28 01:01:57 PDT 2018]; root of context hierarchy
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:01:57 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:01:57 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:01:58 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:01:58 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:01:58 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:01:58 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:01:58 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:01:58 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:01:58 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:01:58 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:58 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:01:58 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:01:58 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:01:58 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.41 seconds (JVM running for 2757.513)
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=vfsKk,age=-1953843140,email=YCwkkwFUox,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=53, name=PGPdrwdZ]],homes=[Home [id=51, name=tGQKJjLt]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=yesOl,age=1592779660,email=yzvuRnbjhq,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=54, name=MHvVASwi]],homes=[Home [id=52, name=xMYLYOBJ]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=wbkBh,age=1999162038,email=VSUdNbCzGq,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=55, name=VDfghhQX]],homes=[Home [id=53, name=xkdMwWeu]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=HSLoL,age=-1251363814,email=VzCBBklnsl,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=56, name=KnrxGwIe]],homes=[Home [id=54, name=HiokqhGN]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=qATFF,age=-1585188976,email=crxZhlWOLt,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=57, name=ClpSZgLs]],homes=[Home [id=55, name=rACQBibg]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=YCiJu,age=-197671444,email=JaphXbjSnK,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=58, name=TeTUClhd]],homes=[Home [id=56, name=aHTTHEhO]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=Gvunp,age=-516476220,email=XTMUowhqLt,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=59, name=uEZBtbRr]],homes=[Home [id=57, name=hNZZQeDB]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=hXaPy,age=1567706258,email=rIznychCZn,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=60, name=MXbbGDHl]],homes=[Home [id=58, name=nVgDSyvf]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=xpvxy,age=1709034724,email=dwRLtynPaL,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=61, name=QssaNfwf]],homes=[Home [id=59, name=eYPNeuWF]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:01:59 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=ZOEzX,age=1593153870,email=ZMKNVVoJXJ,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=62, name=rKSUxqIY]],homes=[Home [id=60, name=UuXasBAB]]]
+2018-03-28 01:01:59 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:02:05 [Thread-183] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2233300f: startup date [Wed Mar 28 01:01:57 PDT 2018]; root of context hierarchy
+2018-03-28 01:02:05 [Thread-183] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:02:05 [Thread-183] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:02:05 [Thread-183] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:02:05 [Thread-183] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:05 [Thread-183] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:02:05 [Thread-183] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:02:05 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:02:05 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:02:05 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6688db55: startup date [Wed Mar 28 01:02:05 PDT 2018]; root of context hierarchy
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:02:06 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:02:06 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:02:06 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:02:06 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:07 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:02:07 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.315 seconds (JVM running for 2766.074)
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=QUyhR,age=587747110,email=FsbRYidMnX,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=63, name=ddYmdrTO]],homes=[Home [id=61, name=LBfjXCqB]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=aLqNq,age=-1674315948,email=NQobSoARWq,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=64, name=nbAWLBcy]],homes=[Home [id=62, name=mjnbgvyN]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=jZnLU,age=-984613694,email=XHbidIGPgQ,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=65, name=QSsEcFiN]],homes=[Home [id=63, name=sQusHIDm]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=dsBpQ,age=-1005021388,email=vFdpcPMLlQ,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=66, name=BzasKrVb]],homes=[Home [id=64, name=LbCHykvC]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=SpfGT,age=-1925847680,email=OmHhXmfmHa,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=67, name=rTGeuDCg]],homes=[Home [id=65, name=GKMmcXhx]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=BpnYr,age=353910160,email=GHStmVxkfY,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=68, name=nQwsrYxs]],homes=[Home [id=66, name=rHRslDae]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=ZJQZw,age=4232588,email=gHjvuxJlcb,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=69, name=esHNbanQ]],homes=[Home [id=67, name=zvHtWOyU]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=QWezk,age=716941590,email=pPnFMbBbnP,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=70, name=TZVRjssE]],homes=[Home [id=68, name=npykAaDb]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=xiTmf,age=1956933260,email=uQkoQLWpDf,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=71, name=OFoPUibX]],homes=[Home [id=69, name=DOWdxHoK]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:08 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=gnyZh,age=1353114536,email=gcByCoXkEg,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=72, name=VmzxCMFS]],homes=[Home [id=70, name=RzYbTxFd]]]
+2018-03-28 01:02:08 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:02:42 [Thread-189] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6688db55: startup date [Wed Mar 28 01:02:05 PDT 2018]; root of context hierarchy
+2018-03-28 01:02:42 [Thread-189] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:02:42 [Thread-189] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:02:42 [Thread-189] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:02:42 [Thread-189] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:42 [Thread-189] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:02:42 [Thread-189] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:02:43 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:02:43 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8427364: startup date [Wed Mar 28 01:02:43 PDT 2018]; root of context hierarchy
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:02:43 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:02:43 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:02:44 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:02:44 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:02:44 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:02:44 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:02:44 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:02:44 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:02:44 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:02:44 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:44 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:02:44 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:02:44 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:02:45 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.752 seconds (JVM running for 2803.709)
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=WbatN,age=1810890228,email=AyJIFEmofM,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=73, name=WdqCYUAq]],homes=[Home [id=71, name=mMcrVYqM]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=stzpI,age=-567807264,email=OREsTVpleN,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=74, name=bOmjmBmv]],homes=[Home [id=72, name=gTtviQDv]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=zGrmA,age=1861674136,email=MLXsGhAtsW,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=75, name=GRjYqBdf]],homes=[Home [id=73, name=RGILKBYF]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=Abtxs,age=2115738550,email=EkqHevEhtY,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=76, name=ATOVxAZE]],homes=[Home [id=74, name=AplPeWyn]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=MSwaq,age=1842029442,email=JeUUEPOAIW,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=77, name=pEEicVOe]],homes=[Home [id=75, name=iDXAoVKq]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=arjVi,age=682503542,email=rkssNjKqIA,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=78, name=XFHEPgfd]],homes=[Home [id=76, name=CIeNnahT]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=hhePx,age=1664999940,email=RSlkNDrzAE,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=79, name=QbjDXWTT]],homes=[Home [id=77, name=gwKIyHtI]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=omokv,age=-1838577664,email=NuVIDDEKiI,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=80, name=cQANgJGj]],homes=[Home [id=78, name=xolKpodE]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=rxMxl,age=1365115154,email=KFApENtZTB,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=81, name=qsRbLDcZ]],homes=[Home [id=79, name=zsBYEIiy]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:02:45 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=WZxWX,age=-43986646,email=aElzbyXxwP,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=82, name=uYwWDtIp]],homes=[Home [id=80, name=pQRbSqIE]]]
+2018-03-28 01:02:45 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:03:04 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:03:53 [Thread-195] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8427364: startup date [Wed Mar 28 01:02:43 PDT 2018]; root of context hierarchy
+2018-03-28 01:03:53 [Thread-195] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:03:53 [Thread-195] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:03:53 [Thread-195] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:03:53 [Thread-195] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:03:53 [Thread-195] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:03:53 [Thread-195] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:03:54 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:03:54 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35d67183: startup date [Wed Mar 28 01:03:54 PDT 2018]; root of context hierarchy
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:03:54 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:03:54 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:03:54 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:03:54 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:03:55 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:03:55 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.652 seconds (JVM running for 2874.337)
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=DQWBn,age=1560022986,email=VeyQZdBJBY,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=83, name=PIFjDzSO]],homes=[Home [id=81, name=kjqPsZQU]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=SYeyZ,age=1901956486,email=AHTVlnPLRU,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=84, name=bVgoLTVA]],homes=[Home [id=82, name=bnBKVTiz]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=lYLbR,age=1856009554,email=hKIORBHApO,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=85, name=gzkFkpHK]],homes=[Home [id=83, name=lTCQGLvw]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=saYsi,age=502861894,email=LYaVtCnkFp,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=86, name=OIBlhuLN]],homes=[Home [id=84, name=SQbVshbM]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=yCmPo,age=-119938066,email=fhlyPdEmxG,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=87, name=wNsYAPfZ]],homes=[Home [id=85, name=vlGyXvJn]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=iPdIu,age=-121080196,email=FIMcxPHciA,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=88, name=UONGUMmF]],homes=[Home [id=86, name=OYkpHWlX]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=LeelX,age=1402431816,email=usLtlsiFXu,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=89, name=RWddgfno]],homes=[Home [id=87, name=dMicYDSi]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=xHLPD,age=-378494586,email=ymqdggmiDt,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=90, name=dqsOLMqk]],homes=[Home [id=88, name=tSBpYpYA]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=PIlmK,age=329429008,email=RbFqqOfIpL,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=91, name=uoVVNDWL]],homes=[Home [id=89, name=qohDGZoS]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:03:56 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=OSKNg,age=416998598,email=slZtvlfkGS,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=92, name=TqNYXkne]],homes=[Home [id=90, name=nTpEMdSb]]]
+2018-03-28 01:03:56 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:03:58 [Thread-201] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35d67183: startup date [Wed Mar 28 01:03:54 PDT 2018]; root of context hierarchy
+2018-03-28 01:03:58 [Thread-201] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:03:58 [Thread-201] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:03:58 [Thread-201] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:03:58 [Thread-201] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:03:58 [Thread-201] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:03:58 [Thread-201] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:03:59 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:03:59 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e35cc25: startup date [Wed Mar 28 01:03:59 PDT 2018]; root of context hierarchy
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:03:59 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:03:59 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:03:59 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:03:59 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:04:00 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:04:00 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.154 seconds (JVM running for 2879.103)
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=jmPyX,age=1233405642,email=OKZKEhjwpq,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=93, name=CAPEzhHI]],homes=[Home [id=91, name=HsPMrRVR]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=VHvgH,age=1192909466,email=kQJnVcEKAH,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=94, name=fnKuWMRv]],homes=[Home [id=92, name=anvnwHFw]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=NhVOz,age=493158372,email=PqYXsjnhWT,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=95, name=dzdoNxEf]],homes=[Home [id=93, name=YeCDTQEl]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=Hxtcs,age=-1608706942,email=HWmfhjzpNr,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=96, name=URfIhMHK]],homes=[Home [id=94, name=wETTWRZv]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=MUXUi,age=-1692614906,email=BmrVCZMyKT,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=97, name=YVKFGVOH]],homes=[Home [id=95, name=oxQOUfNY]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=NOYEy,age=289643174,email=BYAFWpkkXQ,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=98, name=dSwcnDfY]],homes=[Home [id=96, name=efNiGPRI]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=YySKK,age=332416940,email=JeBjyFBRto,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=99, name=BxkotOOs]],homes=[Home [id=97, name=izYNCVsZ]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=ANhWs,age=78409340,email=CMnTqecagy,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=100, name=QODFyngt]],homes=[Home [id=98, name=tSuylhrD]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=dWuBi,age=1988419832,email=bPQrWxdjgK,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=101, name=Sybulnjk]],homes=[Home [id=99, name=XOwzXltd]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:04:01 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=CzuMz,age=-106396474,email=SbPioAZfDn,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=102, name=UKXAnskk]],homes=[Home [id=100, name=zPLopsut]]]
+2018-03-28 01:04:01 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:04:09 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:07:01 [Thread-207] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1e35cc25: startup date [Wed Mar 28 01:03:59 PDT 2018]; root of context hierarchy
+2018-03-28 01:07:01 [Thread-207] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:07:01 [Thread-207] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:07:01 [Thread-207] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:07:01 [Thread-207] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:07:01 [Thread-207] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:07:01 [Thread-207] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:07:01 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44326 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:07:01 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:07:01 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4e8e4988: startup date [Wed Mar 28 01:07:01 PDT 2018]; root of context hierarchy
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$49549eaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e0a18de9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$29b3c407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$1e2788ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$ceb92505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$f5bb4c33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:07:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:07:02 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:07:02 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:07:02 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:07:03 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:07:03 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:07:03 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 2.476 seconds (JVM running for 3061.897)
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=XheFh,age=-1339432254,email=hJvsNSvCKr,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=103, name=tAJjiboH]],homes=[Home [id=101, name=DKUNBxKZ]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=klfab,age=1068034746,email=vcJEQZYPkb,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=104, name=uRIVWwaX]],homes=[Home [id=102, name=sReDdUrh]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=CeWeu,age=587562998,email=wOILExtdZE,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=105, name=CTEOpNay]],homes=[Home [id=103, name=ltAPOQvU]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=XHJQc,age=558172802,email=WXBaDnKXlX,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=106, name=iSRjZKmr]],homes=[Home [id=104, name=trSsdtGL]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=Vjpfa,age=-965516778,email=gEGqKoeUuU,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=107, name=HulZkBRk]],homes=[Home [id=105, name=YbrTZpLZ]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=xQass,age=-1023655186,email=JWTOKNkbOC,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=108, name=woNUeeyV]],homes=[Home [id=106, name=RXqSEzuC]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=XwEoK,age=-2017924570,email=oCTOUNeQBE,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=109, name=islXpQIq]],homes=[Home [id=107, name=zZebxras]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=hYdoR,age=-2075343266,email=jHIxUWjrMQ,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=110, name=njphXSwb]],homes=[Home [id=108, name=TYzWWygx]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=IUfir,age=748432042,email=bBSFafvASq,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=111, name=gbOXmUXE]],homes=[Home [id=109, name=WqcpiUAY]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:07:04 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=hqUYp,age=-1394281210,email=zFANDToMOC,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=112, name=tpgEoDNV]],homes=[Home [id=110, name=SrRvBDVR]]]
+2018-03-28 01:07:04 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:08:44 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:132 - Application shutdown requested.
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4e8e4988: startup date [Wed Mar 28 01:07:01 PDT 2018]; root of context hierarchy
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:09:30 [RMI TCP Connection(2)-127.0.0.1] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:09:58 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44648 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:09:58 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:09:58 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a2f383e: startup date [Wed Mar 28 01:09:58 PDT 2018]; root of context hierarchy
+2018-03-28 01:09:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:09:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:09:59 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$d6f28298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e3f71d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$b751a7f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$abc56c94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$5c5708ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$8359301c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:10:00 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:10:01 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:10:01 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:10:01 [localhost-startStop-1] [INFO ] o.a.c.c.AprLifecycleListener:180 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/folaukaveinga/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2018-03-28 01:10:01 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-03-28 01:10:02 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-03-28 01:10:02 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:10:02 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.h.Version:45 - HHH000412: Hibernate Core {5.2.14.Final}
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-03-28 01:10:02 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:10:03 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:10:04 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:10:05 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:10:05 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:10:05 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:10:05 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:10:05 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-28 01:10:06 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:10:06 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:10:06 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:10:06 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:10:06 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 7.923 seconds (JVM running for 8.769)
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=RKxSu,age=821473138,email=ozagGatczY,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=113, name=qSTkHVNU]],homes=[Home [id=111, name=KZsSQlPZ]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=jvpRp,age=809106374,email=aXnuglVGKi,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=114, name=ukpFdhNu]],homes=[Home [id=112, name=awpmDBVt]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=DKysm,age=-62447830,email=ctpEDjWjEB,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=115, name=lEtprQUu]],homes=[Home [id=113, name=YpOtSPVM]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=KXFgm,age=-1394360482,email=dPvoHvlSUq,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=116, name=WYPxkggU]],homes=[Home [id=114, name=VqUGlqkd]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=Liksh,age=390005164,email=nNrXiVcDoF,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=117, name=tacdxKiX]],homes=[Home [id=115, name=ZXSQLwAG]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=LsfZO,age=-285879528,email=DRVrUzdRVf,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=118, name=IQLropad]],homes=[Home [id=116, name=PwsFiFbi]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=aClOZ,age=1831020032,email=PnhtxhFhAZ,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=119, name=hLzeLALu]],homes=[Home [id=117, name=rXzmnAjM]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=IIzrD,age=1548548070,email=pjdAghAvYZ,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=120, name=AixenMBi]],homes=[Home [id=118, name=afLqaSFy]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=Jxywk,age=1276227734,email=scPLTsbyxA,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=121, name=jVYmERZt]],homes=[Home [id=119, name=PfRWCZVG]]]
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:10:06 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=yzGTE,age=1318581292,email=UiSDEaXNSe,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=122, name=BVacrvGI]],homes=[Home [id=120, name=RRojLZEu]]]
+2018-03-28 01:10:46 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:683 - Using Persistence Adapter: MemoryPersistenceAdapter
+2018-03-28 01:11:18 [JMX connector] [INFO ] o.a.a.b.j.ManagementContext:156 - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:746 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:1) is starting
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:773 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:1) started
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:774 - For help or more information please see: http://activemq.apache.org
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.TransportConnector:263 - Connector vm://localhost started
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.TransportConnector:294 - Connector vm://localhost stopped
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:836 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:1) is shutting down
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:896 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:1) uptime 0.209 seconds
+2018-03-28 01:11:18 [http-nio-8085-exec-3] [INFO ] o.a.a.b.BrokerService:898 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:1) is shutdown
+2018-03-28 01:11:19 [http-nio-8085-exec-3] [INFO ] i.l.c.EpollProvider:101 - Starting without optional epoll library
+2018-03-28 01:11:19 [http-nio-8085-exec-3] [INFO ] i.l.c.KqueueProvider:101 - Starting without optional kqueue library
+2018-03-28 01:17:34 [Thread-8] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a2f383e: startup date [Wed Mar 28 01:09:58 PDT 2018]; root of context hierarchy
+2018-03-28 01:17:34 [Thread-8] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:17:34 [Thread-8] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:17:34 [Thread-8] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:17:34 [Thread-8] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:17:34 [Thread-8] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:17:34 [Thread-8] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:17:36 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44648 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:17:36 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7cd32840: startup date [Wed Mar 28 01:17:36 PDT 2018]; root of context hierarchy
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$d6f28298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e3f71d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$b751a7f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$abc56c94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$5c5708ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$8359301c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:36 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-03-28 01:17:37 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-03-28 01:17:37 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:17:37 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:17:37 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:17:38 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 3.873 seconds (JVM running for 462.43)
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=dBmuT,age=781935464,email=wmajlIXqUO,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=123, name=zEVSxXqt]],homes=[Home [id=121, name=HmMAvAjE]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=MsNWx,age=495424128,email=GszYGtqFHX,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=124, name=duvmoXcJ]],homes=[Home [id=122, name=JeOkpfFd]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=puCKq,age=585548890,email=vjVcjZCLXl,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=125, name=FOcyaxim]],homes=[Home [id=123, name=vCDwWlhl]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=iMHpG,age=-2126952266,email=ZZSrqnMqiq,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=126, name=uuCEnAMc]],homes=[Home [id=124, name=lsFazczu]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=jrJvV,age=-998980118,email=zUEBleNNvS,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=127, name=swjkKjiz]],homes=[Home [id=125, name=hbRpmzBb]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=DfIvG,age=1073138456,email=fdUpOZXCaU,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=128, name=uugBQCxZ]],homes=[Home [id=126, name=dPNYnAgo]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=OvPVC,age=83154436,email=XyrdJBTNsc,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=129, name=tmjgNNCj]],homes=[Home [id=127, name=qzoDoJPN]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=rfapa,age=-1153101838,email=EGjBwqkPbC,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=130, name=kiAZxAsv]],homes=[Home [id=128, name=VMMmKXDX]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=kuJOh,age=-1089439948,email=osdbgHNbbg,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=131, name=DvCHIAad]],homes=[Home [id=129, name=XgUQMeDz]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:17:39 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=JDtRJ,age=-689862828,email=KnFNOeUthr,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=132, name=hugyJAUL]],homes=[Home [id=130, name=ecMnjCaF]]]
+2018-03-28 01:17:39 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:50 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   ShutdownEndpointAutoConfiguration#shutdownEndpoint matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.context.ShutdownEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnEnabledEndpoint no property management.endpoint.shutdown.enabled found so using user defined default from management.endpoints.enabled-by-default (OnEnabledEndpointCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2018-03-28 01:17:43 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:19:48 [Thread-18] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7cd32840: startup date [Wed Mar 28 01:17:36 PDT 2018]; root of context hierarchy
+2018-03-28 01:19:48 [Thread-18] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:19:48 [Thread-18] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:19:48 [Thread-18] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:19:48 [Thread-18] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:19:48 [Thread-18] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:19:48 [Thread-18] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:19:49 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44648 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:19:49 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:19:49 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@24d54f1a: startup date [Wed Mar 28 01:19:49 PDT 2018]; root of context hierarchy
+2018-03-28 01:19:49 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:19:49 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:19:49 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$d6f28298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e3f71d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$b751a7f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$abc56c94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$5c5708ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$8359301c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-03-28 01:19:50 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-03-28 01:19:50 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:19:50 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:19:50 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:19:51 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:19:51 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 3.417 seconds (JVM running for 595.404)
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=kfoqz,age=301254656,email=OfcITeSaMb,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=133, name=QwoDQKlF]],homes=[Home [id=131, name=PhuBriHm]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=oiGoO,age=-118191334,email=KEIZPhgOXd,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=134, name=wgcdraKy]],homes=[Home [id=132, name=JDymmVvG]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=deCEa,age=1071815832,email=cBYPkiwBOP,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=135, name=TMeLlnls]],homes=[Home [id=133, name=LjsTVGPQ]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=mMMfn,age=-508802266,email=hODMIAvgPj,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=136, name=yuymMMMa]],homes=[Home [id=134, name=AoWtIWdF]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=HazeD,age=-1821110616,email=NqZPMHrhCN,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=137, name=IPsQfFBq]],homes=[Home [id=135, name=OxzgJDIE]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=aLYrn,age=-1310475790,email=HBibuxrsuL,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=138, name=sxmoeLPT]],homes=[Home [id=136, name=jKNYgKgJ]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=JdLWK,age=550545292,email=oyoiSmvEPI,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=139, name=rXPuuHMQ]],homes=[Home [id=137, name=nHQGFyak]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=RujnG,age=1353530690,email=eFTYfrvjUs,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=140, name=uuCLkKbd]],homes=[Home [id=138, name=tatLLEoe]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=mIpnB,age=-268990288,email=aKfmLmVlpJ,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=141, name=kJiWJFLF]],homes=[Home [id=139, name=VhulBQhX]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:19:52 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=isZSH,age=517023548,email=WIDjBsUBqN,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=142, name=puhSLuoI]],homes=[Home [id=140, name=FUPfiUyz]]]
+2018-03-28 01:19:52 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:50 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   ShutdownEndpointAutoConfiguration#shutdownEndpoint:
+      Did not match:
+         - @ConditionalOnEnabledEndpoint no property management.endpoint.shutdown.enabled found so using endpoint default (OnEnabledEndpointCondition)
+      Matched:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.actuate.context.ShutdownEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2018-03-28 01:20:01 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:20:39 [Thread-26] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@24d54f1a: startup date [Wed Mar 28 01:19:49 PDT 2018]; root of context hierarchy
+2018-03-28 01:20:39 [Thread-26] [INFO ] o.s.c.s.DefaultLifecycleProcessor:366 - Stopping beans in phase 2147483647
+2018-03-28 01:20:39 [Thread-26] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2018-03-28 01:20:39 [Thread-26] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2018-03-28 01:20:39 [Thread-26] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:572 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:20:39 [Thread-26] [INFO ] c.z.h.HikariDataSource:381 - spring_boot - Shutdown initiated...
+2018-03-28 01:20:39 [Thread-26] [INFO ] c.z.h.HikariDataSource:383 - spring_boot - Shutdown completed.
+2018-03-28 01:20:39 [restartedMain] [INFO ] c.f.s.SpringbootApplication:50 - Starting SpringbootApplication on Folaus-MacBook-Pro-2.local with PID 44648 (/Users/folaukaveinga/Github/springboot/springboot-jpa/target/classes started by folaukaveinga in /Users/folaukaveinga/Github/springboot/springboot-jpa)
+2018-03-28 01:20:39 [restartedMain] [INFO ] c.f.s.SpringbootApplication:656 - The following profiles are active: dev
+2018-03-28 01:20:39 [restartedMain] [INFO ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7fd87f30: startup date [Wed Mar 28 01:20:39 PDT 2018]; root of context hierarchy
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationDelegate:163 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.d.r.c.RepositoryConfigurationExtensionSupport:283 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.folaukaveinga.springboot.repository.UserRepository.
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'asyncConfig' of type [com.folaukaveinga.springboot.config.AsyncConfig$$EnhancerBySpringCGLIB$$d6f28298] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.s.c.ThreadPoolTaskExecutor:168 - Initializing ExecutorService 
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6e3f71d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$b751a7f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$$EnhancerBySpringCGLIB$$abc56c94] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.context.properties.ConversionServiceDeducer$Factory' of type [org.springframework.boot.context.properties.ConversionServiceDeducer$Factory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties' of type [org.springframework.boot.autoconfigure.cache.CacheProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManagerCustomizers' of type [org.springframework.boot.autoconfigure.cache.CacheManagerCustomizers] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration' of type [org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration$$EnhancerBySpringCGLIB$$5c5708ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$8359301c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:328 - Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:91 - Tomcat initialized with port(s): 8085 (http)
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.a.c.c.StandardService:180 - Starting service [Tomcat]
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.a.c.c.StandardEngine:180 - Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring embedded WebApplicationContext
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'httpTraceFilter' to: [/*]
+2018-03-28 01:20:40 [localhost-startStop-1] [INFO ] o.s.b.w.s.FilterRegistrationBean:243 - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-03-28 01:20:40 [restartedMain] [INFO ] c.z.h.HikariDataSource:110 - spring_boot - Starting...
+2018-03-28 01:20:40 [restartedMain] [INFO ] c.z.h.HikariDataSource:123 - spring_boot - Start completed.
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:361 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:20:40 [restartedMain] [INFO ] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-03-28 01:20:41 [restartedMain] [INFO ] o.h.d.Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2018-03-28 01:20:41 [restartedMain] [INFO ] o.s.o.j.LocalContainerEntityManagerFactoryBean:394 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-03-28 01:20:41 [restartedMain] [WARN ] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration:235 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.a.w.s.WelcomePageHandlerMapping:61 - Adding welcome page template: index
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.a.e.w.s.WebMvcEndpointHandlerMapping:548 - Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:896 - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.j.e.a.AnnotationMBeanExporter:669 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.c.s.DefaultLifecycleProcessor:351 - Starting beans in phase 2147483647
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.w.e.t.TomcatWebServer:205 - Tomcat started on port(s): 8085 (http) with context path ''
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.SpringbootApplication:59 - Started SpringbootApplication in 3.136 seconds (JVM running for 645.495)
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=1,name=zUXqJ,age=-1109838292,email=EwjFRewKNn,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=143, name=zPdAoNss]],homes=[Home [id=141, name=XapRzznr]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=2,name=YQNJT,age=2043427742,email=kJdcFLfNbK,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=144, name=mGAjjXYJ]],homes=[Home [id=142, name=vvFCxyeY]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=3,name=qCaGh,age=1903224756,email=cupsDYKJKE,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=145, name=XPSPHQUx]],homes=[Home [id=143, name=MdesnUKQ]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=4,name=AuWcH,age=1708836164,email=ZUbIanHVWI,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=146, name=NfoYRLGf]],homes=[Home [id=144, name=FzGzmfwQ]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=5,name=xXBqV,age=715621300,email=yEFIHJOXMU,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=147, name=FNFkNHNX]],homes=[Home [id=145, name=GEanwvCV]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=6,name=eGHHR,age=73465844,email=shevCWwFPs,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=148, name=EhNyGDFR]],homes=[Home [id=146, name=zWOebxpc]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=7,name=JFpQz,age=1623763126,email=RBapeHqJgg,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=149, name=sIEQonXa]],homes=[Home [id=147, name=wYpUUpDe]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=8,name=eqhCV,age=2043271766,email=mXtJpIFKdq,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=150, name=jMrlBHCz]],homes=[Home [id=148, name=aNKeiiOu]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=9,name=DBWbz,age=1878288648,email=ggQKlNfumr,lastName=Folau,active=true,addresses=<null>,cars=[Home [id=151, name=KPWZPCZW]],homes=[Home [id=149, name=JICPKrgx]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:28 - user saved
+2018-03-28 01:20:42 [restartedMain] [INFO ] c.f.s.s.UserService:29 - User[log=Logger[com.folaukaveinga.springboot.domain.User],id=10,name=RhWqG,age=268522564,email=krYGjtVsyN,lastName=Folau,active=false,addresses=<null>,cars=[Home [id=152, name=PKssVgVN]],homes=[Home [id=150, name=CDYOBFau]]]
+2018-03-28 01:20:42 [restartedMain] [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2018-03-28 01:20:51 [http-nio-8085-exec-1] [INFO ] o.a.c.c.C.[.[.[/]:180 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:683 - Using Persistence Adapter: MemoryPersistenceAdapter
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:746 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:2) is starting
+2018-03-28 01:22:18 [JMX connector] [INFO ] o.a.a.b.j.ManagementContext:156 - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:773 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:2) started
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:774 - For help or more information please see: http://activemq.apache.org
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.TransportConnector:263 - Connector vm://localhost started
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.TransportConnector:294 - Connector vm://localhost stopped
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:836 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:2) is shutting down
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:896 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:2) uptime 0.032 seconds
+2018-03-28 01:22:18 [http-nio-8085-exec-6] [INFO ] o.a.a.b.BrokerService:898 - Apache ActiveMQ 5.15.3 (localhost, ID:Folaus-MacBook-Pro-2.local-55181-1522224678739-0:2) is shutdown
+2018-03-28 02:52:00 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=30m18s796ms).
+2018-03-28 03:02:46 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=10m16s655ms).
+2018-03-28 03:24:23 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=21m6s427ms).
+2018-03-28 03:53:27 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=28m32s106ms).
+2018-03-28 04:02:07 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=8m10s844ms).
+2018-03-28 04:54:52 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=52m14s716ms).
+2018-03-28 05:31:36 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=36m14s193ms).
+2018-03-28 06:25:30 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=53m23s678ms).
+2018-03-28 07:08:25 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=42m55s203ms).
+2018-03-28 08:00:48 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=30m19s416ms).
+2018-03-28 08:12:41 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=11m22s653ms).
+2018-03-28 08:59:33 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=46m21s718ms).
+2018-03-28 09:53:28 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=53m24s967ms).
+2018-03-28 10:56:17 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=1h2m49s744ms).
+2018-03-28 11:34:56 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=38m8s405ms).
+2018-03-28 21:24:42 [spring_boot housekeeper] [WARN ] c.z.h.p.HikariPool:756 - spring_boot - Thread starvation or clock leap detected (housekeeper delta=9h49m14s433ms).

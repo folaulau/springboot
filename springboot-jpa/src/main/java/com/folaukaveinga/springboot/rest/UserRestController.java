@@ -49,17 +49,17 @@ public class UserRestController {
 		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value={"/email/{email}","/email/{email}/"}, method=RequestMethod.GET)
-	public ResponseEntity<Mono<User>> getByEmail(@PathVariable("email") String email){
-		log.info("get user by email: {}", email);
-		return new ResponseEntity<>(userService.getByEmail(email), HttpStatus.OK);
-	}
+//	@RequestMapping(value={"/email/{email}","/email/{email}/"}, method=RequestMethod.GET)
+//	public ResponseEntity<Mono<User>> getByEmail(@PathVariable("email") String email){
+//		log.info("get user by email: {}", email);
+//		return new ResponseEntity<>(userService.getByEmail(email), HttpStatus.OK);
+//	}
 	
-	@RequestMapping(value={"/lastName/{lastName}","/lastName/{lastName}/"}, method=RequestMethod.GET)
-	public ResponseEntity<Flux<User>> getByLastname(@PathVariable("lastName") String lastName){
-		log.info("get user by lastName: {}", lastName);
-		return new ResponseEntity<>(userService.getByLastName(lastName), HttpStatus.OK);
-	}
+//	@RequestMapping(value={"/lastName/{lastName}","/lastName/{lastName}/"}, method=RequestMethod.GET)
+//	public ResponseEntity<Flux<User>> getByLastname(@PathVariable("lastName") String lastName){
+//		log.info("get user by lastName: {}", lastName);
+//		return new ResponseEntity<>(userService.getByLastName(lastName), HttpStatus.OK);
+//	}
 	
 	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
 	public ResponseEntity<List<User>> getAll(){

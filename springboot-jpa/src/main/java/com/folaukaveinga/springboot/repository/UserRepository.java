@@ -21,11 +21,10 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	public Future<User> findByAge(int age);
 	
 	
-	Flux<User> findByLastName(String lastName);
+//	Flux<User> findByLastName(String lastName);
 
-	
 	@Async
 	public CompletableFuture<User> findByName(String name);
 
-	Mono<User> findByEmail(String email);
+//	Mono<User> findByEmail(String email);
 }
