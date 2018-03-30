@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Spring Boot Validation</title>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container-fluid">
+	<br>
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<form action="#" th:action="@{/user}" th:object="${user}" method="post">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+    							<label for="name">Name</label>
+    							<input class="form-control" th:field="*{name}" >
+    							<div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+  						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+    							<label for="age">Age</label>
+    							<input class="form-control" th:field="*{age}" >
+    							<div class="text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+  						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+    							<label for="email">Email</label>
+    							<input class="form-control" th:field="*{email}" >
+    							<div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+  						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+    							<label for="role">Role</label>
+    							<input class="form-control" th:field="*{role}" >
+    							<div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{role}">Role Error</div>
+  						</div>
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+    							<label for="email">Name</label> 
+    							<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    							<input class="form-control" th:field="*{name}" >
+  						</div>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+</body>
+</html>
