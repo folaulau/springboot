@@ -8,10 +8,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.repository.UserRepository;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class UserService {
@@ -28,10 +33,10 @@ public class UserService {
 	}
 	
 	// cache this query
-	@Cacheable(value = "user_id")
+	//@Cacheable(value = "user_id")
 	public User get(long id){
 		log.info("get user by id: {}",id);
-		return userRepository.findOne(id);
+		return userRepository.findById(id).get();
 	}
 	
 	public User getByAge(int age){
@@ -43,7 +48,7 @@ public class UserService {
 		}
 		return new User();
 	}
-	@Cacheable(value = "user_name")
+	//@Cacheable(value = "user_name")
 	public User getByName(String name){
 		log.info("get user by name: {}",name);
 		try {
@@ -54,19 +59,10 @@ public class UserService {
 		return new User();
 	}
 	
-	public User getByEmail(String email) {
-		log.info("get user by email: {}",email);
-		try {
-			return userRepository.findByEmail(email).get();
-		} catch (InterruptedException | ExecutionException e) {
-			log.warn("Exception, msg: {}",e.getMessage());
-		}
-		return new User();
-	}
-	
-	@Cacheable(value = "user_all")
-	public List<User> getAll(){
-		return userRepository.findAll();
+	public List<User> getAll(Pageable page){
+		Page<User> p = userRepository.findAll(page);
+		List<User> users = p.getContent();
+		return users;
 	}
 
 	public User update(User user) {

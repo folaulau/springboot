@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.service.UserService;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 
 @RestController
@@ -46,10 +50,14 @@ public class UserRestController {
 		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
 	}
 	
+
+	
 	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
-	public ResponseEntity<List<User>> getAll(){
-		log.info("get all users");
-		return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
+	public ResponseEntity<List<User>> getAll(@RequestParam int size, Pageable page){
+		log.info("get all users {}", size);
+		log.info("page number: {}, page size: {}",page.getPageNumber(),page.getPageSize());
+		log.info("page sort: {}",page.getSort());
+		return new ResponseEntity<>(userService.getAll(page), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value={"/update","/update/"}, method=RequestMethod.POST)
@@ -57,5 +65,4 @@ public class UserRestController {
 		log.info("update user: "+user.toString());
 		return new ResponseEntity<>(userService.update(user), HttpStatus.OK);
 	}
-
 }
