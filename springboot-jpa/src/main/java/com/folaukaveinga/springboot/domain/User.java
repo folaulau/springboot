@@ -38,6 +38,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.folaukaveinga.springboot.utility.Factory;
 
 @JsonInclude(value = Include.NON_NULL)
 // @Cache(usage=CacheConcurrencyStrategy.READ_WRITE,region="user-region")
@@ -71,8 +72,9 @@ public class User implements Serializable {
 	@Type(type = "true_false")
 	private Boolean active;
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "user_address", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "address_id"))
+	@JsonIgnoreProperties("user")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
 	private Set<Address> addresses;
 
 	// bidirectional one to many
@@ -210,18 +212,16 @@ public class User implements Serializable {
 	}
 
 	public static User fromJson(String json) {
-		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			return objectMapper.readValue(json, User.class);
+			return Factory.getObjectMapper().readValue(json, User.class);
 		} catch (IOException e) {
 			return new User();
 		}
 	}
 
 	public String toJson() {
-		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			return objectMapper.writeValueAsString(this);
+			return Factory.getObjectMapper().writeValueAsString(this);
 		} catch (JsonProcessingException e) {
 			return "{}";
 		}

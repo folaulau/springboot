@@ -36,7 +36,7 @@ public class UserServiceTest {
 	@Test
 	public void testGetAll() {
 		System.out.println("test GetAll");
-		userService.getAll().forEach(System.out::println);
+		//userService.getAll().forEach(System.out::println);
 		System.out.println("getAll done!");
 	}
 	

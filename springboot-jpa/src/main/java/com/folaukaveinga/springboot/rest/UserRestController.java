@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -49,22 +50,14 @@ public class UserRestController {
 		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
 	}
 	
-//	@RequestMapping(value={"/email/{email}","/email/{email}/"}, method=RequestMethod.GET)
-//	public ResponseEntity<Mono<User>> getByEmail(@PathVariable("email") String email){
-//		log.info("get user by email: {}", email);
-//		return new ResponseEntity<>(userService.getByEmail(email), HttpStatus.OK);
-//	}
-	
-//	@RequestMapping(value={"/lastName/{lastName}","/lastName/{lastName}/"}, method=RequestMethod.GET)
-//	public ResponseEntity<Flux<User>> getByLastname(@PathVariable("lastName") String lastName){
-//		log.info("get user by lastName: {}", lastName);
-//		return new ResponseEntity<>(userService.getByLastName(lastName), HttpStatus.OK);
-//	}
+
 	
 	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
-	public ResponseEntity<List<User>> getAll(){
-		log.info("get all users");
-		return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
+	public ResponseEntity<List<User>> getAll(@RequestParam int size, Pageable page){
+		log.info("get all users {}", size);
+		log.info("page number: {}, page size: {}",page.getPageNumber(),page.getPageSize());
+		log.info("page sort: {}",page.getSort());
+		return new ResponseEntity<>(userService.getAll(page), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value={"/update","/update/"}, method=RequestMethod.POST)

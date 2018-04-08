@@ -30,7 +30,7 @@ public class Car implements Serializable {
 	@Column(name = "name")
 	private String name;
 	
-	@JsonIgnoreProperties("car")
+	@JsonIgnoreProperties("cars")
 	@ManyToOne(fetch = FetchType.EAGER)
     private User user;
 	

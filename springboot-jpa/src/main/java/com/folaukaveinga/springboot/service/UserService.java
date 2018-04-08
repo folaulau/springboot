@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.folaukaveinga.springboot.domain.User;
@@ -31,10 +33,10 @@ public class UserService {
 	}
 	
 	// cache this query
-	@Cacheable(value = "user_id")
+	//@Cacheable(value = "user_id")
 	public User get(long id){
 		log.info("get user by id: {}",id);
-		return userRepository.getOne(id);
+		return userRepository.findById(id).get();
 	}
 	
 	public User getByAge(int age){
@@ -46,7 +48,7 @@ public class UserService {
 		}
 		return new User();
 	}
-	@Cacheable(value = "user_name")
+	//@Cacheable(value = "user_name")
 	public User getByName(String name){
 		log.info("get user by name: {}",name);
 		try {
@@ -57,30 +59,10 @@ public class UserService {
 		return new User();
 	}
 	
-//	public Mono<User> getByEmail(String email) {
-//		log.info("get user by email: {}",email);
-//		try {
-//			return userRepository.findByEmail(email);
-//		} catch (Exception e) {
-//			log.warn("Exception, msg: {}",e.getMessage());
-//			return null;
-//		}
-//		
-//	}
-	
-//	public Flux<User> getByLastName(String lastname) {
-//		log.info("get user by lastname: {}",lastname);
-//		try {
-//			return userRepository.findByLastName(lastname);
-//		} catch (Exception e) {
-//			log.warn("Exception, msg: {}",e.getMessage());
-//			return null;
-//		}
-//	}
-	
-	@Cacheable(value = "user_all")
-	public List<User> getAll(){
-		return userRepository.findAll();
+	public List<User> getAll(Pageable page){
+		Page<User> p = userRepository.findAll(page);
+		List<User> users = p.getContent();
+		return users;
 	}
 
 	public User update(User user) {

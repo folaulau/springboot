@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 
+import com.folaukaveinga.springboot.domain.Address;
 import com.folaukaveinga.springboot.domain.Car;
 import com.folaukaveinga.springboot.domain.Home;
 import com.folaukaveinga.springboot.domain.User;
@@ -49,6 +50,10 @@ public class SpringbootApplication {
 				System.out.println("** External Url: " + InetAddress.getLocalHost().getHostAddress() + ":"
 						+ env.getProperty("server.port"));
 				System.out.println("** Internal Url: http://localhost:" + env.getProperty("server.port"));
+				System.out.println("** External Swagger Url: " + InetAddress.getLocalHost().getHostAddress() + ":"
+						+ env.getProperty("server.port")+"/swagger-ui.html");
+				System.out.println("** Internal Swagger Url: http://localhost:" + env.getProperty("server.port")+"/swagger-ui.html");
+				
 				System.out.println("************************* Java - JVM ***********************");
 				System.out.println("** Number of processors: " + runtime.availableProcessors());
 				System.out.println("** Total memory: " + (double) (runtime.totalMemory() / mb) + " MB = "
@@ -66,16 +71,21 @@ public class SpringbootApplication {
 	}
 
 	private void loadData() {
-		for(int i=1;i<=10;i++) {
+		for(int i=1;i<=50;i++) {
 			User user = new User();
 			user.setId(i);
 			user.setAge(2*RandomUtils.nextInt());
 			user.setActive(RandomUtils.nextBoolean());
-			user.setEmail(RandomStringUtils.randomAlphabetic(10));
+			user.setEmail(RandomStringUtils.randomAlphabetic(10)+"@gmail.com");
 			user.setName(RandomStringUtils.randomAlphabetic(5));
 			user.setLastName("Folau");
 			user.addCar(new Car(RandomStringUtils.randomAlphabetic(8)));
 			user.addHome(new Home(RandomStringUtils.randomAlphabetic(8)));
+			
+			user.addAddress(new Address(RandomStringUtils.randomAlphabetic(8),
+					RandomStringUtils.randomAlphabetic(8),
+					RandomStringUtils.randomAlphabetic(8),
+					RandomStringUtils.randomAlphabetic(8)));
 			userService.save(user);
 		}
 	}

@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -21,12 +22,14 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.folaukaveinga.springboot.utility.Factory;
 
 
 @JsonInclude(value=Include.NON_NULL)
@@ -51,11 +54,16 @@ public class Address implements Serializable {
 	@Column(name = "zipcode")
 	private String zipcode;
 	
-	@ManyToMany(mappedBy="addresses")
-	private Set<User> users;
+	@JsonIgnoreProperties("addresses")
+	@ManyToOne(fetch = FetchType.EAGER)
+    private User user;
 	
 	public Address() {
-		super();
+		this(null,null,null,null);
+	}
+	
+	public Address( String street, String city, String state, String zipcode) {
+		this(0,street,city,state,zipcode);
 	}
 
 	public Address(long id, String street, String city, String state, String zipcode) {
@@ -107,12 +115,14 @@ public class Address implements Serializable {
 		this.zipcode = zipcode;
 	}
 
-	public Set<User> getUsers() {
-		return users;
+	
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsers(Set<User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public static long getSerialversionuid() {
@@ -120,18 +130,16 @@ public class Address implements Serializable {
 	}
 
 	public static Address fromJson(String json) {
-		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			return objectMapper.readValue(json, Address.class);
+			return Factory.getObjectMapper().readValue(json, Address.class);
 		} catch (IOException e) {
 			return new Address();
 		}
 	}
 
 	public String toJson() {
-		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			return objectMapper.writeValueAsString(this);
+			return Factory.getObjectMapper().writeValueAsString(this);
 		} catch (JsonProcessingException e) {
 			return "{}";
 		}
