@@ -26,10 +26,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.service.UserService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-
+@Api(value = "user",produces = "Rest API for user operations", tags = "User API")
 @RestController
 @RequestMapping("api/users")
 public class UserRestController {
@@ -38,12 +40,14 @@ public class UserRestController {
 	@Autowired
 	private UserService userService;
 	
+	@ApiOperation(value = "Create user")
 	@RequestMapping(value={"/",""}, method=RequestMethod.POST)
 	public ResponseEntity<User> create(@RequestBody User user){
 		log.info("create user: "+user.toString());
 		return new ResponseEntity<>(userService.save(user), HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "get User by id")
 	@RequestMapping(value={"/{id}","/{id}/"}, method=RequestMethod.GET)
 	public ResponseEntity<User> get(@PathVariable("id")int id){
 		log.info("get user by id: {}", id);
@@ -51,15 +55,16 @@ public class UserRestController {
 	}
 	
 
-	
+	@ApiOperation(value = "Get all users")
 	@RequestMapping(value={"","/"}, method=RequestMethod.GET)
-	public ResponseEntity<List<User>> getAll(@RequestParam int size, Pageable page){
-		log.info("get all users {}", size);
+	public ResponseEntity<List<User>> getAll(Pageable page){
+		log.info("get all users");
 		log.info("page number: {}, page size: {}",page.getPageNumber(),page.getPageSize());
 		log.info("page sort: {}",page.getSort());
 		return new ResponseEntity<>(userService.getAll(page), HttpStatus.OK);
 	}
 	
+	@ApiOperation(value = "Update user")
 	@RequestMapping(value={"/update","/update/"}, method=RequestMethod.POST)
 	public ResponseEntity<User> update(@RequestBody User user){
 		log.info("update user: "+user.toString());
