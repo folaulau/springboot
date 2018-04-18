@@ -47,7 +47,10 @@ public class SpringbootSwaggerApplication {
 				System.out.println("** Port: " + env.getProperty("server.port"));
 				System.out.println("** External Url: " + InetAddress.getLocalHost().getHostAddress() + ":"
 						+ env.getProperty("server.port"));
+				System.out.println("** External Swagger Url: " + InetAddress.getLocalHost().getHostAddress() + ":"
+						+ env.getProperty("server.port")+"/swagger-ui.html");
 				System.out.println("** Internal Url: http://localhost:" + env.getProperty("server.port"));
+				System.out.println("** Internal Swagger Url: http://localhost:" + env.getProperty("server.port")+"/swagger-ui.html");
 				System.out.println("************************* Java - JVM ***********************");
 				System.out.println("** Number of processors: " + runtime.availableProcessors());
 				System.out.println("** Total memory: " + (double) (runtime.totalMemory() / mb) + " MB = "
