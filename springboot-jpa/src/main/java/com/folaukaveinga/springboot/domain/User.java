@@ -76,6 +76,11 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private Set<Address> addresses;
+	
+	@JsonIgnoreProperties("user")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private Set<PaymentMethod> paymentMethods;
 
 	// bidirectional one to many
 	@JsonIgnoreProperties("user")
@@ -103,6 +108,7 @@ public class User implements Serializable {
 		this.name = name;
 		this.age = age;
 		this.email = email;
+		this.paymentMethods = new HashSet<>();
 	}
 
 	public long getId() {
@@ -162,6 +168,18 @@ public class User implements Serializable {
 
 	public Boolean getActive() {
 		return active;
+	}
+
+	public Set<PaymentMethod> getPaymentMethods() {
+		return paymentMethods;
+	}
+
+	public void setPaymentMethods(Set<PaymentMethod> paymentMethods) {
+		this.paymentMethods = paymentMethods;
+	}
+	
+	public void addPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethods.add(paymentMethod);
 	}
 
 	public String getLastName() {

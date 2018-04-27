@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.folaukaveinga.springboot.domain.BankAccount;
+import com.folaukaveinga.springboot.domain.CreditCard;
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.service.UserService;
 
@@ -21,14 +23,31 @@ public class UserServiceTest {
 	@Test
 	public void testSave() {
 		System.out.println("test save");
-		User user = userService.save(new User("Folau",12, "folaukaveinga@gmail.com"));
-		assertEquals(1, user.getId());
+		User user = new User("Folau",12, "folaukaveinga@gmail.com");
+		CreditCard creditCard = new CreditCard();
+		creditCard.setBrand("VISA");
+		creditCard.setType("credit");
+		creditCard.setLast4("1234");
+		user.addPaymentMethod(creditCard);
+		BankAccount bankAccount = new BankAccount();
+		bankAccount.setType("credit");
+		bankAccount.setLast4("1234");
+		bankAccount.setBank("CHASE");
+		bankAccount.setName("Folau Kaveinga");
+		user.addPaymentMethod(bankAccount);
+		System.out.println("USER");
+		System.out.println(user.toJson());
 		
-		user = userService.save(new User("Folaulau",5, "folaudev@gmail.com"));
-		assertEquals(1, user.getId());
+		user = userService.save(user);
 		
-		user = userService.save(new User("Lisa",10, "efinau10@gmail.com"));
-		assertEquals(1, user.getId());
+		System.out.println(user.toJson());
+//		assertEquals(1, user.getId());
+//		
+//		user = userService.save(new User("Folaulau",5, "folaudev@gmail.com"));
+//		assertEquals(1, user.getId());
+//		
+//		user = userService.save(new User("Lisa",10, "efinau10@gmail.com"));
+//		assertEquals(1, user.getId());
 		
 		System.out.println("save done!");
 	}

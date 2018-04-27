@@ -23,8 +23,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.folaukaveinga.springboot.domain.PaymentMethod;
 import com.folaukaveinga.springboot.domain.User;
 import com.folaukaveinga.springboot.service.UserService;
+import com.github.bohnman.squiggly.Squiggly;
+import com.github.bohnman.squiggly.filter.SquigglyPropertyFilter;
+import com.github.bohnman.squiggly.util.SquigglyUtils;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -51,7 +57,31 @@ public class UserRestController {
 	@RequestMapping(value={"/{id}","/{id}/"}, method=RequestMethod.GET)
 	public ResponseEntity<User> get(@PathVariable("id")int id){
 		log.info("get user by id: {}", id);
-		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
+		
+		User user = userService.get(id);
+		String filter = "id,paymentMethods";
+				ObjectMapper mapper = Squiggly.init(new ObjectMapper(), filter);
+		String userJson = SquigglyUtils.stringify(mapper, user);
+		
+		log.info(userJson);
+		
+		return new ResponseEntity<>(user, HttpStatus.OK);
+	}
+	
+	@ApiOperation(value = "get User PaymentMethods by user id")
+	@RequestMapping(value={"/{id}/paymentmethods","/{id}/paymentmethods/"}, method=RequestMethod.GET)
+	public ResponseEntity<Set<PaymentMethod>> getPaymentMethods(@PathVariable("id")int id){
+		log.info("get user payment methods by user id: {}", id);
+		
+		
+		Set<PaymentMethod> payments = userService.get(id).getPaymentMethods();
+		String filter = "-user";
+				ObjectMapper mapper = Squiggly.init(new ObjectMapper(), filter);
+		String userJson = SquigglyUtils.stringify(mapper, payments);
+		
+		log.info(userJson);
+		
+		return new ResponseEntity<>(userService.get(id).getPaymentMethods(), HttpStatus.OK);
 	}
 	
 
