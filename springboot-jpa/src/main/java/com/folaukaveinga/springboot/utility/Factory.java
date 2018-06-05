@@ -13,6 +13,8 @@ public class Factory {
 		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 		objectMapper.configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, false);
+		
+		objectMapper.enableDefaultTyping();
 		return objectMapper;
 	}
 
