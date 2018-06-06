@@ -2,7 +2,6 @@ package com.folaukaveinga.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@Cacheable("users")
+	@Cacheable(value="users", key = "#id")
 	public User getById(Long id) {
 		log.info("getById({})", id);
 		try {
@@ -31,13 +30,16 @@ public class UserService {
 		return user;
 	}
 	
-	@CachePut("users")
+	@CachePut(value="users", key = "#user.id")
 	public User update(User user) {
+		log.info("update(..)");
+		log.info(user.toString());
 		return user;
 	}
 	
-	@CacheEvict("users")
+	@CacheEvict(value="users", key = "#id")
 	public Boolean delete(Long id) {
+		log.info("delete({})", id);
 		return true;
 	}
 }
