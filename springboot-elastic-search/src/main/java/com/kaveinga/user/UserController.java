@@ -1,5 +1,7 @@
 package com.kaveinga.user;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,12 @@ private Logger log = LoggerFactory.getLogger(this.getClass());
 	public ResponseEntity<User> get(@PathVariable("id") Long id){
 		log.info("getUser({})", id);
 		return new ResponseEntity<>(userService.get(id), HttpStatus.OK);
+	}
+	
+	@GetMapping("/users")
+	public ResponseEntity<List<User>> getAll(){
+		log.info("getAll()");
+		return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
 	}
 	
 	@PostMapping("/users")

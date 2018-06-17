@@ -1,5 +1,8 @@
 package com.kaveinga.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +36,16 @@ public class UserService {
 		this.userSearchRepository.delete(new User(id));
 		return true;
 	}
+
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		List<User> users = new ArrayList<>();
+		userSearchRepository.findAll().forEach(users::add);
+		return users;
+	}
+	
+	public boolean doesExist(Long id) {
+		return userSearchRepository.existsById(id);
+	}
+
 }
