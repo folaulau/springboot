@@ -9,9 +9,16 @@ import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+
+import com.folaukaveinga.client.util.HttpUtils;
 
 
 @Service
@@ -19,13 +26,26 @@ public class UserServiceImp implements UserService {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	private RestTemplate restTemplate = new RestTemplate();
+	private RestTemplate restTemplate = new RestTemplate(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
 	
 	private String apiUrl = "http://localhost:8080";
 	
+	private String username = "username";
+
+	private String password = "password";
+	
 	@Override
 	public User create(User user) {
-		return restTemplate.postForObject(apiUrl+"/users", user, User.class);
+		
+		// include headers
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Authorization", HttpUtils.basicAuthentication(username, password));
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		
+		// include payload and headers
+		HttpEntity<String> entity = new HttpEntity<>(user.toJson(), headers);
+		
+		return restTemplate.postForObject(apiUrl+"/users", entity, User.class);
 	}
 
 	@Override
