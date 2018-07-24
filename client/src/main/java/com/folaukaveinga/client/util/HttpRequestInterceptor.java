@@ -18,7 +18,6 @@ public class HttpRequestInterceptor implements ClientHttpRequestInterceptor {
 	@Override
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
 			throws IOException {
-		log.info("intercept(..)");
 		logRequest(request, body);
         ClientHttpResponse response = execution.execute(request, body);
         logResponse(response);
@@ -26,23 +25,23 @@ public class HttpRequestInterceptor implements ClientHttpRequestInterceptor {
 	}
     private void logRequest(HttpRequest request, byte[] body) throws IOException {
         //if (log.isDebugEnabled()) {
-            log.info("===========================request begin=============================================");
+            log.info("===========================Http Request begin=============================================");
             log.info("URI         : {}", request.getURI());
             log.info("Method      : {}", request.getMethod());
             log.info("Headers     : {}", request.getHeaders());
             log.info("Request body: {}", ObjectUtil.getObjectMapper().writeValueAsString(body));
-            log.info("==========================request end================================================");
+            log.info("===========================Http Request end===============================================");
         //}
     }
  
     private void logResponse(ClientHttpResponse response) throws IOException {
         //if (log.isDebugEnabled()) {
-            log.info("============================response begin==========================================");
+            log.info("===========================Http Response begin============================================");
             log.info("Status code  : {}", response.getStatusCode());
             log.info("Status text  : {}", response.getStatusText());
             log.info("Headers      : {}", response.getHeaders());
             log.info("Response body: {}", ObjectUtil.getObjectMapper().writeValueAsString(response.getBody()));
-            log.info("=======================response end=================================================");
+            log.info("===========================Http Response end==============================================");
         //}
     }
 
