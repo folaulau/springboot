@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -28,7 +29,8 @@ public class UserServiceImp implements UserService {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	private RestTemplate restTemplate = new RestTemplate(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	private String apiUrl = "http://localhost:8080";
 	
@@ -46,7 +48,6 @@ public class UserServiceImp implements UserService {
 		
 		// include payload and headers
 		HttpEntity<String> entity = new HttpEntity<>(user.toJson(), headers);
-		restTemplate.setInterceptors(Collections.singletonList(new HttpRequestInterceptor()));
 		return restTemplate.postForObject(apiUrl+"/users", entity, User.class);
 	}
 

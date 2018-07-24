@@ -26,11 +26,11 @@ public class HttpRequestInterceptor implements ClientHttpRequestInterceptor {
 	}
     private void logRequest(HttpRequest request, byte[] body) throws IOException {
         //if (log.isDebugEnabled()) {
-            log.info("===========================request begin================================================");
+            log.info("===========================request begin=============================================");
             log.info("URI         : {}", request.getURI());
             log.info("Method      : {}", request.getMethod());
             log.info("Headers     : {}", request.getHeaders());
-            log.info("Request body: {}", ObjectUtil.getObjectMapper().writeValueAsString(new String(body, "UTF-8")));
+            log.info("Request body: {}", ObjectUtil.getObjectMapper().writeValueAsString(body));
             log.info("==========================request end================================================");
         //}
     }
@@ -41,7 +41,7 @@ public class HttpRequestInterceptor implements ClientHttpRequestInterceptor {
             log.info("Status code  : {}", response.getStatusCode());
             log.info("Status text  : {}", response.getStatusText());
             log.info("Headers      : {}", response.getHeaders());
-            log.info("Response body: {}", ObjectUtil.getObjectMapper().writeValueAsString(StreamUtils.copyToString(response.getBody(), Charset.defaultCharset())));
+            log.info("Response body: {}", ObjectUtil.getObjectMapper().writeValueAsString(response.getBody()));
             log.info("=======================response end=================================================");
         //}
     }
