@@ -3,6 +3,7 @@ package com.folaukaveinga.client.user;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.folaukaveinga.client.util.HttpRequestInterceptor;
 import com.folaukaveinga.client.util.HttpUtils;
 
 
@@ -44,7 +46,7 @@ public class UserServiceImp implements UserService {
 		
 		// include payload and headers
 		HttpEntity<String> entity = new HttpEntity<>(user.toJson(), headers);
-		
+		restTemplate.setInterceptors(Collections.singletonList(new HttpRequestInterceptor()));
 		return restTemplate.postForObject(apiUrl+"/users", entity, User.class);
 	}
 
