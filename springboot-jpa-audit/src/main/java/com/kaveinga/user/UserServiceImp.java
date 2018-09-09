@@ -45,4 +45,10 @@ public class UserServiceImp implements UserService {
 		return userRepository.findAll();
 	}
 
+	@Override
+	public void removeAll() {
+		log.info("removeAll()");
+		userRepository.deleteAll();
+	}
+
 }

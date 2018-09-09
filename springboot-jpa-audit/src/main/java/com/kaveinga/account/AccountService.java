@@ -8,5 +8,6 @@ public interface AccountService {
 	Account update(Account account);
 	Account getById(Long id);
 	void remove(Long id);
+	void removeAll();
 	List<Account> getAll();
 }

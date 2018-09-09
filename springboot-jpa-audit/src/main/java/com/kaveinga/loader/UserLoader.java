@@ -20,13 +20,8 @@ public class UserLoader {
 	@Autowired
 	private UserService userService;
 	
-	@PostConstruct
-	void init() {
-		log.info("init()");
-		load();
-	}
-	
 	void load() {
+		userService.removeAll();
 		for(int i=0;i<10;i++) {
 			User user = new User();
 			user.setFirstName(RandomGeneratorUtils.getAlphaNumeric(5));
@@ -34,7 +29,7 @@ public class UserLoader {
 			user.setEmail(RandomGeneratorUtils.getAlphaNumeric(10)+"@gmail.com");
 			user.setAge(RandomGeneratorUtils.getInteger());
 			
-			Account account = new Account(null,RandomGeneratorUtils.getIntegerWithin(1, 100),null);
+			Account account = new Account(Long.parseLong(RandomGeneratorUtils.getIntegerWithin(1, 10)+""));
 			user.setAccount(account);
 			
 			user = this.userService.create(user);

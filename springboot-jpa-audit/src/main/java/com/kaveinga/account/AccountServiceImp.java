@@ -13,36 +13,42 @@ public class AccountServiceImp implements AccountService {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	private AccountRepository userRepository;
+	private AccountRepository accountRepository;
 	
 	@Override
-	public Account create(Account user) {
+	public Account create(Account account) {
 		log.info("create(..)");
-		return userRepository.saveAndFlush(user);
+		return accountRepository.saveAndFlush(account);
 	}
 
 	@Override
-	public Account update(Account user) {
+	public Account update(Account account) {
 		log.info("update(..)");
-		return userRepository.saveAndFlush(user);
+		return accountRepository.saveAndFlush(account);
 	}
 
 	@Override
 	public Account getById(Long id) {
 		log.info("getById(..)");
-		return userRepository.getOne(id);
+		return accountRepository.getOne(id);
 	}
 
 	@Override
 	public void remove(Long id) {
 		log.info("remove(..)");
-		userRepository.deleteById(id);
+		accountRepository.deleteById(id);
 	}
 
 	@Override
 	public List<Account> getAll() {
 		log.info("getAll()");
-		return userRepository.findAll();
+		return accountRepository.findAll();
+	}
+
+	@Override
+	public void removeAll() {
+		log.info("removeAll()");
+		accountRepository.deleteAll();
 	}
 
 }

@@ -53,7 +53,7 @@ public class Account implements Serializable {
 	private int balance;
 	
 	@JsonIgnoreProperties(value = {"account"})
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "account")
+    @OneToMany(orphanRemoval=true, fetch = FetchType.EAGER, mappedBy = "account")
     private Set<User> users;
 	
 	@CreationTimestamp
