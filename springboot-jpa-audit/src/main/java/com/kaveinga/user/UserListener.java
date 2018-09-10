@@ -17,6 +17,7 @@ public class UserListener {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
+	
 	@PrePersist
 	public void userPrePersist(User ob) {
 		log.info("userPrePersist(..)");

@@ -8,5 +8,6 @@ public interface UserService {
 	User update(User user);
 	User getById(Long id);
 	void remove(Long id);
+	void removeAll();
 	List<User> getAll();
 }

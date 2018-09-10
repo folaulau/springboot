@@ -61,7 +61,7 @@ public class User implements Serializable {
 	private String email;
 	
 	@JsonIgnoreProperties("users")
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id")
     private Account account;
 	

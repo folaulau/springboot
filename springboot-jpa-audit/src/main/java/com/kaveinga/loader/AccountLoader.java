@@ -24,19 +24,19 @@ public class AccountLoader {
 	@Autowired
 	private UserLoader userLoader;
 	
-//	@PostConstruct
-//	void init() {
-//		log.info("init()");
-//		load();
-//		
-//		userLoader.load();
-//	}
+	@PostConstruct
+	void init() {
+		log.info("init()");
+		load();
+		
+		userLoader.load();
+	}
 	
 	void load() {
+		this.accountService.removeAll();
 		for(int i=0;i<10;i++) {
 			Account account = new Account();
 			account.setBalance(RandomGeneratorUtils.getInteger());
-			//account.addUser(new User(Long.parseLong(RandomGeneratorUtils.getIntegerWithin(1, 10)+"")));
 			account = accountService.create(account);
 			log.info(account.toJson());
 		}
