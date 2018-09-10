@@ -5,19 +5,26 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+
+import com.kaveinga.events.UserEvent;
 
 @Service
 public class UserServiceImp implements UserService {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
+	@Autowired
+	private ApplicationEventPublisher applicationEventPublisher;
+
 	@Override
 	public User create(User user) {
 		log.info("create(..)");
+		applicationEventPublisher.publishEvent(new UserEvent(user));
 		return userRepository.saveAndFlush(user);
 	}
 
