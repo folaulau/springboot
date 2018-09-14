@@ -46,6 +46,7 @@ public class UserController {
 	public ResponseEntity<User> create(@RequestBody User user){
 		log.info("create(..)", user.toJson());
 		user = userService.create(user);
+		log.info("user created");
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	
@@ -54,6 +55,7 @@ public class UserController {
 	public ResponseEntity<User> update(@RequestBody User user){
 		log.info("update({})", user.toJson());
 		user = userService.update(user);
+		log.info("user updated");
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	
@@ -62,6 +64,7 @@ public class UserController {
 	public ResponseEntity<User> getById(@PathVariable("id") Long id){
 		log.info("getById({})", id);
 		User user = userService.getById(id);
+		log.info("user returned");
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	
@@ -70,6 +73,7 @@ public class UserController {
 	public ResponseEntity<List<User>> getAll(){
 		log.info("getAll()");
 		List<User> users = userService.getAll();
+		log.info("users returned");
 		return new ResponseEntity<>(users, HttpStatus.OK);
 	}
 	
@@ -80,7 +84,7 @@ public class UserController {
 		log.info("delete({})", id);
 		
 		this.userService.remove(id);
-		
+		log.info("user deleted");
 		return new ResponseEntity<>(true, HttpStatus.OK);
 	}
 }
