@@ -6,21 +6,13 @@ import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kaveinga.utility.ObjectUtils;
 
 @Configuration
-@EnableJpaAuditing
 public class GlobalConfig {
-
-	@Bean(name = "applicationEventMulticaster")
-	public ApplicationEventMulticaster simpleApplicationEventMulticaster() {
-		SimpleApplicationEventMulticaster eventMulticaster = new SimpleApplicationEventMulticaster();
-
-		eventMulticaster.setTaskExecutor(new SimpleAsyncTaskExecutor());
-		return eventMulticaster;
-	}
 
 	@Bean
 	public ObjectMapper objectMapper() {
