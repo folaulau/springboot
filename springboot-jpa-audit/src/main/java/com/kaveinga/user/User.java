@@ -2,8 +2,6 @@ package com.kaveinga.user;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -20,6 +18,8 @@ import javax.persistence.Transient;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +33,7 @@ import com.kaveinga.utility.ObjectUtils;
 
 import net.minidev.json.annotate.JsonIgnore;
 
-
+@Audited
 @JsonInclude(value = Include.NON_NULL)
 @JsonIgnoreProperties(value= {"handler","hibernateLazyInitializer"})// "handler" and "hibernateLazyInitializer" are shown on user payload
 @EntityListeners(UserListener.class)
@@ -44,7 +44,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
 	
@@ -60,6 +60,7 @@ public class User implements Serializable {
 	@Column(name="email")
 	private String email;
 	
+	@NotAudited
 	@JsonIgnoreProperties("users")
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id")
