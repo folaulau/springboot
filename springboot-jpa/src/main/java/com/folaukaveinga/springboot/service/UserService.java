@@ -26,7 +26,7 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	public User save(User user){
-		user = userRepository.save(user);
+		user = userRepository.saveAndFlush(user);
 		log.info("user saved");
 		log.info(user.toString());
 		return user;
@@ -68,4 +68,13 @@ public class UserService {
 	public User update(User user) {
 		return userRepository.save(user);
 	}
+	
+	
+	public List<User> search(int yr, Pageable page){
+		@SuppressWarnings("unchecked")
+		Page<User> p = userRepository.findAll(UserSpecs.isUserYoungerThan20(yr), page);
+		List<User> users = p.getContent();
+		return users;
+	}
+	
 }
