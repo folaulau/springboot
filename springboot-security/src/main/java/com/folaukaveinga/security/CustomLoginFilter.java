@@ -30,10 +30,13 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.folaukaveinga.dto.SessionDTO;
+import com.folaukaveinga.jwt.JwtPayload;
+import com.folaukaveinga.jwt.JwtTokenUtils;
 import com.folaukaveinga.user.User;
 import com.folaukaveinga.user.UserService;
 import com.folaukaveinga.utils.HttpUtils;
 import com.folaukaveinga.utils.ObjectUtils;
+import com.folaukaveinga.utils.RandomGeneratorUtils;
 
 
 
@@ -117,12 +120,16 @@ public class CustomLoginFilter extends AbstractAuthenticationProcessingFilter {
 		
 		User user = this.userService.getByEmail(email);
 		
+		JwtPayload jwtpayload = new JwtPayload(user, RandomGeneratorUtils.getUuid());
+		jwtpayload.setDeviceId(clientUserAgent);
+		
+		String jwtToken = JwtTokenUtils.generateToken(jwtpayload);
+		
 		SessionDTO sessionDto = new SessionDTO();
 		sessionDto.setEmail(email);
 		sessionDto.setName(user.getName());
 		sessionDto.setUserUid(user.getUid());
-		
-		
+		sessionDto.setToken(jwtToken);
 		
 		response.setStatus(HttpStatus.OK.value());
 		response.setContentType(MediaType.APPLICATION_JSON_VALUE);

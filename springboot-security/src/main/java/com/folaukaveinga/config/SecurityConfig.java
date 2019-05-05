@@ -108,6 +108,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(PathConstantUtil.SIGNUP_URL)
 			.antMatchers(PathConstantUtil.LOGIN_URL)
 			.antMatchers(PathConstantUtil.PING_URL)
+			.antMatchers(PathConstantUtil.AUTH_TOKEN_URL)
 			.antMatchers(PathConstantUtil.SWAGGER_DOC_URLS)
 			.antMatchers("/actuator/**");
 	}

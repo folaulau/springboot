@@ -15,6 +15,7 @@ public final class PathConstantUtil {
 	public static final String LOGOUT_URL ="/logout";
 	public static final String SIGNUP_URL ="/signup";
 	public static final String PING_URL ="/ping";
+	public static final String AUTH_TOKEN_URL ="/generate-basic-auth-token";
 	
 	public static final String[] SWAGGER_DOC_URLS = {
             "/swagger-ui.html",

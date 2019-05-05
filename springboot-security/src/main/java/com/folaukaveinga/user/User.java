@@ -1,7 +1,9 @@
 package com.folaukaveinga.user;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -142,6 +144,19 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public List<String> getAuthorities() {
+		List<String> authorities = new ArrayList<>();
+		if(this.roles==null) {
+			return authorities;
+		}
+		
+		for(Role role : roles) {
+			authorities.add(role.getAuthority());
+		}
+		
+		return authorities;
 	}
 
 	@Override

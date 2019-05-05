@@ -29,6 +29,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.folaukaveinga.jwt.JwtPayload;
+import com.folaukaveinga.jwt.JwtTokenUtils;
+import com.folaukaveinga.utils.ObjectUtils;
+
 public class CustomAuthenticationFilter extends OncePerRequestFilter {
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -47,28 +52,47 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
 		String token = request.getHeader("token");
 		log.debug("Token: {}", token);
 
-		ApiTokenSession apiTokenSession = null;
+		if (token == null) {
+			ObjectNode erroMsg = ObjectUtils.getObjectNode();
 
-		Authentication authentication = getAuthentication(request, apiTokenSession);
+			erroMsg.put("status", "error");
+			erroMsg.put("msg", "token is missing");
+			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+			response.setStatus(HttpStatus.BAD_REQUEST.value());
+			ObjectUtils.getObjectMapper().writeValue(response.getWriter(), erroMsg);
+			return;
+		}
 
-		// log.info(authentication.getCredentials().toString());
+		JwtPayload jwtPayload = JwtTokenUtils.getJetPayload(token);
+
+		if (jwtPayload == null) {
+			ObjectNode erroMsg = ObjectUtils.getObjectNode();
+
+			erroMsg.put("status", "error");
+			erroMsg.put("msg", "token is invalid");
+			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+			response.setStatus(HttpStatus.BAD_REQUEST.value());
+			ObjectUtils.getObjectMapper().writeValue(response.getWriter(), erroMsg);
+			return;
+		}
+
+		log.debug("jwtPayload: {}", ObjectUtils.toJson(jwtPayload));
+
+		Authentication authentication = getAuthentication(request, jwtPayload);
+
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 
 		filterChain.doFilter(request, response);
 	}
 
+	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request, JwtPayload jwtPayload) {
 
-	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request,
-			ApiTokenSession apiTokenSession) {
-		
 		List<GrantedAuthority> authorities = new ArrayList<>();
-		if (apiTokenSession.getUserAuthorities() != null
-				|| apiTokenSession.getUserAuthorities().isEmpty() == false) {
-			for (String role : apiTokenSession.getUserAuthorities()) {
+		if (jwtPayload.getAuthorities() != null || jwtPayload.getAuthorities().isEmpty() == false) {
+			for (String role : jwtPayload.getAuthorities()) {
 				authorities.add(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()));
 			}
 		}
-		return new UsernamePasswordAuthenticationToken(apiTokenSession.getUserEmail(),
-				apiTokenSession.getUserEmail(), authorities);
+		return new UsernamePasswordAuthenticationToken(jwtPayload.getEmail(), jwtPayload.getUid(), authorities);
 	}
 }
