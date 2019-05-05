@@ -34,7 +34,7 @@ public class UserAdminController {
 	@Autowired
 	private UserMapper userMapper;
 	
-	@Secured(value={"ROLE_"+Role.ADMIN})
+	@Secured(value={Role.ADMIN})
 	@ApiOperation(value = "Get Member By Uuid")
 	@GetMapping("/users/{uid}")
 	public ResponseEntity<UserDto> getUserByUid(@RequestHeader(name="token", required=true) String token, @ApiParam(name="uid", required=true, value="uid") @PathVariable("uid") String uid){

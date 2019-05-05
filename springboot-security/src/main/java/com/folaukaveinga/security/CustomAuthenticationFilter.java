@@ -90,7 +90,7 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		if (jwtPayload.getAuthorities() != null || jwtPayload.getAuthorities().isEmpty() == false) {
 			for (String role : jwtPayload.getAuthorities()) {
-				authorities.add(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()));
+				authorities.add(new SimpleGrantedAuthority(role.toUpperCase()));
 			}
 		}
 		return new UsernamePasswordAuthenticationToken(jwtPayload, jwtPayload.getUid(), authorities);

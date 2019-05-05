@@ -98,7 +98,7 @@ public class UserController {
 		return new ResponseEntity<>(auth, HttpStatus.OK);
 	}
 	
-	@Secured(value={"ROLE_"+Role.USER})
+	@Secured(value={Role.USER})
 	@ApiOperation(value = "Get Member By Uuid")
 	@GetMapping("/users/{uid}")
 	public ResponseEntity<UserDto> getUserByUid(@RequestHeader(name="token", required=true) String token, @ApiParam(name="uid", required=true, value="uid") @PathVariable("uid") String uid){
