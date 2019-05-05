@@ -93,6 +93,6 @@ public class CustomAuthenticationFilter extends OncePerRequestFilter {
 				authorities.add(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()));
 			}
 		}
-		return new UsernamePasswordAuthenticationToken(jwtPayload.getEmail(), jwtPayload.getUid(), authorities);
+		return new UsernamePasswordAuthenticationToken(jwtPayload, jwtPayload.getUid(), authorities);
 	}
 }

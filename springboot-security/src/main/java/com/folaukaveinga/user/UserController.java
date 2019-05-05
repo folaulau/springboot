@@ -22,9 +22,11 @@ import com.folaukaveinga.dto.SessionDTO;
 import com.folaukaveinga.dto.SignupRequest;
 import com.folaukaveinga.dto.UserDto;
 import com.folaukaveinga.dto.UserMapper;
+import com.folaukaveinga.jwt.JwtPayload;
 import com.folaukaveinga.role.Role;
 import com.folaukaveinga.utils.HttpUtils;
 import com.folaukaveinga.utils.ObjectUtils;
+import com.folaukaveinga.utils.SessionUserUtil;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -107,6 +109,10 @@ public class UserController {
 		UserDto userDto = userMapper.userToUserDto(user);
 		
 		log.debug("userDto: {}",ObjectUtils.toJson(userDto));
+		
+		JwtPayload jwtPayload = SessionUserUtil.getJwtPayload();
+		
+		log.debug("jwtPayload: {}",ObjectUtils.toJson(jwtPayload));
 		
 		return new ResponseEntity<>(userDto, HttpStatus.OK);
 	}
