@@ -1,4 +1,4 @@
-package com.folaukaveinga.springbootdependencyinjection;
+package com.folaukaveinga;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
