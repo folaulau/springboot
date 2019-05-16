@@ -15,8 +15,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.folaukaveinga.testing.domain.User;
-import com.folaukaveinga.testing.repository.UserRepository;
+import com.folaukaveinga.testing.user.User;
+import com.folaukaveinga.testing.user.UserRepository;
 
 @RunWith(SpringRunner.class)
 //@DataJpaTest

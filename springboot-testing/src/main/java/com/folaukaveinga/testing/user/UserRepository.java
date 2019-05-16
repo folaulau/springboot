@@ -1,14 +1,14 @@
-package com.folaukaveinga.testing.repository;
+package com.folaukaveinga.testing.user;
 
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.util.concurrent.ListenableFuture;
 
-import com.folaukaveinga.testing.domain.User;
 import java.lang.String;
 import java.util.List;
 

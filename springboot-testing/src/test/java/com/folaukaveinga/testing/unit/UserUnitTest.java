@@ -5,15 +5,13 @@ import static org.junit.Assert.*;
 import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
-
-import org.assertj.core.util.Arrays;
 import org.junit.Test;
+import com.folaukaveinga.testing.user.User;
 
-import com.folaukaveinga.testing.domain.Address;
-import com.folaukaveinga.testing.domain.User;
-
-public class UserTest {
+public class UserUnitTest {
+	
 	User user = null;
+	
 	@Test
 	public void testConstructor() {
 		user = new User();
@@ -102,24 +100,5 @@ public class UserTest {
 		user.setEmail(email);
 		assertEquals(user.getEmail(), email);
 	}
-	
-	@Test
-	public void testAddressesSetter()throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		Set<Address> addresses = new HashSet<>();
-		addresses.add(new Address());
-		user = new User();
-		user.setAddresses(addresses);
-		Field field = user.getClass().getDeclaredField("addresses");
-		field.setAccessible(true);
-		assertEquals(field.get(user), addresses);
-	}
-	
-	@Test
-	public void testAddressesGetter() {
-		Set<Address> addresses = new HashSet<>();
-		addresses.add(new Address());
-		user = new User();
-		user.setAddresses(addresses);
-		assertEquals(user.getAddresses(), addresses);
-	}
+
 }
