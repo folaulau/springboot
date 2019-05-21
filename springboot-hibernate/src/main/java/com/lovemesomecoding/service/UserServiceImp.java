@@ -44,7 +44,7 @@ public class UserServiceImp implements UserService {
 	
 	@Override
 	public User update(User user) {
-		return userDAO.saveAndFlush(user);
+		return userDAO.update(user);
 	}
 
 	@Override

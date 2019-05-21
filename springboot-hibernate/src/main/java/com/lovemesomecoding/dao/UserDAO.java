@@ -27,13 +27,27 @@ public class UserDAO {
 		transaction.begin();
 		Object id = session.save(user);
 		transaction.commit();
+		session.close();
 		log.debug("id={}",ObjectUtils.toJson(id));
 		user.setId((long)id);
 		
 		return user;
 	}
 	
+	public User update(User user) {
+		log.debug("saveAndFlush(..)");
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.getTransaction();
+		transaction.begin();
+		session.update(user);
+		transaction.commit();
+		session.close();
+		
+		return this.getById(user.getId());
+	}
+	
 	public User getById(Long memberId) {
-		return null;
+		Session session = sessionFactory.openSession();
+		return session.get(User.class, memberId);
 	}
 }

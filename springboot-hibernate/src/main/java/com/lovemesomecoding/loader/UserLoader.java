@@ -83,5 +83,12 @@ public class UserLoader {
 		
 		log.info("post persist: {}",ObjectUtils.toJson(user));
 		
+		user.setEmail("folaukaveinga+100+update@gmail.com");
+		user.setPassword("Test1234!");
+		
+		user =userService.update(user);
+		
+		log.info("post update: {}",ObjectUtils.toJson(user));
+		
 	}
 }
