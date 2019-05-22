@@ -35,7 +35,7 @@ public class UserDAO {
 	}
 	
 	public User update(User user) {
-		log.debug("saveAndFlush(..)");
+		log.debug("update(..)");
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.getTransaction();
 		transaction.begin();
