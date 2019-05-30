@@ -208,23 +208,6 @@ public class CustomLoginFilter extends AbstractAuthenticationProcessingFilter {
 		
 	}
 	
-	/**
-	 * Parse for access token
-	 * @param authorizationHeader
-	 * @return String access token
-	 */
-	private String getAccessToken(String authorizationHeader) {
-		log.debug("getAccessToken(..)");
-		String bearerToken = null;
-		try {
-			bearerToken = StringUtils.substringAfter(authorizationHeader, " ").trim();
-			log.info("bearerToken: {}",bearerToken);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return bearerToken;
-	}
-	
 	
 	/**
 	 * Decode authentication token
