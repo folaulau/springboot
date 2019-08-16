@@ -1,10 +1,14 @@
 package com.lovemesomecoding.user;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.amazonaws.services.sqs.model.MessageAttributeValue;
 import com.lovemesomecoding.aws.sqs.SQSMessage;
 import com.lovemesomecoding.aws.sqs.SQSMessageAction;
 import com.lovemesomecoding.aws.sqs.SQSMessageType;
@@ -23,7 +27,8 @@ public class UserServiceImp implements UserService {
 	@Override
 	public User create(User user) {
 		log.debug("create user={}",ObjectUtils.toJson(user));
-		sqsService.sendMessage(SQSQueue.ACCOUNTS_QUEUE_URL, new SQSMessage(SQSMessageType.EVENT, SQSMessageAction.SEND_USER_WELCOME_EMAIL, ObjectUtils.toJson(user)));
+		
+		sqsService.sendMessageToAccountQueue(new SQSMessage(SQSMessageType.EVENT, SQSMessageAction.SEND_USER_WELCOME_EMAIL, ObjectUtils.toJson(user)));
 		
 		return user;
 	}

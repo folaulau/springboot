@@ -48,6 +48,10 @@ public class SQSService {
 	public boolean sendMessage(String queueUrl, SQSMessage msg, int delaySeconds) {
 		return sendMessage(queueUrl,msg,delaySeconds,null);
 	}
+	
+	public boolean sendMessage(String queueUrl, SQSMessage msg, Map<String, MessageAttributeValue> messageAttributes) {
+		return sendMessage(queueUrl,msg,0,messageAttributes);
+	}
 
 	public boolean sendMessage(String queueUrl, SQSMessage msg, int delaySeconds, Map<String, MessageAttributeValue> messageAttributes) {
 		
@@ -56,16 +60,20 @@ public class SQSService {
 		}
 		
 		SendMessageRequest sendMessageRequest = new SendMessageRequest();
-		sendMessageRequest.setQueueUrl(queueUrl);
-		sendMessageRequest.setMessageBody(msg.toJson());
-		
-		if(delaySeconds>0) {
-			sendMessageRequest.setDelaySeconds(delaySeconds);
-		}
+
+		sendMessageRequest.withMessageBody(msg.toJson());
+		sendMessageRequest.withQueueUrl(queueUrl);
 		
 		if(messageAttributes!=null) {
+			log.debug("messageAttributes set!");
 			sendMessageRequest.withMessageAttributes(messageAttributes);
 		}
+		
+//		if(delaySeconds>0) {
+//			sendMessageRequest.withDelaySeconds(delaySeconds);
+//		}
+		
+		log.debug("messageAttributes={}",ObjectUtils.toJson(sendMessageRequest.getMessageAttributes()));
 		
 		SendMessageResult sendMessageResult = amazonSQS.sendMessage(sendMessageRequest);
 

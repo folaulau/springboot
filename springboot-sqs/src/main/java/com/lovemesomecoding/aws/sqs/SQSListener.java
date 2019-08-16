@@ -1,6 +1,7 @@
 package com.lovemesomecoding.aws.sqs;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageResult;
 import com.amazonaws.services.sqs.model.Message;
+import com.amazonaws.services.sqs.model.MessageAttributeValue;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.lovemesomecoding.user.User;
 import com.lovemesomecoding.user.UserService;
@@ -40,20 +42,11 @@ public class SQSListener {
 		while (true) {
 
 			final List<Message> messages = amazonSQS.receiveMessage(receiveMessageRequest).getMessages();
-			log.debug("polling 1 {}", queueUrl);
+			log.debug("polling {}", queueUrl);
 
 			if (messages != null && messages.size() > 0) {
 				for (final Message message : messages) {
-					log.debug("Message Received 1");
-					log.debug("  MessageId:     " + message.getMessageId());
-					log.debug("  ReceiptHandle: " + message.getReceiptHandle());
-					log.debug("  MD5OfBody:     " + message.getMD5OfBody());
-					log.debug("  Body:          " + message.getBody());
-					for (final Entry<String, String> entry : message.getAttributes().entrySet()) {
-						log.debug("Attribute");
-						log.debug("  Name:  " + entry.getKey());
-						log.debug("  Value: " + entry.getValue());
-					}
+					log.debug("Message Received");
 
 					SQSMessage sqsMessage = SQSMessage.fromJson(message.getBody());
 
@@ -94,62 +87,52 @@ public class SQSListener {
 	 * two threads are listening to the ACCOUNTS_QUEUE. Only one of the listeners 
 	 * gets to process the message.
 	 */
-	@Async
-	public void processAccountQueue1() {
-		int waitingSeconds = 10;
-		String queueUrl = SQSQueue.ACCOUNTS_QUEUE_URL;
-
-		final ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
-		receiveMessageRequest.withWaitTimeSeconds(waitingSeconds);
-
-		while (true) {
-
-			final List<Message> messages = amazonSQS.receiveMessage(receiveMessageRequest).getMessages();
-			log.debug("polling 2 {}", queueUrl);
-
-			if (messages != null && messages.size() > 0) {
-				for (final Message message : messages) {
-					log.debug("Message Received 2");
-					log.debug("  MessageId:     " + message.getMessageId());
-					log.debug("  ReceiptHandle: " + message.getReceiptHandle());
-					log.debug("  MD5OfBody:     " + message.getMD5OfBody());
-					log.debug("  Body:          " + message.getBody());
-					for (final Entry<String, String> entry : message.getAttributes().entrySet()) {
-						log.debug("Attribute");
-						log.debug("  Name:  " + entry.getKey());
-						log.debug("  Value: " + entry.getValue());
-					}
-
-					SQSMessage sqsMessage = SQSMessage.fromJson(message.getBody());
-
-					int retryCount = 0;
-
-					while (true) {
-						try {
-							handleAccountMessage(sqsMessage);
-							break;
-						} catch (Exception e) {
-							if (retryCount == 5) {
-								break;
-							}
-							log.debug("retryCount={}", retryCount);
-							retryCount++;
-						}
-					}
-
-					// delete message once it's done
-					DeleteMessageResult deleteMessageResult = amazonSQS
-							.deleteMessage(new DeleteMessageRequest(queueUrl, message.getReceiptHandle()));
-
-					log.debug("delete message response={}",
-							ObjectUtils.toJson(deleteMessageResult.getSdkResponseMetadata()));
-
-				}
-			} else {
-				log.debug("{} is empty", queueUrl);
-			}
-		}
-	}
+//	@Async
+//	public void processAccountQueue1() {
+//		int waitingSeconds = 10;
+//		String queueUrl = SQSQueue.ACCOUNTS_QUEUE_URL;
+//
+//		final ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
+//		receiveMessageRequest.withWaitTimeSeconds(waitingSeconds);
+//
+//		while (true) {
+//
+//			final List<Message> messages = amazonSQS.receiveMessage(receiveMessageRequest).getMessages();
+//			log.debug("polling {}", queueUrl);
+//
+//			if (messages != null && messages.size() > 0) {
+//				for (final Message message : messages) {
+//
+//					SQSMessage sqsMessage = SQSMessage.fromJson(message.getBody());
+//
+//					int retryCount = 0;
+//
+//					while (true) {
+//						try {
+//							handleAccountMessage(sqsMessage);
+//							break;
+//						} catch (Exception e) {
+//							if (retryCount == 5) {
+//								break;
+//							}
+//							log.debug("retryCount={}", retryCount);
+//							retryCount++;
+//						}
+//					}
+//
+//					// delete message once it's done
+//					DeleteMessageResult deleteMessageResult = amazonSQS
+//							.deleteMessage(new DeleteMessageRequest(queueUrl, message.getReceiptHandle()));
+//
+//					log.debug("delete message response={}",
+//							ObjectUtils.toJson(deleteMessageResult.getSdkResponseMetadata()));
+//
+//				}
+//			} else {
+//				log.debug("{} is empty", queueUrl);
+//			}
+//		}
+//	}
 
 	private void handleAccountMessage(SQSMessage sqsMessage) {
 
@@ -157,12 +140,15 @@ public class SQSListener {
 
 			String action = sqsMessage.getAction();
 
-			User user = ObjectUtils.fromJsonString(sqsMessage.getData(), User.class);
 			
-			log.debug("user={}",ObjectUtils.toJson(user));
+			User user = null;
 			
 			switch (action) {
 				case SQSMessageAction.SEND_USER_WELCOME_EMAIL:
+					
+					user = ObjectUtils.fromJsonString(sqsMessage.getData(), User.class);
+					
+					log.debug("user={}",ObjectUtils.toJson(user));
 					
 					this.userService.sendWelcomeEmail(user);
 				break;
