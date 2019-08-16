@@ -22,9 +22,20 @@ public class SQSOperations {
 	@Autowired
 	private SQSService sqsService;
 	
+	
+	@Test
+	public void sendMsg() {
+		String message = "test";
+		int delaySeconds = 10;
+		
+//		boolean result = sqsService.sendMessage(SQSService.testQueueUrl, new , delaySeconds, null);
+//		
+//		log.info("result: {}", result);
+	}
+	
 	@Test
 	public void createQueue() {
-		String name = "test";
+		String name = "accounts";
 		String queueUrl = sqsService.createQueue(name);
 		
 		log.info("queueUrl: {}", queueUrl);

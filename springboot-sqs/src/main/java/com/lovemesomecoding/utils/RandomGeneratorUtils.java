@@ -77,4 +77,9 @@ public final class RandomGeneratorUtils {
 		return "jwt-"+UUID.randomUUID().toString()+"-"+RandomStringUtils.randomAlphabetic(10);
 	}
 
+	public static String getQueueMsgId() {
+		// TODO Auto-generated method stub
+		return UUID.randomUUID().toString();
+	}
+
 }

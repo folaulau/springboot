@@ -44,11 +44,4 @@ public class QueueController {
 		return new ResponseEntity<>(sqsService.getAllQueueUrls(), HttpStatus.OK);
 	}
 	
-	@ApiOperation(value = "Create a queue")
-	@PostMapping("/queues")
-	public ResponseEntity<String> createQueue(@RequestParam("name") String name){
-		log.debug("createQueue(..)");
-		return new ResponseEntity<>(sqsService.createQueue(name), HttpStatus.OK);
-	}
-
 }
