@@ -69,9 +69,9 @@ public class SQSService {
 			sendMessageRequest.withMessageAttributes(messageAttributes);
 		}
 		
-//		if(delaySeconds>0) {
-//			sendMessageRequest.withDelaySeconds(delaySeconds);
-//		}
+		if(delaySeconds>0) {
+			sendMessageRequest.withDelaySeconds(delaySeconds);
+		}
 		
 		log.debug("messageAttributes={}",ObjectUtils.toJson(sendMessageRequest.getMessageAttributes()));
 		

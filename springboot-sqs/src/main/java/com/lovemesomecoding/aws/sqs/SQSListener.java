@@ -52,6 +52,7 @@ public class SQSListener {
 
 					int retryCount = 0;
 
+					// retry policy
 					while (true) {
 						try {
 							handleAccountMessage(sqsMessage);
