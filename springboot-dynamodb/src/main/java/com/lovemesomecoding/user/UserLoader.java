@@ -33,6 +33,7 @@ public class UserLoader {
 		user.setLastName("Kaveinga");
 		user.setCreatedAt(new Date());
 		user.setPhoneNumber("3109934731");
+		user.setBalance(RandomGeneratorUtils.getLongWithin(100, 100000));
 		
 		userRepository.create(user);
 		

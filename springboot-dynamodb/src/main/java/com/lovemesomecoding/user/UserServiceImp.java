@@ -25,4 +25,6 @@ public class UserServiceImp implements UserService {
 		return userRepository.getAllUser();
 	}
 
+
+
 }

@@ -17,7 +17,7 @@ public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@DynamoDBHashKey(attributeName="uuid")  
+	@DynamoDBHashKey(attributeName="userid")  
 	@DynamoDBAttribute
 	private String uuid;
 
@@ -32,6 +32,9 @@ public class User implements Serializable {
 	
 	@DynamoDBAttribute
 	private String phoneNumber;
+	
+	@DynamoDBAttribute
+	private double balance;
 	
 	@DynamoDBAttribute
 	private Date createdAt;
@@ -88,6 +91,14 @@ public class User implements Serializable {
 
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}
 
 	@Override

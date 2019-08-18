@@ -33,11 +33,19 @@ public final class RandomGeneratorUtils {
 		return RandomUtils.nextInt(start, end);
 	}
 
+	public static long getLong() {
+		return RandomUtils.nextLong();
+	}
+
+	public static long getLongWithin(long start, long end) {
+		return RandomUtils.nextLong(start, end);
+	}
+	
 	public static Float getFloat() {
 		return RandomUtils.nextFloat();
 	}
 
-	public static Float getIntegerWithin(float start, float end) {
+	public static Float getFloatWithin(float start, float end) {
 		return RandomUtils.nextFloat(start, end);
 	}
 

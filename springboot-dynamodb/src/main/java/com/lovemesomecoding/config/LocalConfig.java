@@ -37,7 +37,7 @@ public class LocalConfig {
 	
 	@Bean
 	public AWSCredentialsProvider amazonAWSCredentialsProvider() {
-		return new ProfileCredentialsProvider("folauk+100");
+		return new ProfileCredentialsProvider("folauk100-dev");
 	}
 	
 	@Bean
