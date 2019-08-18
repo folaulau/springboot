@@ -199,6 +199,7 @@ public class UserRepositoryImp implements UserRepository {
 
 			TransactWriteItemsResult transactWriteItemsResult = amazonDynamoDB.transactWriteItems(withdrawTransaction);
 			log.debug("consumed capacity={}",ObjectUtils.toJson(transactWriteItemsResult.getConsumedCapacity()));
+			
 			return (transactWriteItemsResult.getConsumedCapacity()!=null) ? true : false;
 		} catch (ResourceNotFoundException e) {
 			log.error("One of the table involved in the transaction is not found " + e.getMessage());
