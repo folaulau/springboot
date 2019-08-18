@@ -1,5 +1,7 @@
 package com.lovemesomecoding;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -10,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.amazonaws.services.sns.util.Topics;
 import com.lovemesomecoding.aws.sns.SNSService;
+import com.lovemesomecoding.utils.ObjectUtils;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -91,6 +94,52 @@ public class SNSServiceTester {
 		boolean sub = snsService.sendMsgToTopic(newsTopic, msg);
 		
 		log.info("sub={}",sub);
+	}
+	
+	@Test
+	public void getAllTopicArns() {
+		
+		List<String> topicArns = snsService.getAllTopicArns();
+		
+		log.info("topicArns={}",ObjectUtils.toJson(topicArns));
+	}
+	
+	@Test
+	public void getSubscriptionsByTopic() {
+		
+		List<String> topicArns = snsService.getAllTopicArns();
+		
+		log.info("topicArns={}",ObjectUtils.toJson(topicArns));
+		
+		topicArns.forEach((topicArn)->{
+			List<String> subscriptionArns = snsService.getSubscriptionsByTopic(topicArn);
+			log.info("subscriptionArns={}",ObjectUtils.toJson(subscriptionArns));
+		});
+		
+	}
+	
+	@Test
+	public void deleteAllTopicsAndSubscriptions() {
+		
+		List<String> topicArns = snsService.getAllTopicArns();
+		
+		log.info("topicArns={}",ObjectUtils.toJson(topicArns));
+		
+		topicArns.forEach((topicArn)->{
+			List<String> subscriptionArns = snsService.getSubscriptionsByTopic(topicArn);
+			log.info("subscriptionArns={}",ObjectUtils.toJson(subscriptionArns));
+			
+			// unsubscribe first
+			subscriptionArns.forEach((subscriptionArn)->{
+				boolean unsubscribe = snsService.unsubscribe(subscriptionArn);
+				log.info("unsubscribe={}",unsubscribe);
+			});
+			
+			
+			boolean deleteResult = snsService.deleteTopic(topicArn);
+			log.info("deleteResult={}",deleteResult);
+		});
+		
 	}
 
 }
