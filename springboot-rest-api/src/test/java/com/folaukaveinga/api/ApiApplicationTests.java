@@ -11,6 +11,7 @@ public class ApiApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("hi");
 	}
 
 }

@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,22 +22,30 @@ import com.folaukaveinga.api.utility.HttpRequestInterceptor;
 import com.folaukaveinga.api.utility.HttpUtils;
 
 public class UserEndpointTest {
+	
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
 	RestTemplate restTemplate = new RestTemplate(
 			new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
 
-	private String apiUrl = "";
+	private String apiUrl = "http://localhost:8080";
 	
 	@Before
 	public void init() {
+		log.info("init()");
 		restTemplate.getInterceptors().add(new HttpRequestInterceptor());
 	}
 	
 	@Test
-	public void create() {
-		User user = null;
-		String username = "";
-		String password = "";
+	public void testCreate() {
+		log.info("create(..)");
+		User user = new User();
+		user.setEmail("folau@gmail.com");
+		user.setName("Laulau");
+		user.setType("user");
+		
+		String username = "asdf";
+		String password = "asdf";
 		// include headers
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Authorization", HttpUtils.generateBasicAuthenticationToken(username, password));
@@ -46,25 +56,25 @@ public class UserEndpointTest {
 		restTemplate.postForObject(apiUrl+"/users", entity, User.class);
 	}
 
-	@Test
-	public void update() {
-		User user = null;
-		try {
-			restTemplate.put(new URI(apiUrl+"/users"), user);
-		} catch (RestClientException | URISyntaxException e) {
-			System.out.println(e.getLocalizedMessage());
-		}
-	}
-
-	@Test
-	public void getById(Integer id) {
-		Map<String, Integer> params = new HashMap<String, Integer>();
-	    params.put("id", id);
-	    restTemplate.getForObject(apiUrl+"/users/{id}", User.class, params);
-	}
-
-	@Test
-	public void getAll() {
-		List<User> users = restTemplate.getForObject(apiUrl+"/users", List.class);
-	}
+//	@Test
+//	public void update() {
+//		User user = null;
+//		try {
+//			restTemplate.put(new URI(apiUrl+"/users"), user);
+//		} catch (RestClientException | URISyntaxException e) {
+//			System.out.println(e.getLocalizedMessage());
+//		}
+//	}
+//
+//	@Test
+//	public void getById(Integer id) {
+//		Map<String, Integer> params = new HashMap<String, Integer>();
+//	    params.put("id", id);
+//	    restTemplate.getForObject(apiUrl+"/users/{id}", User.class, params);
+//	}
+//
+//	@Test
+//	public void getAll() {
+//		List<User> users = restTemplate.getForObject(apiUrl+"/users", List.class);
+//	}
 }
