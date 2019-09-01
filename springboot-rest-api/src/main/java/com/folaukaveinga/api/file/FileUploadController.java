@@ -1,10 +1,21 @@
 package com.folaukaveinga.api.file;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.folaukaveinga.api.user.User;
 import com.folaukaveinga.api.user.UserCreateDTO;
 import com.folaukaveinga.api.user.UserService;
+import com.folaukaveinga.api.utility.FileStorageProperties;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -27,6 +39,12 @@ import io.swagger.annotations.ApiParam;
 public class FileUploadController {
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+    private HttpServletRequest request;
+	
+	@Autowired
+    private FileStorageProperties fileStorageProperties;
 	
 	@Autowired
 	private UserService userService;
@@ -54,6 +72,22 @@ public class FileUploadController {
 		log.info("postWithDTO(..)");
 		log.info("name: {}, email: {}",userCreateDTO.getName(),userCreateDTO.getEmail());
 		log.info("file size:{}, name:{}", userCreateDTO.getFile().getSize(),userCreateDTO.getFile().getOriginalFilename());
+		
+		try {
+		
+			String fileName = StringUtils.cleanPath(userCreateDTO.getFile().getOriginalFilename());
+			
+			String filePath = fileStorageProperties.getUploadDir()+"/"+fileName;
+			
+			log.info("filePath: {}", filePath);
+            
+            Files.copy(userCreateDTO.getFile().getInputStream(), Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
+			
+			//userCreateDTO.getFile().transferTo(new File(filePath));
+		} catch (IllegalStateException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return new ResponseEntity<>(userService.create(new User(null,null,userCreateDTO.getName(),userCreateDTO.getEmail(),null)), HttpStatus.OK);
 	}
