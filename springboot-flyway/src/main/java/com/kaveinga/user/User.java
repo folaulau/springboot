@@ -41,24 +41,18 @@ public class User  implements Serializable {
 	private String uuid;
 
 	@NotEmpty
-	@Column(name = "first_name", nullable = false)
+	@Column(name = "first_name")
 	private String firstName;
 
 	@NotEmpty
-	@Column(name = "last_name", nullable = false)
+	@Column(name = "last_name")
 	private String lastName;
 
 	@Column(name = "email", unique = true, nullable = false)
 	private String email;
 
-	@Column(name = "password", nullable = false)
-	private String password;
-
-	@Column(name = "phone_number", nullable = false)
+	@Column(name = "phone_number")
 	private String phoneNumber;
-
-	@Column(name = "company", nullable = false)
-	private String company;
 
 	public User() {
 		super();
@@ -97,28 +91,12 @@ public class User  implements Serializable {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-
-	public String getCompany() {
-		return company;
-	}
-
-	public void setCompany(String company) {
-		this.company = company;
 	}
 	
 	public String getUuid() {

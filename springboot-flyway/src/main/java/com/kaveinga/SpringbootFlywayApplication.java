@@ -16,6 +16,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 /*
  * https://flywaydb.org/getstarted/java
+ * 
+ * https://flywaydb.org/documentation/migrations
  */
 
 @SpringBootApplication
