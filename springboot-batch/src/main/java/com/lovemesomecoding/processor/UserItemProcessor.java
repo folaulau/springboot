@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Service;
 
-import com.lovemesomecoding.model.User;
+import com.lovemesomecoding.user.User;
 
 @Service
 public class UserItemProcessor implements ItemProcessor<User, User> {
@@ -20,7 +20,9 @@ public class UserItemProcessor implements ItemProcessor<User, User> {
 		final String firstName = item.getFirstName().toUpperCase();
         final String lastName = item.getLastName().toUpperCase();
 
-        final User transformedPerson = new User(firstName, lastName);
+        final User transformedPerson = new User();
+        transformedPerson.setFirstName(firstName);
+        transformedPerson.setLastName(lastName);
         
 		return transformedPerson;
 	}

@@ -20,8 +20,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import com.lovemesomecoding.listener.JobCompletionNotificationListener;
-import com.lovemesomecoding.model.User;
 import com.lovemesomecoding.processor.UserItemProcessor;
+import com.lovemesomecoding.user.User;
 
 @Configuration
 @EnableBatchProcessing
