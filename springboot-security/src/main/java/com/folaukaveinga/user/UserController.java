@@ -116,4 +116,12 @@ public class UserController {
 		
 		return new ResponseEntity<>(userDto, HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Get Random Name")
+	@GetMapping("/names")
+	public ResponseEntity<String> getRandomName(){
+		log.debug("getRandomName(..)");
+		
+		return new ResponseEntity<>("Folau", HttpStatus.OK);
+	}
 }

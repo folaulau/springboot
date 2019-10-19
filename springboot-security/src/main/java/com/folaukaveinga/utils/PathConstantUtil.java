@@ -30,5 +30,9 @@ public final class PathConstantUtil {
             "/webjars/springfox-swagger-ui/swagger-ui.css?v=2.8.0-SNAPSHOT"
     };
 	
+	public static final String[] PUBLIC_ENDPOINTS = {
+            "/names"
+    };
+	
 	
 }

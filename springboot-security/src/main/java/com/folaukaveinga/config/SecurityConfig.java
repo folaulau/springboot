@@ -77,6 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(PathConstantUtil.PING_URL).permitAll()
 				.antMatchers(PathConstantUtil.LOGIN_URL).permitAll()
 				.antMatchers(PathConstantUtil.SIGNUP_URL).permitAll()
+				.antMatchers(PathConstantUtil.PUBLIC_ENDPOINTS).permitAll()
 				.anyRequest().permitAll();
 					
 		// logout
@@ -110,6 +111,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(PathConstantUtil.PING_URL)
 			.antMatchers(PathConstantUtil.AUTH_TOKEN_URL)
 			.antMatchers(PathConstantUtil.SWAGGER_DOC_URLS)
+			.antMatchers(PathConstantUtil.PUBLIC_ENDPOINTS)
 			.antMatchers("/actuator/**");
 	}
 

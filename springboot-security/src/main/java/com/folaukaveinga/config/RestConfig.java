@@ -1,8 +1,12 @@
 package com.folaukaveinga.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.folaukaveinga.interceptor.GlobalInterceptor;
 
 @Configuration
 public class RestConfig implements WebMvcConfigurer {
@@ -19,4 +23,13 @@ public class RestConfig implements WebMvcConfigurer {
 		registry.addMapping("/**").allowedHeaders("*").allowedMethods("*").allowedOrigins("*");
 	}
 
+	
+	@Autowired
+	private GlobalInterceptor globalInterceptor;
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(globalInterceptor);
+		//WebMvcConfigurer.super.addInterceptors(registry);
+	}
 }
