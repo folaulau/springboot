@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,7 +57,7 @@ public class UserController {
 	
 	@ApiOperation(value = "Create User By Id")
 	@GetMapping("/{id}")
-	public ResponseEntity<User> getById(@PathVariable("id") Integer id){
+	public ResponseEntity<User> getById(@RequestHeader(required = false, name = "fingerPrint") String fingerPrint, @PathVariable("id") Integer id){
 		log.info("getById({})", id);
 		return new ResponseEntity<>(userService.getById(id), HttpStatus.OK);
 	}

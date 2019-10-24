@@ -7,6 +7,10 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 public class HttpUtils {
 	
 	private static final String[] IP_HEADER_CANDIDATES = { "X-Forwarded-For", "Proxy-Client-IP", "WL-Proxy-Client-IP",
@@ -55,5 +59,25 @@ public class HttpUtils {
 		}
 		return obj;
 	}
+	
+	public static String getHeaderValue(HttpServletRequest request, String header) {
+
+		if(header==null) {
+			return null;
+		}
+		if(request==null) {
+			RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
+			if (RequestContextHolder.getRequestAttributes() != null) {
+			     request = ((ServletRequestAttributes) attributes).getRequest();
+			}
+		}
+		
+		if(request==null) {
+			return null;
+		}
+		
+		return request.getHeader(header);
+	}
+
 
 }
