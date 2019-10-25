@@ -121,4 +121,16 @@ public class RestService {
 
 		return false;
 	}
+	
+	
+	@Async
+	public CompletableFuture<String> getName() {
+		log.info("getName with {}", Thread.currentThread().getName());
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return CompletableFuture.completedFuture("Folau");
+	}
 }
