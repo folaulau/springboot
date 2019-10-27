@@ -37,13 +37,16 @@ public class User  implements Serializable {
 	@Column(name = "id", unique = true, nullable = false, updatable = false)
 	private Long id;
 	
-	@Column(name = "uuid", unique = true, nullable = false, updatable = false)
+	@Column(name = "uid", unique = true, nullable = false, updatable = false)
 	private String uuid;
 
 	@NotEmpty
 	@Column(name = "first_name")
 	private String firstName;
 
+	@Column(name = "name")
+	private String name;
+	
 	@NotEmpty
 	@Column(name = "last_name")
 	private String lastName;
@@ -53,6 +56,9 @@ public class User  implements Serializable {
 
 	@Column(name = "phone_number")
 	private String phoneNumber;
+	
+	@Column(name = "password")
+	private String password;
 
 	public User() {
 		super();
@@ -105,6 +111,22 @@ public class User  implements Serializable {
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
