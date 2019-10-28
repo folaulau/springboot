@@ -64,6 +64,13 @@ public class UserRestController {
 
 		return new ResponseEntity<>(User.fromJson(userJson), HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Find by age")
+	@RequestMapping(value = { "/age/{age}" }, method = RequestMethod.GET)
+	public ResponseEntity<List<User>> findByAge(@PathVariable("age") int age) {
+		log.info("find users by age: {}", age);
+		return new ResponseEntity<>(userService.findByAge(age), HttpStatus.OK);
+	}
 
 	@ApiOperation(value = "get User PaymentMethods by user id")
 	@RequestMapping(value = { "/{id}/paymentmethods" }, method = RequestMethod.GET)

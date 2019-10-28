@@ -18,6 +18,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -71,7 +73,7 @@ public class User implements Serializable {
 
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
 
@@ -82,7 +84,7 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private Set<Address> addresses;
-	
+
 	@JsonIgnoreProperties("user")
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
@@ -99,14 +101,14 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private Set<Home> homes;
-	
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at", updatable = false, nullable = false)
 	private Date createdAt;
 
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	@UpdateTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "updated_at", updatable = true, nullable = false)
@@ -184,9 +186,9 @@ public class User implements Serializable {
 	public void setAddresses(Set<Address> addresses) {
 		this.addresses = addresses;
 	}
-	
+
 	public void addAddress(Address address) {
-		if(this.addresses == null){
+		if (this.addresses == null) {
 			this.addresses = new HashSet<>();
 		}
 		this.addresses.add(address);
@@ -211,7 +213,7 @@ public class User implements Serializable {
 	public void setPaymentMethods(Set<PaymentMethod> paymentMethods) {
 		this.paymentMethods = paymentMethods;
 	}
-	
+
 	public void addPaymentMethod(PaymentMethod paymentMethod) {
 		this.paymentMethods.add(paymentMethod);
 	}
@@ -235,9 +237,9 @@ public class User implements Serializable {
 	public void setCars(Set<Car> cars) {
 		this.cars = cars;
 	}
-	
+
 	public void addCar(Car car) {
-		if(this.cars == null){
+		if (this.cars == null) {
 			this.cars = new HashSet<>();
 		}
 		this.cars.add(car);
@@ -250,9 +252,9 @@ public class User implements Serializable {
 	public void setHomes(Set<Home> homes) {
 		this.homes = homes;
 	}
-	
+
 	public void addHome(Home home) {
-		if(this.homes == null){
+		if (this.homes == null) {
 			this.homes = new HashSet<>();
 		}
 		this.homes.add(home);
