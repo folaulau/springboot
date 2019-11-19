@@ -1,0 +1,5 @@
+Resources
+
+verify - verifies that certain things happen.
+
+https://www.journaldev.com/java/mockito
