@@ -14,8 +14,10 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long>{
 
-	@Async
-	public Future<List<User>> findByAge(int age);
+//	@Async
+//	public Future<List<User>> findByAge(int age);
+	
+	public List<User> findByAge(int age);
 	
 	@Async
 	public CompletableFuture<List<User>> findByName(String name);

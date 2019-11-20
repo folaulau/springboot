@@ -39,12 +39,7 @@ public class UserService {
 
 	public List<User> getByAge(int age) {
 		log.info("get user by age: {}", age);
-		try {
-			return userRepository.findByAge(age).get();
-		} catch (InterruptedException | ExecutionException e) {
-			log.warn("Exception, msg: {}", e.getMessage());
-		}
-		return new ArrayList<>();
+		return userRepository.findByAge(age);
 	}
 
 	public List<User> getByName(String name) {
