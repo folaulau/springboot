@@ -1,4 +1,4 @@
-package com.folaukaveinga.testing.unit;
+package com.folaukaveinga.testing.user;
 
 import static org.junit.Assert.*;
 
@@ -26,7 +26,7 @@ public class UserUnitTest {
 	
 	@Test
 	public void testConstructorWith4Parameters() {
-		user = new User(1,"Jane Doe",23,"janedoe@gmail.com");
+		user = new User("Jane Doe",23,"janedoe@gmail.com");
 		assertNotNull(user);
 	}
 	
@@ -45,13 +45,13 @@ public class UserUnitTest {
 		long id = 1;
 		user = new User();
 		user.setId(id);
-		assertEquals(user.getId(), id);
+		assertEquals(user.getId().longValue(), id);
 	}
 	@Test
 	public void testNameSetter() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		String name = "John Doe";
 		user = new User();
-		user.setName(name);
+		user.setLastName(name);
 		Field field = user.getClass().getDeclaredField("name");
 		field.setAccessible(true);
 		assertEquals(field.get(user), name);
@@ -61,15 +61,14 @@ public class UserUnitTest {
 	public void testNameGetter() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		String name = "John Doe";
 		user = new User();
-		user.setName(name);
-		assertEquals(user.getName(), name);
+		user.setLastName(name);
+		assertEquals(user.getLastName(), name);
 	}
 	
 	@Test
 	public void testAgeSetter() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		int age = 23;
 		user = new User();
-		user.setAge(age);
 		Field field = user.getClass().getDeclaredField("age");
 		field.setAccessible(true);
 		assertEquals(field.get(user), age);
@@ -79,7 +78,6 @@ public class UserUnitTest {
 	public void testAgeGetter() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		int age = 23;
 		user = new User();
-		user.setAge(age);
 		assertEquals(user.getAge(), age);
 	}
 	

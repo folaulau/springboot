@@ -1,4 +1,4 @@
-package com.folaukaveinga.testing.unit;
+package com.folaukaveinga.testing.user;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.when;
@@ -25,11 +25,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.folaukaveinga.testing.user.User;
-import com.folaukaveinga.testing.user.UserRestController;
+import com.folaukaveinga.testing.user.UserController;
 import com.folaukaveinga.testing.user.UserService;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(UserRestController.class)
+@WebMvcTest(UserController.class)
 public class UserRestControllerTest {
 
 	@Autowired
@@ -41,7 +41,7 @@ public class UserRestControllerTest {
 	@Test
 	public void testSave() throws Exception {
 		User user = new User("kinga",21,"kinga@gmail.com");
-		User savedUser = new User(1, "kinga",21,"kinga@gmail.com");
+		User savedUser = new User("kinga",21,"kinga@gmail.com");
 		when(userService.save(user)).thenReturn(savedUser);
 		
 		this.mockMvc.perform(post("/api/users").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
@@ -53,7 +53,7 @@ public class UserRestControllerTest {
 
 	@Test
 	public void testGet() throws Exception {
-		when(userService.get(1)).thenReturn(new User("folau",21,"fkaveinga@gmail.com"));
+		when(userService.getById(1)).thenReturn(new User("folau",21,"fkaveinga@gmail.com"));
 		
 		this.mockMvc.perform(get("/api/users/1").contentType(MediaType.APPLICATION_JSON))
 			.andDo(print())
@@ -80,7 +80,7 @@ public class UserRestControllerTest {
 	@Test
 	public void testUpdate() throws Exception {
 		User user = new User("kinga",21,"kinga@gmail.com");
-		User savedUser = new User(1, "kinga",21,"kinga@gmail.com");
+		User savedUser = new User("kinga",21,"kinga@gmail.com");
 		when(userService.update(user)).thenReturn(savedUser);
 		
 		this.mockMvc.perform(patch("/api/users/update").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))

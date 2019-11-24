@@ -95,7 +95,7 @@ public final class ConstantUtils {
 	}
 
 	public static String getRandomGender() {
-		return ConstantUtils.genders.get(RandomGeneratorUtils.getIntegerWithin(0, ConstantUtils.genders.size() - 1));
+		return ConstantUtils.genders.get(RandomGeneratorUtils.getIntegerWithin(0, ConstantUtils.genders.size()));
 	}
 
 	public static String getRandomRelation() {
@@ -103,12 +103,26 @@ public final class ConstantUtils {
 				.get(RandomGeneratorUtils.getIntegerWithin(0, ConstantUtils.relationOptions.size()));
 	}
 
-	public static User getMember() {
+	public static User generateUser() {
 		User user = new User();
-		user.setAge(9);
+		
+		int oldestAge = 40;
+		user.setDob(DateTimeUtils.getRandomDob(oldestAge));
 		user.setEmail(getRandomEmail());
-		user.setName(getRandomFirstname()+" "+getRandomLastname());
+		user.setFirstName(getRandomFirstname());
+		user.setLastName(getRandomLastname());
+		user.setGender(getRandomGender());
+		user.setPhoneNumber(getRandomPhoneNumber());
+		
+		String ssn = getSSN();
+		
+		user.setSsn(ssn);
+		user.setSsnLast4(ssn.substring(ssn.length()-4, ssn.length()));
 		return user;
+	}
+
+	private static String getRandomPhoneNumber() {
+		return "310"+RandomGeneratorUtils.getIntegerWithin(100, 999)+""+RandomGeneratorUtils.getIntegerWithin(1000, 9999);
 	}
 
 	public static ObjectNode getValidSSNAddress() {
@@ -127,15 +141,15 @@ public final class ConstantUtils {
 	}
 
 	public static String getRandomEmail(String name) {
-		return getRandomEmail(name, "");
+		return getRandomEmail(name, null);
 	}
 
 	public static String getRandomEmail(String name, String slug) {
 		String email = null;
 		if (slug == null) {
-			email = name + "+scqa" + RandomGeneratorUtils.getIntegerWithin(1, Integer.MAX_VALUE - 1) + "@gmail.com";
+			email = name +"+"+ RandomGeneratorUtils.getIntegerWithin(1, Integer.MAX_VALUE - 1) + "@gmail.com";
 		} else {
-			email = name + "+scqa" + slug + RandomGeneratorUtils.getIntegerWithin(1, Integer.MAX_VALUE - 1)
+			email = name + slug +"+"+ RandomGeneratorUtils.getIntegerWithin(1, Integer.MAX_VALUE - 1)
 					+ "@gmail.com";
 		}
 		return email;
