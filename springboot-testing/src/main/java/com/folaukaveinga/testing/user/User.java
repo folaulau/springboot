@@ -98,9 +98,10 @@ public class User implements Serializable {
 	private Date deletedAt;
 	
 	@BatchSize(size = 2)
-	@OrderBy("off_days")
+	@OrderBy("off_day")
 	@ElementCollection
 	@CollectionTable(name="user_off_days", joinColumns=@JoinColumn(name="user_id"))
+	@Column(name = "off_day")
 	private Set<Date> offDays;
 
 	public User() {
