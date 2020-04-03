@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.folaukaveinga.springboot.domain.Attachment;
+import com.folaukaveinga.springboot.domain.JsonData;
 import com.folaukaveinga.springboot.service.AttachmentService;
 
 import io.swagger.annotations.Api;
@@ -33,20 +34,50 @@ public class FileUploadRestController {
 	 * Upload a single file
 	 */
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Attachment> uploadSingleFile(@RequestParam(value = "file") MultipartFile file) {
+	public ResponseEntity<Attachment> uploadSingleFile(@RequestPart(value = "file") MultipartFile file) {
 		log.info("uploading file to server. Filename: {}, File size: {}", file.getOriginalFilename(), file.getSize());
 		return new ResponseEntity<>(attachmentService.saveFile(file), HttpStatus.OK);
 	}
+
+//	/**
+//	 * Upload a single file with @RequestParam and is working
+//	 */
+//	@RequestMapping(method = RequestMethod.POST)
+//	public ResponseEntity<Attachment> uploadSingleFile(@RequestParam(value = "file") MultipartFile file) {
+//		log.info("uploading file to server. Filename: {}, File size: {}", file.getOriginalFilename(), file.getSize());
+//		return new ResponseEntity<>(attachmentService.saveFile(file), HttpStatus.OK);
+//	}
 
 	/**
 	 * Upload multiple files
 	 */
 	@RequestMapping(value = {
 			"/multiple" }, method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseEntity<List<Attachment>> saveMultiple(@RequestPart(value = "files") List<MultipartFile> files) {
+	public ResponseEntity<List<Attachment>> saveMultiple(@RequestPart(value = "files") MultipartFile[] files) {
 
-		log.info("uploading files to server. upload size: {}", files.size());
+		log.info("uploading files to server. upload size: {}", files.length);
 		return new ResponseEntity<>(attachmentService.saveMultipartFiles(files), HttpStatus.OK);
 	}
 
+//	/**
+//	 * Upload multiple files with @RequestParam and is working
+//	 */
+//	@RequestMapping(value = {
+//			"/multiple" }, method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+//	public ResponseEntity<List<Attachment>> saveMultiple(@RequestParam(value = "files") MultipartFile[] files) {
+//
+//		log.info("uploading files to server. upload size: {}", files.length);
+//		return new ResponseEntity<>(attachmentService.saveMultipartFiles(files), HttpStatus.OK);
+//	}
+
+	/**
+	 * Upload a single file
+	 */
+	@RequestMapping(value = "/uploadWithData", method = RequestMethod.POST)
+	public ResponseEntity<Attachment> uploadSingleFileWithJsonObject(@RequestParam(value = "file") MultipartFile file,
+			@RequestParam JsonData jsonData) {
+		log.info("uploading file to server. Filename: {}, File size: {}", file.getOriginalFilename(), file.getSize());
+		log.info("jsonData={}", jsonData.toJson());
+		return new ResponseEntity<>(attachmentService.saveFile(file), HttpStatus.OK);
+	}
 }

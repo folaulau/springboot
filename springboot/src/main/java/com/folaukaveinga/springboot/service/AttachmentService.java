@@ -59,6 +59,14 @@ public class AttachmentService {
 		return attachments;
 	}
 	
+	public List<Attachment> saveMultipartFiles(MultipartFile[] multipartFiles) {
+		List<Attachment> attachments = new ArrayList<>();
+		for (int i = 0; i < multipartFiles.length; i++) {
+			attachments.add(this.saveFile(multipartFiles[i]));
+		}
+		return attachments;
+	}
+
 	public List<Attachment> saveFiles(List<File> files){
 		List<Attachment> attachments = new ArrayList<>();
 		for (int i = 0; i < files.size(); i++) {
