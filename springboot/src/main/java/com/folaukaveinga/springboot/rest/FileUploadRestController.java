@@ -71,7 +71,7 @@ public class FileUploadRestController {
 //	}
 
 	/**
-	 * Upload a single file
+	 * Upload a single file with json data not working
 	 */
 	@RequestMapping(value = "/uploadWithData", method = RequestMethod.POST)
 	public ResponseEntity<Attachment> uploadSingleFileWithJsonObject(@RequestParam(value = "file") MultipartFile file,
