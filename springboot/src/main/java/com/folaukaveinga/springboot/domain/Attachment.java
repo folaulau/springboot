@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
 
-
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -17,16 +16,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 public class Attachment implements Serializable, Cloneable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String name;
-	
+
 	private File file;
-	
+
 	public Attachment() {
-		
+
 	}
 
 	public Attachment(String name, File file) {
@@ -35,13 +33,9 @@ public class Attachment implements Serializable, Cloneable {
 		this.file = file;
 	}
 
-
-
 	public String getName() {
 		return name;
 	}
-
-
 
 	public void setName(String name) {
 		this.name = name;
@@ -55,7 +49,7 @@ public class Attachment implements Serializable, Cloneable {
 		this.file = file;
 		this.file.renameTo(new File("newFile"));
 	}
-	
+
 	public void setFile(MultipartFile multipartFile) {
 		file = new File(multipartFile.getOriginalFilename());
 		try {
@@ -68,13 +62,9 @@ public class Attachment implements Serializable, Cloneable {
 		}
 	}
 
-
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-
 
 	public static Attachment fromJson(String json) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
@@ -86,11 +76,9 @@ public class Attachment implements Serializable, Cloneable {
 		return objectMapper.writeValueAsString(this);
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "Attachment [name=" + name + ", filename=" + file.getName() +", filename=" + file.length() + "]";
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 
 	@Override
