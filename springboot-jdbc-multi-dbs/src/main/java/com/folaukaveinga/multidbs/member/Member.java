@@ -21,6 +21,9 @@ public class Member {
 	@Column(name = "last_name")
 	private String lastName;
 
+	@Column(name = "db")
+	private String db;
+
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -50,9 +53,17 @@ public class Member {
 		this.lastName = lastName;
 	}
 
+	public String getDb() {
+		return db;
+	}
+
+	public void setDb(String db) {
+		this.db = db;
+	}
+
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Member [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", db=" + db + "]";
 	}
 
 }

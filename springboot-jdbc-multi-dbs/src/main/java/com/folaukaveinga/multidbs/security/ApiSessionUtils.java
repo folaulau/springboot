@@ -2,6 +2,7 @@ package com.folaukaveinga.multidbs.security;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,6 +48,25 @@ public interface ApiSessionUtils {
 
 		}
 		return null;
+	}
+
+	public static String getCurrentUserDatabase() {
+		UserSession userSession = getApiSession();
+
+		try {
+			if (userSession != null && userSession.getMember() != null && userSession.getMember().getDb() != null) {
+				return userSession.getMember().getDb();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		Random rand = new Random();
+		if (rand.nextInt(10) % 2 == 0) {
+			return "springboot_clienta";
+		} else {
+			return "springboot_clientb";
+		}
 	}
 
 }
