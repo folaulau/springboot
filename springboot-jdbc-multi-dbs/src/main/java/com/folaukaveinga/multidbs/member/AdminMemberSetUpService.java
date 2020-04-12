@@ -66,13 +66,16 @@ public class AdminMemberSetUpService {
 		Member member = new Member();
 		member.setFirstName("Laulau");
 		member.setLastName("Kaveinga");
-
-		Random rand = new Random();
-		if (rand.nextInt(10) % 2 == 0) {
-			member.setDb("springboot_clienta");
-		} else {
-			member.setDb("springboot_clientb");
-		}
+		member.setDb("springboot_clienta");
+		
+		member = adminMemberService.save(member);
+		
+		log.info("new added Member={}", member.toString());
+		
+		member = new Member();
+		member.setFirstName("Kinga");
+		member.setLastName("Kaveinga");
+		member.setDb("springboot_clientb");
 		
 		member = adminMemberService.save(member);
 		
