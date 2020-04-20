@@ -28,7 +28,7 @@ public class DatabaseConfig {
 		String pass = "";
 		String adminDb = "springboot_admin";
 		String url = "jdbc:mysql://localhost:3306/" + adminDb
-				+ "?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
+				+ "?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
 
 		HikariConfig config = new HikariConfig();
 		config.setJdbcUrl(url);

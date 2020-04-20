@@ -34,7 +34,7 @@ public class ClientRoutingSource extends AbstractRoutingDataSource {
 	private DataSource getDataSourceByDBName(String database) {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		String url = "jdbc:mysql://localhost:3306/" + database
-				+ "?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
+				+ "?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
 
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		dataSource.setUrl(url);
