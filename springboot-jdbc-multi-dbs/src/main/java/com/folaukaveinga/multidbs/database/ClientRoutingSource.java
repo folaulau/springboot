@@ -22,7 +22,7 @@ public class ClientRoutingSource extends AbstractRoutingDataSource {
 		Map<Object, Object> result = new HashMap<>();
 
 		// key value pair of determineCurrentLookupKey() and database dataSource.
-
+		// test_bada does not exist - test to see if server checks db
 		Arrays.asList("springboot_clienta", "springboot_clientb", "test_bada").stream().forEach(database -> {
 			DataSource dataSource = getDataSourceByDBName(database);
 			result.put(database, dataSource);

@@ -2,15 +2,15 @@ package com.folaukaveinga.multidbs.expense;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
 
-@Entity
-@Table(name = "expense")
+//@Entity
+//@Table(name = "expense")
 public class Expense implements Serializable {
 
 	/**
@@ -18,20 +18,20 @@ public class Expense implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//	@Id
+	//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(name = "member_id")
+	//@Column(name = "member_id")
 	private Long memberId;
 
-	@Column(name = "total_amount")
+	//	@Column(name = "total_amount")
 	private Double totalAmount;
 
-	@Column(name = "total_amount_paid")
+	//	@Column(name = "total_amount_paid")
 	private Double totalAmountPaid;
 
-	@Column(name = "merchant_name")
+	//	@Column(name = "merchant_name")
 	private String merchantName;
 
 	public Expense() {
