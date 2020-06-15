@@ -12,84 +12,95 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.folaukaveinga.testing.plan.Plan;
+
 @Service
 public class UserServiceImp implements UserService {
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private UserValidatorService userValidatorService;
+    private final Logger         log = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private UserDAO userDAO;
+    @Autowired
+    private UserValidatorService userValidatorService;
 
-	@Autowired
-	private UserNtcService userNtcService;
+    @Autowired
+    private UserDAO              userDAO;
 
-	@Override
-	public User save(User user) {
-		log.info("save(..)");
-		try {
-			user = userDAO.save(user);
-		} catch (RuntimeException re) {
-			log.error(re.getMessage());
-		}
-		return user;
-	}
+    @Autowired
+    private UserNtcService       userNtcService;
 
-	@Override
-	public User getById(long id) {
-		log.info("get user by id: {}", id);
+    @Override
+    public User save(User user) {
+        log.info("save(..)");
+        try {
+            user = userDAO.save(user);
+        } catch (RuntimeException re) {
+            log.error(re.getMessage());
+        }
+        return user;
+    }
 
-		User user = userDAO.getById(id);
+    @Override
+    public User getById(long id) {
+        log.info("get user by id: {}", id);
 
-		UserUtils.validateUser(user, userValidatorService);
+        User user = userDAO.getById(id);
 
-		return user;
-	}
+        UserUtils.validateUser(user, userValidatorService);
 
-	@Override
-	public User getByEmail(String email) {
-		log.info("get user by email: {}", email);
-		return userDAO.getByEmail(email);
-	}
+        return user;
+    }
 
-	@Override
-	public List<User> getAll() {
-		return userDAO.getAll();
-	}
+    @Override
+    public User getByEmail(String email) {
+        log.info("get user by email: {}", email);
+        return userDAO.getByEmail(email);
+    }
 
-	@Override
-	public User update(User user) {
-		user.setUpdatedAt(new Date());
-		return userDAO.save(user);
-	}
+    @Override
+    public List<User> getAll() {
+        return userDAO.getAll();
+    }
 
-	@Override
-	public boolean remove(long id) {
-		return userDAO.deleteById(id);
-	}
+    @Override
+    public User update(User user) {
+        user.setUpdatedAt(new Date());
+        return userDAO.save(user);
+    }
 
-	@Override
-	public int getAge(LocalDate dob) {
-		log.info("getAge(..)");
-		return Period.between(dob, LocalDate.now()).getYears();
-	}
+    @Override
+    public boolean remove(long id) {
+        return userDAO.deleteById(id);
+    }
 
-	@Override
-	public User signUp(User user) {
-		log.info("signUp(..)");
-		user = this.save(user);
+    @Override
+    public int getAge(LocalDate dob) {
+        log.info("getAge(..)");
+        return Period.between(dob, LocalDate.now()).getYears();
+    }
 
-		boolean emailSent = this.userNtcService.sendWelcomeEmail(user);
+    @Override
+    public User signUp(User user) {
+        log.info("signUp(..)");
+        user = this.save(user);
 
-		log.info("welcome email sent: {}", emailSent);
+        boolean emailSent = this.userNtcService.sendWelcomeEmail(user);
 
-		return user;
-	}
+        log.info("welcome email sent: {}", emailSent);
 
-	@Override
-	public List<User> getByLastName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        return user;
+    }
+
+    @Override
+    public List<User> getByLastName(String name) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Plan signUpForPlan(Plan plan) {
+        // TODO Auto-generated method stub
+        return null;
+
+    }
+
 }

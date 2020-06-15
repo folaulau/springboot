@@ -3,3 +3,15 @@ Resources
 verify - verifies that certain things happen.
 
 https://www.journaldev.com/java/mockito
+
+Use Sonarqube
+- https://docs.sonarqube.org/latest/setup/get-started-2-minutes/
+
+1. Make sure the sonarqube server is up and running
+2. Login (username: admin, password: admin)
+3. Create a project(There should be a command given at the end to execute)
+4. Run this command 
+mvn sonar:sonar   -Dsonar.projectKey=project-942271187624842   -Dsonar.host.url=http://127.0.0.1:9000   -Dsonar.login=b81ec5032ae9068bd7f2f20be058eaec7c8de487
+(-Dsonar.login should be from sonarqube)
+(-Dsonar.projectKey should be from sonarqube)
+5. Done.

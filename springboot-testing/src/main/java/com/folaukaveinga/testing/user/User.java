@@ -46,248 +46,141 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.folaukaveinga.testing.utility.ConversionUtil;
 import com.folaukaveinga.testing.utility.ObjectUtils;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(value = Include.NON_NULL)
 @Where(clause = "deleted = 'F'")
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
-	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", unique = true, nullable = false, updatable = false)
-	private Long id;
+    private static final long serialVersionUID = 1L;
 
-	@Column(name = "first_name")
-	private String firstName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, updatable = false)
+    private Long              id;
 
-	@Column(name = "last_name")
-	private String lastName;
+    @Column(name = "first_name")
+    private String            firstName;
 
-	@Column(name = "phone_number")
-	private String phoneNumber;
+    @Column(name = "last_name")
+    private String            lastName;
 
-	@Column(name = "email", nullable = false, unique = true)
-	private String email;
+    @Column(name = "phone_number")
+    private String            phoneNumber;
 
-	@Column(name = "gender")
-	private String gender;
+    @Column(name = "email", nullable = false, unique = true)
+    private String            email;
 
-	@Column(name = "ssn")
-	private String ssn;
+    @Column(name = "gender")
+    private String            gender;
 
-	@Column(name = "ssn_last_4")
-	private String ssnLast4;
+    @Column(name = "ssn")
+    private String            ssn;
 
-	@Basic(optional = true)
-	private Date dob;
+    @Column(name = "ssn_last_4")
+    private String            ssnLast4;
 
-	@Type(type = "true_false")
-	@Column(name = "deleted", nullable = false)
-	private boolean deleted;
+    @Basic(optional = true)
+    private Date              dob;
 
-	@CreationTimestamp
-	@Column(name = "created_at", nullable = false, updatable = false)
-	private Date createdAt;
+    @Type(type = "true_false")
+    @Column(name = "deleted", nullable = false)
+    private boolean           deleted;
 
-	@UpdateTimestamp
-	@Column(name = "updated_at", nullable = false, updatable = true)
-	private Date updatedAt;
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Date              createdAt;
 
-	@Column(name = "deleted_at")
-	private Date deletedAt;
-	
-	@BatchSize(size = 2)
-	@OrderBy("off_day")
-	@ElementCollection
-	@CollectionTable(name="user_off_days", joinColumns=@JoinColumn(name="user_id"))
-	@Column(name = "off_day")
-	private Set<Date> offDays;
+    @UpdateTimestamp
+    @Column(name = "updated_at", nullable = false, updatable = true)
+    private Date              updatedAt;
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    @Column(name = "deleted_at")
+    private Date              deletedAt;
 
-	public User(String firstName, int age, String email) {
-		this.firstName = firstName;
-		this.email = email;
-		this.dob = DateUtils.addYears(new Date(), -age);
-	}
+    @BatchSize(size = 2)
+    @OrderBy("off_day")
+    @ElementCollection
+    @CollectionTable(name = "user_off_days", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "off_day")
+    private Set<Date>         offDays;
 
-	public Long getId() {
-		return id;
-	}
+    public User(String firstName, int age, String email) {
+        this(firstName, null, age, email);
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public User(String firstName, String lastName, int age, String email) {
+        this(0, firstName, lastName, age, email);
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public User(long id, String firstName, String lastName, int age, String email) {
+        super();
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.dob = DateUtils.addYears(new Date(), -age);
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public int getAge() {
+        return (dob == null) ? 0 : Period.between(dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(), LocalDate.now()).getYears();
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void addOffDay(Date offDay) {
+        if (this.offDays == null) {
+            this.offDays = new HashSet<>();
+        }
+        this.offDays.add(offDay);
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37).append(id).append(phoneNumber).append(email).toHashCode();
+    }
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+    @Override
+    public boolean equals(Object other) {
+        User otherUser = (User) other;
+        return new EqualsBuilder().append(this.id, otherUser.id).append(this.phoneNumber, otherUser.phoneNumber).append(this.email, otherUser.email).isEquals();
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public static User fromJson(String json) {
+        try {
+            return ObjectUtils.getObjectMapper().readValue(json, User.class);
+        } catch (IOException e) {
+            return new User();
+        }
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String toJson() {
+        try {
+            return ObjectUtils.getObjectMapper().writeValueAsString(this);
+        } catch (JsonProcessingException e) {
+            return "{}";
+        }
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    @PrePersist
+    private void preCreate() {
+        this.deleted = false;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getSsn() {
-		return ssn;
-	}
-
-	public void setSsn(String ssn) {
-		this.ssn = ssn;
-	}
-
-	public String getSsnLast4() {
-		return ssnLast4;
-	}
-
-	public void setSsnLast4(String ssnLast4) {
-		this.ssnLast4 = ssnLast4;
-	}
-
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
-	public boolean isDeleted() {
-		return deleted;
-	}
-
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-	public Date getDeletedAt() {
-		return deletedAt;
-	}
-
-	public void setDeletedAt(Date deletedAt) {
-		this.deletedAt = deletedAt;
-	}
-	
-	public int getAge() {
-		return (dob==null) ? 0 : Period.between(dob.toInstant()
-			      .atZone(ZoneId.systemDefault())
-			      .toLocalDate(), LocalDate.now()).getYears();
-	}
-
-	public Set<Date> getOffDays() {
-		return offDays;
-	}
-	
-	public List<Date> generateOffDaysAsList() {
-		return ConversionUtil.getListFromSet(this.offDays);
-	}
-
-	public void setOffDays(Set<Date> offDays) {
-		this.offDays = offDays;
-	}
-	
-	public void addOffDay(Date offDay) {
-		if(this.offDays == null ){
-			this.offDays = new HashSet<>();
-		}
-		this.offDays.add(offDay);
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
-	@Override
-	public int hashCode() {
-		return new HashCodeBuilder(17, 37).append(id).append(phoneNumber).append(email).toHashCode();
-	}
-
-	@Override
-	public boolean equals(Object other) {
-		User otherUser = (User) other;
-		return new EqualsBuilder().append(this.id, otherUser.id).append(this.phoneNumber, otherUser.phoneNumber)
-				.append(this.email, otherUser.email).isEquals();
-	}
-
-	public static User fromJson(String json) {
-		try {
-			return ObjectUtils.getObjectMapper().readValue(json, User.class);
-		} catch (IOException e) {
-			return new User();
-		}
-	}
-
-	public String toJson() {
-		try {
-			return ObjectUtils.getObjectMapper().writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			return "{}";
-		}
-	}
-	
-	@PrePersist
-	private void preCreate() {
-		this.deleted = false;
-	}
-
-	@PreUpdate
-	private void preUpdate() {
-	}
+    @PreUpdate
+    private void preUpdate() {
+    }
 
 }

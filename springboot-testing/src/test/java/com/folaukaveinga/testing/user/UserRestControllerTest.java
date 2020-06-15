@@ -32,74 +32,75 @@ import com.folaukaveinga.testing.user.UserService;
 @WebMvcTest(UserController.class)
 public class UserRestControllerTest {
 
-	@Autowired
-	private MockMvc mockMvc;
+    @Autowired
+    private MockMvc     mockMvc;
 
-	@MockBean
-	private UserService userService;
-	
-	@Test
-	public void testSave() throws Exception {
-		User user = new User("kinga",21,"kinga@gmail.com");
-		User savedUser = new User("kinga",21,"kinga@gmail.com");
-		when(userService.save(user)).thenReturn(savedUser);
-		
-		this.mockMvc.perform(post("/api/users").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.name", is("kinga")))
-			.andExpect(jsonPath("$.id", is(1)));
-	}
+    @MockBean
+    private UserService userService;
 
-	@Test
-	public void testGet() throws Exception {
-		when(userService.getById(1)).thenReturn(new User("folau",21,"fkaveinga@gmail.com"));
-		
-		this.mockMvc.perform(get("/api/users/1").contentType(MediaType.APPLICATION_JSON))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-			.andExpect(jsonPath("$.name", is("folau")))
-			.andExpect(jsonPath("$.age", is(21)));
-	}
-	
-	@Test
-	public void testGetAll() throws Exception {
-		List<User> users = Arrays.asList(
-				new User("folaulau",21,"folaulau@gmail.com"),
-				new User("kinga",21,"kinga@gmail.com"));
-		when(userService.getAll()).thenReturn(users);
-		
-		this.mockMvc.perform(get("/api/users").contentType(MediaType.APPLICATION_JSON))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$[0].name", is("folaulau")))
-			.andExpect(jsonPath("$[0].age", is(21)));
-	}
-	
-	@Test
-	public void testUpdate() throws Exception {
-		User user = new User("kinga",21,"kinga@gmail.com");
-		User savedUser = new User("kinga",21,"kinga@gmail.com");
-		when(userService.update(user)).thenReturn(savedUser);
-		
-		this.mockMvc.perform(patch("/api/users/update").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(jsonPath("$.name", is("kinga")))
-			.andExpect(jsonPath("$.id", is(1)));
-	}
-	
-	@Test
-	public void testRemove() throws Exception {
-		long id = 1;
-		when(userService.remove(id)).thenReturn(true);
-		
-		this.mockMvc.perform(delete("/api/users/remove/1"))
-			.andDo(print())
-			.andExpect(status().isOk())
-			.andExpect(MockMvcResultMatchers.content().string("true"));
-		
-	}
+    @Test
+    public void testUserSave() throws Exception {
+        User user = new User("kinga", "kaveinga", 21, "kinga@gmail.com");
+
+        User savedUser = new User(1, "kinga", "kaveinga", 21, "kinga@gmail.com");
+
+        when(userService.save(user)).thenReturn(savedUser);
+
+        this.mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName", is("kinga")))
+                .andExpect(jsonPath("$.id", is(1)));
+    }
+
+    @Test
+    public void testGetUserById() throws Exception {
+        User mockUser = new User("folau", 21, "fkaveinga@gmail.com");
+
+        when(userService.getById(1)).thenReturn(mockUser);
+
+        this.mockMvc.perform(get("/users/1").contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(jsonPath("$.firstName", is("folau")))
+                .andExpect(jsonPath("$.age", is(21)));
+    }
+
+    @Test
+    public void testGetAllUsers() throws Exception {
+        List<User> users = Arrays.asList(new User("folaulau", 21, "folaulau@gmail.com"), new User("kinga", 21, "kinga@gmail.com"));
+        when(userService.getAll()).thenReturn(users);
+
+        this.mockMvc.perform(get("/users").contentType(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].firstName", is("folaulau")))
+                .andExpect(jsonPath("$[0].age", is(21)));
+    }
+
+    @Test
+    public void testUpdateUser() throws Exception {
+        User user = new User("kinga", "kaveinga", 21, "kinga@gmail.com");
+
+        User savedUser = new User(1, "kinga", "kaveinga", 21, "kinga@gmail.com");
+
+        when(userService.update(user)).thenReturn(savedUser);
+
+        this.mockMvc.perform(patch("/users/update").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.firstName", is("kinga")))
+                .andExpect(jsonPath("$.id", is(1)));
+    }
+
+    @Test
+    public void testRemoveUser() throws Exception {
+        long id = 1;
+        when(userService.remove(id)).thenReturn(true);
+
+        this.mockMvc.perform(delete("/users/" + id)).andDo(print()).andExpect(status().isOk()).andExpect(MockMvcResultMatchers.content().string("true"));
+
+    }
 
 }

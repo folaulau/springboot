@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -23,99 +25,100 @@ import com.folaukaveinga.testing.user.User;
 import com.folaukaveinga.testing.user.UserRepository;
 import com.folaukaveinga.testing.utility.ConstantUtils;
 import com.folaukaveinga.testing.utility.ObjectUtils;
+import com.folaukaveinga.testing.utility.RandomGeneratorUtils;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class UserRepositoryTest {
 
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
+    private final Logger   log       = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-	private String firstName;
-	private int age;
-	private String email;
+    List<User>             testUsers = new ArrayList<User>();
 
-	@Before
-	public void setup() {
+    @Before
+    public void setup() {
 
-		for (int i = 0; i < 5; i++) {
-			User user = ConstantUtils.generateUser();
-			user = userRepository.saveAndFlush(user);
-			firstName = user.getFirstName();
-			age = user.getAge();
-			email = user.getEmail();
+        for (int i = 0; i < 7; i++) {
+            User user = ConstantUtils.generateUser();
+            user = userRepository.saveAndFlush(user);
+            testUsers.add(user);
+            // log.info("user={}",ObjectUtils.toJson(user));
+        }
 
-//			log.info("user={}",ObjectUtils.toJson(user));
-		}
+        System.out.println("\n");
+    }
 
-		System.out.println("\n");
-	}
+    @Transactional
+    @Test
+    public void testSaveUser() {
+        User user = ConstantUtils.generateUser();
+        log.info("user={}", ObjectUtils.toJson(user));
 
-	@Transactional
-	@Test
-	public void testSave() {
-		log.info("testSave({})", age);
-		User user = ConstantUtils.generateUser();
-		User savedUser = userRepository.saveAndFlush(user);
+        User savedUser = userRepository.saveAndFlush(user);
+        log.info("savedUser={}", ObjectUtils.toJson(savedUser));
 
-		assertNotNull(savedUser);
+        assertNotNull(savedUser);
 
-		log.info("savedUser==user -> {}", savedUser == user);
+        log.info("savedUser==user -> {}", savedUser == user);
 
-		assertEquals(user, savedUser);
+        assertEquals(user, savedUser);
 
-		log.info("user={}", ObjectUtils.toJson(user));
-		log.info("savedUser={}", ObjectUtils.toJson(savedUser));
+        long count = userRepository.count();
 
-		log.info("\n\ntestSave passed\n");
-	}
+        log.info("count={}", count);
 
-//	@Transactional
-//	@Test
-//	public void testFindByAge() throws InterruptedException, ExecutionException {
-//		log.info("testFindByAge({})", age);
-//		List<User> savedUsers = userRepository.findByAge(age);
-//		assertNotNull(savedUsers);
-//		assertNotEquals(savedUsers.size(), 0);
-//
-//		savedUsers.forEach((user) -> {
-//			System.out.println(user.toString());
-//		});
-//		
-//		log.info("\n\ntestFindByAge passed\n");
-//	}
+        assertEquals(8, count);
 
-	@Transactional
-	@Test
-	public void testFindByName() throws InterruptedException, ExecutionException {
-		log.info("testFindByName({})", firstName);
-		String name = firstName;
-		Future<List<User>> savedUsers = userRepository.findByLastName(name);
+        log.info("\n\ntestSave passed\n");
+    }
 
-		assertNotNull(savedUsers);
-		assertNotEquals(savedUsers.get().size(), 0);
+    // @Transactional
+    // @Test
+    // public void testFindByAge() throws InterruptedException, ExecutionException {
+    // log.info("testFindByAge({})", age);
+    // List<User> savedUsers = userRepository.findByAge(age);
+    // assertNotNull(savedUsers);
+    // assertNotEquals(savedUsers.size(), 0);
+    //
+    // savedUsers.forEach((user) -> {
+    // System.out.println(user.toString());
+    // });
+    //
+    // log.info("\n\ntestFindByAge passed\n");
+    // }
 
-		savedUsers.get().forEach((user) -> {
-			System.out.println(user.toString());
-		});
+    @Transactional
+    @Test
+    public void testFindByName() throws InterruptedException, ExecutionException {
+        log.info("testFindByName({})", testUsers.get(0).getFirstName());
 
-		log.info("\n\ntestFindByName passed\n");
-	}
+        String lastName = testUsers.get(0).getLastName();
+        List<User> savedUsers = userRepository.findByLastName(lastName);
 
-	@Transactional
-	@Test
-	public void testFindByEmail() throws InterruptedException, ExecutionException {
-		log.info("testFindByEmail({})", email);
-		User savedUser = userRepository.findByEmail(email);
+        log.info(savedUsers.toString());
 
-		assertNotNull(savedUser);
-		assertNotEquals(savedUser.getId().longValue(), 0);
+        assertNotNull(savedUsers);
+        assertNotEquals(savedUsers.size(), 0);
 
-		System.out.println(savedUser.toString());
+        log.info("\n\ntestFindByName passed\n");
+    }
 
-		log.info("\n\ntestFindByEmail passed\n");
-	}
+    @Transactional
+    @Test
+    public void testFindByEmail() throws InterruptedException, ExecutionException {
+        log.info("testFindByEmail({})", testUsers.get(0).getEmail());
+        User savedUser = userRepository.findByEmail(testUsers.get(0).getEmail());
+
+        assertNotNull(savedUser);
+        assertNotEquals(savedUser.getId().longValue(), 0);
+
+        System.out.println(savedUser.toString());
+
+        log.info("\n\ntestFindByEmail passed\n");
+
+    }
 
 }

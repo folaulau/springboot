@@ -17,31 +17,32 @@ import com.folaukaveinga.testing.utility.RandomGeneratorUtils;
 @Component
 public class UserLoader {
 
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
+    private final Logger   log = LoggerFactory.getLogger(this.getClass());
 
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-	@PostConstruct
-	public void init() {
-		log.info("loading users...");
-		for (int i = 0; i < 10; i++) {
-			User user = ConstantUtils.generateUser();
+    @PostConstruct
+    public void init() {
+        log.info("loading users...");
+        for (int i = 0; i < 5; i++) {
+            User user = ConstantUtils.generateUser();
+            user.setId(new Long(i + 1));
+            user = addDays(user);
 
-			user = addDays(user);
+            user = userRepository.saveAndFlush(user);
 
-			user = userRepository.saveAndFlush(user);
+            log.info("user={}", ObjectUtils.toJson(user));
+        }
+        log.info("done loading users!");
+    }
 
-			log.info("user={}", ObjectUtils.toJson(user));
-		}
-		log.info("done loading users!");
-	}
+    private User addDays(User user) {
+        int numOfOffDays = RandomGeneratorUtils.getIntegerWithin(1, 10);
+        for (int i = 0; i < numOfOffDays; i++) {
+            user.addOffDay(DateUtils.addDays(new Date(), RandomGeneratorUtils.getIntegerWithin(1, 350)));
+        }
+        return user;
+    }
 
-	private User addDays(User user) {
-		int numOfOffDays = RandomGeneratorUtils.getIntegerWithin(1, 10);
-		for (int i = 0; i < numOfOffDays; i++) {
-			user.addOffDay(DateUtils.addDays(new Date(), RandomGeneratorUtils.getIntegerWithin(1, 350)));
-		}
-		return user;
-	}
 }
