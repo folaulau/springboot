@@ -26,7 +26,7 @@ public class UserNtcServiceImp implements UserNtcService {
 
     @Override
     public boolean notifyUserOfNewPaymentMethod(PaymentMethod paymentMethod) {
-        // TODO Auto-generated method stub
+        log.info("sending email to {}", paymentMethod.getName());
         return false;
 
     }
