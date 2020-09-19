@@ -1,6 +1,10 @@
 package com.folaukaveinga.testing.user;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.ArgumentMatchers.same;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -44,6 +48,10 @@ public class UserRestControllerTest {
 
         User savedUser = new User(1, "kinga", "kaveinga", 21, "kinga@gmail.com");
 
+        /**
+         * thenReturn or doReturn() are used to specify a value to be returned <br/>
+         * upon method invocation.
+         */
         when(userService.save(user)).thenReturn(savedUser);
 
         this.mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON).content(user.toJson()))
@@ -51,6 +59,9 @@ public class UserRestControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.firstName", is("kinga")))
                 .andExpect(jsonPath("$.id", is(1)));
+
+        verify(userService, times(1)).save(user);
+        verifyNoMoreInteractions(userService);
     }
 
     @Test

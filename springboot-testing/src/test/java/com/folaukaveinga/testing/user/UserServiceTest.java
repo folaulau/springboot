@@ -52,7 +52,7 @@ public class UserServiceTest {
 	@Captor
 	private ArgumentCaptor<User> userCaptor;
 
-	@Before
+    @Before
 	public void setup() {
 		log.info("setUp()");
 		MockitoAnnotations.initMocks(this);
@@ -65,13 +65,17 @@ public class UserServiceTest {
 
 		log.info("user={}", user.toJson());
 
+        /**
+         * thenReturn or doReturn() are used to specify a value to be returned <br/>
+         * upon method invocation.
+         */
 		when(userDAO.save(any(User.class))).thenReturn(user);
 
 		User savedUser = userService.save(user);
 
 		verify(userDAO).save(same(user));
 
-		assertEquals(user, savedUser);
+        assertEquals(user, savedUser);
 
 		log.info("testSave() - passed\n\n");
 	}
