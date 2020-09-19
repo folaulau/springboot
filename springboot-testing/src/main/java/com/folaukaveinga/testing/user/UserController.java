@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 @Api(value = "users", produces = "Rest API for User operations", tags = "User Controller")
 @RestController
@@ -33,7 +34,7 @@ public class UserController {
 
     @ApiOperation(value = "Get Member By Id")
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
+    public ResponseEntity<User> getUserById(@ApiParam(name = "id", required = true, value = "id of member") @PathVariable("id") Long id) {
         log.info("get user by id: {}", id);
 
         return new ResponseEntity<>(userService.getById(id), HttpStatus.OK);
