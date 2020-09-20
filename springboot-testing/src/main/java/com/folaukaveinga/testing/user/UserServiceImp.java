@@ -1,5 +1,7 @@
 package com.folaukaveinga.testing.user;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 
 import com.folaukaveinga.testing.plan.Plan;
 
@@ -96,10 +100,21 @@ public class UserServiceImp implements UserService {
         return null;
     }
 
+    /**
+     * Set up for Spy demo.
+     */
     @Override
     public Plan signUpForPlan(Plan plan) {
-        // TODO Auto-generated method stub
-        return null;
+        log.info("signUpForPlan(..)");
+        RestTemplate restTemplate = new RestTemplate();
+        double amount = 0;
+        try {
+            amount = restTemplate.getForObject(new URI("https://www.random.org/sequences/?min=1&max=52&format=plain&rnd=new"), Double.class);
+        } catch (RestClientException | URISyntaxException e) {
+            log.info(e.getLocalizedMessage());
+        }
+        plan.setAmount(amount);
+        return plan;
 
     }
 
