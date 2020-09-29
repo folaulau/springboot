@@ -1,9 +1,10 @@
 package com.lovemesomecoding;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ public class DoctorFileTests {
     public void readJsonFile() throws JsonParseException, JsonMappingException, IOException {
         ObjectMapper objectMapper = ObjectUtils.getObjectMapper();
 
-        File file = new File("doctor-ut.json");
+        File file = new File("doctor-ut-sample.json");
 
         DoctorIndex[] doctors = objectMapper.readValue(file, DoctorIndex[].class);
 
@@ -28,6 +29,14 @@ public class DoctorFileTests {
         DoctorIndex doctor = doctors[0];
 
         System.out.println(ObjectUtils.toJson(doctor));
+    }
+
+    @Test
+    public void writeJsonFile() throws JsonParseException, JsonMappingException, IOException {
+        List<DoctorIndex> doctors = new ArrayList<DoctorIndex>();
+
+        ObjectUtils.getObjectMapper().writeValue(new FileOutputStream("doctor-ut-sample.json", true), doctors);
+
     }
 
 }
