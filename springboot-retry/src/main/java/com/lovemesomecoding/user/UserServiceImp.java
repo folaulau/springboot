@@ -16,15 +16,17 @@ public class UserServiceImp implements UserService {
     public boolean sendEmail(User user) throws RuntimeException {
         log.info("send email");
         if (true) {
-            throw new RuntimeException("asdf");
+            throw new RuntimeException("error");
         }
 
         return false;
     }
 
     @Recover
-    void recover(RuntimeException e, User user) {
+    @Override
+    public boolean recover(RuntimeException e, User user) {
         log.info("recover");
+        return true;
     }
 
 }
