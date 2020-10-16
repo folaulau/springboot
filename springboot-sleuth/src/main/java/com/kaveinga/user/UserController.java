@@ -16,13 +16,15 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class UserController {
 
-	@Autowired
-	private UserService userService;
+    @Autowired
+    private UserService userService;
 
-	@GetMapping("/users/{id}")
-	public ResponseEntity<User> getById(@RequestHeader(name = "token") String token, @PathVariable long id) {
-		User user = userService.getById(id);
-		log.debug(user.toString());
-		return new ResponseEntity<User>(user, HttpStatus.OK);
-	}
+    @GetMapping("/users/{id}")
+    public ResponseEntity<User> getById(@RequestHeader(name = "token") String token, @PathVariable long id) {
+        log.info("get user by id={}, traceId={}", id);
+        User user = userService.getById(id);
+        log.debug(user.toString());
+        return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+
 }

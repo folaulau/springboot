@@ -1,12 +1,15 @@
 package com.kaveinga.security;
 
 import java.io.IOException;
+import java.util.Optional;
+import java.util.UUID;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.ThreadContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -21,35 +24,44 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class AuthFilter extends OncePerRequestFilter {
 
-	@Autowired
-	private Tracer tracer;
+    @Autowired
+    private Tracer tracer;
 
-	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-			throws ServletException, IOException {
-		log.debug("before filter url={}", request.getRequestURL().toString());
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        log.debug("before filter url={}", request.getRequestURL().toString());
 
-		String token = request.getHeader("token");
-//
-//		tracer.currentSpan().customizer().tag("tagKey", "tagValue").name("newSpanName");
-		Span currentSpan = this.tracer.currentSpan();
+        String token = request.getHeader("token");
 
-		((HttpServletResponse) response).addHeader("ZIPKIN-TRACE-ID", currentSpan.context().traceIdString());
-		// we can also add some custom tags
-		currentSpan.tag("custom", "tag");
-		log.debug("spanId={}", currentSpan.context().spanIdString());
-		log.debug("traceId={}", currentSpan.context().traceIdString());
-		TraceContext traceContext = currentSpan.context().toBuilder().spanId(999999).traceId(9889898).build();
-		this.tracer.joinSpan(traceContext);
-		ScopedSpan scopedSpan = tracer.startScopedSpan("sdfsd");
-		scopedSpan.context().toBuilder().spanId(999999).traceId(9889898).build();
-		log.debug("spanId={}", traceContext.spanId());
-		log.debug("traceId={}", traceContext.traceId());
-		filterChain.doFilter(request, response);
+        /*
+         * Add custom tag to logs
+         */
+        ThreadContext.put("memberUuid", "mem-" + UUID.randomUUID().toString());
+        ////
+        // tracer.currentSpan().customizer().tag("tagKey", "tagValue").name("newSpanName");
+        Span currentSpan = this.tracer.currentSpan();
 
-		scopedSpan.finish();
-		log.debug("after filter");
+        ((HttpServletResponse) response).addHeader("ZIPKIN-TRACE-ID", currentSpan.context().traceIdString());
+        // we can also add some custom tags
+        currentSpan.tag("custom", "tag");
+        log.debug("spanId={}", currentSpan.context().spanIdString());
+        log.debug("traceId={}", currentSpan.context().traceIdString());
+        TraceContext traceContext = currentSpan.context().toBuilder().spanId(999999).traceId(9889898).build();
+        this.tracer.joinSpan(traceContext);
+        ScopedSpan scopedSpan = tracer.startScopedSpan("sdfsd");
+        scopedSpan.context().toBuilder().spanId(999999).traceId(9889898).build();
+        log.debug("spanId={}", traceContext.spanId());
+        log.debug("traceId={}", traceContext.traceId());
+        filterChain.doFilter(request, response);
 
-	}
+        /*
+         * Remove custom tag from logs
+         */
+        ThreadContext.clearMap();
+
+        scopedSpan.finish();
+        log.debug("after filter");
+
+    }
 
 }
