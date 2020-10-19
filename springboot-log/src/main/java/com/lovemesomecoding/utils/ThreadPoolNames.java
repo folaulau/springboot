@@ -1,7 +1,7 @@
 package com.lovemesomecoding.utils;
 
-public interface ThreadPoolNames {
+public final class ThreadPoolNames {
 
-    String MainThreadPool = "mainThreadPool";
+    public static final String MainThreadPool = "mainThreadPool";
 
 }
