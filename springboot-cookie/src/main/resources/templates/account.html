@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Springboot Cookie</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script>
+	sessionStorage.name = "Lisa";
+
+	var cookies = document.cookie;
+	console.log(cookies);
+	
+	function setCookie(cname, cvalue, exdays) {
+		  var d = new Date();
+		  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		  var expires = "expires="+d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+	
+	
+	// set score to 25
+	setCookie("JSESSIONID","test-JSESSIONID",7);
+</script>
+</head>
+<body>
+	<p>Account Page - private</p>
+	<div>
+		<p>
+			<a href="/profile">profile</a>
+		</p>
+		<p>
+			<a href="/account">account</a>
+		</p>
+		<p>
+			<a href="/admin/stats">admin stats</a>
+		</p>
+		<p>
+			<a href="/logout">logout</a>
+		</p>
+	</div>
+</body>
+</html>

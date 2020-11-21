@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Springboot Cookie</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script>
+	localStorage.setItem("page", "profile");
+	
+	var cookies = document.cookie;
+	console.log(cookies);
+	
+	document.cookie = "USERNAME=folauk; expires=Thu, 18 Dec 2025 12:00:00 UTC; path=/";
+</script>
+</head>
+<body>
+	<p>Profile Page - private</p>
+	<div>
+		<p>
+			<a href="/profile">profile</a>
+		</p>
+		<p>
+			<a href="/account">account</a>
+		</p>
+		<p>
+			<a href="/admin/stats">admin stats</a>
+		</p>
+		<p>
+			<a href="/logout">logout</a>
+		</p>
+	</div>
+</body>
+</html>
