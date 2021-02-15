@@ -46,7 +46,7 @@ import lombok.ToString;
 @Entity
 @SQLDelete(sql = "UPDATE member SET deleted = 'T' WHERE id = ?", check = ResultCheckStyle.NONE)
 @Where(clause = "deleted = 'F'")
-@Table(name = "member", indexes = {@Index(columnList = "uuid")})
+@Table(name = "member", schema = "public", indexes = {@Index(columnList = "uuid")})
 public class Member implements Serializable {
 
     private static final long serialVersionUID = 1L;
