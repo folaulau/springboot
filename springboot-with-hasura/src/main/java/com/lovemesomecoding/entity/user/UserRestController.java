@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.lovemesomecoding.dto.AuthenticationResponseDTO;
 import com.lovemesomecoding.dto.EntityDTOMapper;
+import com.lovemesomecoding.dto.HasuraRequestDTO;
 import com.lovemesomecoding.dto.SignUpDTO;
 import com.lovemesomecoding.utils.ObjMapperUtils;
 
@@ -51,14 +52,13 @@ public class UserRestController {
 	 */
 	@ApiOperation(value = "Sign Up")
 	@PostMapping(value = "/users/signup")
-	public ResponseEntity<AuthenticationResponseDTO> signUp(
-			@ApiParam(name = "user", value = "user sign up dto", required = true) @Valid @RequestBody String body) {
-		log.info("sign up {}", body);
+	public ResponseEntity<AuthenticationResponseDTO> signUp(@RequestBody HasuraRequestDTO body) {
+		log.info("sign up {}", ObjMapperUtils.toJson(body));
 
 		SignUpDTO signUpDTO = null;
 		AuthenticationResponseDTO userAuthenticationSuccessDTO = userService.signUp(signUpDTO);
-		
-		log.info("auth={}",ObjMapperUtils.toJson(userAuthenticationSuccessDTO));
+
+		log.info("auth={}", ObjMapperUtils.toJson(userAuthenticationSuccessDTO));
 
 		return new ResponseEntity<>(userAuthenticationSuccessDTO, OK);
 	}
@@ -69,7 +69,6 @@ public class UserRestController {
 	@ApiOperation(value = "Log In")
 	@PostMapping(value = "/users/login")
 	public ResponseEntity<AuthenticationResponseDTO> login(
-			@RequestHeader(name = "x-api-key", required = true) String xApiKey,
 			@RequestParam(name = "type", required = true) String loginType,
 			@RequestHeader(name = "Authorization", required = true) String authorization) {
 		log.info("login authorization={}", ObjMapperUtils.toJson(authorization));
