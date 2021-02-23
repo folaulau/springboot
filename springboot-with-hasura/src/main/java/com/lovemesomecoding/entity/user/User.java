@@ -1,4 +1,4 @@
-package com.lovemesomecoding.entity.member;
+package com.lovemesomecoding.entity.user;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -46,8 +46,8 @@ import lombok.ToString;
 @Entity
 @SQLDelete(sql = "UPDATE member SET deleted = 'T' WHERE id = ?", check = ResultCheckStyle.NONE)
 @Where(clause = "deleted = 'F'")
-@Table(name = "member", schema = "public", indexes = {@Index(columnList = "uuid")})
-public class Member implements Serializable {
+@Table(name = "member", schema = "public", indexes = {})
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -56,49 +56,41 @@ public class Member implements Serializable {
     @Column(name = "id", nullable = false, updatable = false, unique = true)
     private Long              id;
 
-    @Column(name = "uuid", unique = true, nullable = false, updatable = false)
-    private String            uuid;
-
     @Column(name = "first_name")
     private String            firstName;
 
     @Column(name = "last_name")
     private String            lastName;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email")
     private String            email;
 
     @Column(name = "phone_number")
     private String            phoneNumber;
 
-    @Column(name = "date_of_birth")
-    private LocalDate         dateOfBirth;
-
     @Type(type = "true_false")
-    @Column(name = "deleted", nullable = false)
+    @Column(name = "deleted", nullable = true)
     private boolean           deleted;
 
     @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = true, updatable = true)
     private LocalDateTime     createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = true)
     private LocalDateTime     updatedAt;
 
     @JoinColumn(name = "address_id", nullable = true)
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private Address           address;
 
-    public Member(long id) {
+    public User(long id) {
         this.id = id;
     }
 
     @PrePersist
     private void preCreate() {
-        if (this.uuid == null || this.uuid.isEmpty()) {
-            this.uuid = "user-" + UUID.randomUUID().toString();
-        }
+
 
     }
 

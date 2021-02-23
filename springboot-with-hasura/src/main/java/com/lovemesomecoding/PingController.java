@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class PingController {
 
-    @GetMapping(value = {"/", "/ping"})
-    public ResponseEntity<String> logout(HttpServletRequest request) {
+    @GetMapping(value = {"/ping"})
+    public ResponseEntity<String> ping(HttpServletRequest request) {
 
         String requestorIPAddress = "";
 
