@@ -59,6 +59,10 @@ public class UserRestController {
 		AuthenticationResponseDTO userAuthenticationSuccessDTO = userService.signUp(signUpDTO);
 
 		log.info("auth={}", ObjMapperUtils.toJson(userAuthenticationSuccessDTO));
+		
+		if(true) {
+			throw new IllegalArgumentException("something went wrong");
+		}
 
 		return new ResponseEntity<>(userAuthenticationSuccessDTO, OK);
 	}
