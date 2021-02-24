@@ -1,0 +1,20 @@
+version: '3.6'
+services:
+  springboot-account:
+    image: 'springboot-account:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-account
+    ports:
+    - "8888:8888"
+    restart: always
+  springboot-billing:
+    image: 'springboot-billing:latest'
+    build:
+      context: ../springboot-billing/
+      dockerfile: Dockerfile
+    container_name: springboot-billing
+    ports:
+    - "9999:9999"
+    restart: always
