@@ -16,3 +16,6 @@ run hasura container by using docker-compose file
 access hasura on http://localhost:8098/console
 
 ping hasura server on http://localhost:8098/healthz
+
+## Run just the hasura
+docker-compose -f docker-compose-hasura.yaml up
